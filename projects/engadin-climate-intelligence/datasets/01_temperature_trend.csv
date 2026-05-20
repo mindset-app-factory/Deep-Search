@@ -1,0 +1,70 @@
+Year,Mean_Annual_Temp_C,Scenario,Source,Confidence
+1990,1.2,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+1991,1.5,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+1992,1.8,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+1993,1.0,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+1994,1.6,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+1995,1.3,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+1996,0.8,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+1997,1.4,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+1998,1.9,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+1999,1.1,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2000,1.7,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2001,1.8,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2002,2.0,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2003,2.6,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2004,1.5,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2005,1.4,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2006,2.1,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2007,2.0,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2008,1.8,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2009,1.9,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2010,1.3,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2011,2.4,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2012,2.1,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2013,1.8,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2014,2.3,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2015,2.5,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2016,2.2,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2017,2.0,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2018,2.7,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2019,2.4,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2020,2.6,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2021,2.0,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2022,2.8,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2023,2.5,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2024,2.7,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2025,2.6,historical,MeteoSwiss Samedan/Segl-Maria composite,high
+2026,2.7,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2027,2.8,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2028,2.7,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2029,2.8,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2030,2.9,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2031,2.8,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2032,2.9,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2033,2.9,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2034,2.9,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2035,3.0,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2036,3.0,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2026,2.8,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2027,2.9,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2028,3.0,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2029,3.1,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2030,3.2,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2031,3.2,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2032,3.3,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2033,3.4,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2034,3.4,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2035,3.5,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2036,3.6,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2026,2.9,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium
+2027,3.1,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium
+2028,3.2,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium
+2029,3.4,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium
+2030,3.5,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium
+2031,3.6,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium
+2032,3.8,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium
+2033,3.9,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium
+2034,4.0,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium
+2035,4.2,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium
+2036,4.3,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium

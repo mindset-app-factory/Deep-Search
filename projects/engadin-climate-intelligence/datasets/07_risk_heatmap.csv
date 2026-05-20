@@ -1,0 +1,9 @@
+Sub_Region,Flood_Risk,Drought_Risk,Permafrost_Risk,Snow_Loss_Risk,Overall_Risk,Flood_Probability,Flood_Impact,Drought_Probability,Drought_Impact,Permafrost_Probability,Permafrost_Impact,Snow_Loss_Probability,Snow_Loss_Impact,Source
+Upper Engadin (Maloja-St.Moritz),high,medium,high,high,high,0.7,4,0.5,3,0.8,4,0.8,5,CH2018/FOEN/SLF composite
+Mid Engadin (Celerina-Zuoz),medium,medium,low,high,medium,0.5,3,0.5,3,0.2,2,0.7,4,CH2018/FOEN/SLF composite
+Lower Engadin (Zernez-Scuol),medium,high,medium,medium,medium,0.5,3,0.7,4,0.4,3,0.5,3,CH2018/FOEN/SLF composite
+Val Bernina,high,low,very_high,medium,high,0.6,4,0.3,2,0.9,5,0.6,3,CH2018/FOEN/SLF composite
+Val Roseg,high,low,very_high,medium,high,0.7,4,0.2,2,0.9,5,0.5,3,CH2018/FOEN/SLF composite
+Silsersee Area,medium,medium,low,high,medium,0.4,3,0.5,3,0.2,2,0.8,4,CH2018/FOEN/SLF composite
+Swiss National Park Area,low,high,medium,low,medium,0.3,2,0.7,4,0.5,3,0.3,2,CH2018/FOEN/SLF composite
+Val Mustair,low,very_high,low,medium,medium,0.3,2,0.8,5,0.2,2,0.5,3,CH2018/FOEN/SLF composite

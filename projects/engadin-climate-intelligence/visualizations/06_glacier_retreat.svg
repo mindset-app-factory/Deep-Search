@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Arial, Helvetica, sans-serif">
+    <rect width="900" height="520" fill="#F7F6F2" rx="0"/>
+
+  <text x="450" y="35" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Gletscherruckgang Engadin / Glacier Retreat Engadin</text>
+  <text x="450" y="55" text-anchor="middle" font-size="11" fill="#64748b">Flache in km2 | Area in km2 — Morteratsch, Pers, Roseg</text>
+
+  <line x1="100" y1="65" x2="100" y2="400" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="100" y1="400" x2="840" y2="400" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Y-axis: 0-7 km2, height=335, scale: 1 km2 = 47.86px -->
+  <text x="95" y="400" text-anchor="end" font-size="10" fill="#64748b">0</text>
+  <text x="95" y="352" text-anchor="end" font-size="10" fill="#64748b">1</text>
+  <text x="95" y="304" text-anchor="end" font-size="10" fill="#64748b">2</text>
+  <text x="95" y="257" text-anchor="end" font-size="10" fill="#64748b">3</text>
+  <text x="95" y="209" text-anchor="end" font-size="10" fill="#64748b">4</text>
+  <text x="95" y="161" text-anchor="end" font-size="10" fill="#64748b">5</text>
+  <text x="95" y="113" text-anchor="end" font-size="10" fill="#64748b">6</text>
+  <text x="95" y="65" text-anchor="end" font-size="10" fill="#64748b">7 km2</text>
+
+  <line x1="100" y1="352" x2="840" y2="352" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="304" x2="840" y2="304" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="257" x2="840" y2="257" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="209" x2="840" y2="209" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="161" x2="840" y2="161" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="113" x2="840" y2="113" stroke="#e2e8f0" stroke-width="0.5"/>
+
+  <!-- Projection zone -->
+  <rect x="700" y="65" width="140" height="335" fill="#fef3c7" opacity="0.3" rx="0"/>
+
+  <!-- X-axis: 1990 to 2036, 46 years, width=740 -->
+  <text x="120" y="418" text-anchor="middle" font-size="10" fill="#64748b">1990</text>
+  <text x="200" y="418" text-anchor="middle" font-size="10" fill="#64748b">1995</text>
+  <text x="281" y="418" text-anchor="middle" font-size="10" fill="#64748b">2000</text>
+  <text x="361" y="418" text-anchor="middle" font-size="10" fill="#64748b">2005</text>
+  <text x="441" y="418" text-anchor="middle" font-size="10" fill="#64748b">2010</text>
+  <text x="521" y="418" text-anchor="middle" font-size="10" fill="#64748b">2015</text>
+  <text x="601" y="418" text-anchor="middle" font-size="10" fill="#64748b">2020</text>
+  <text x="681" y="418" text-anchor="middle" font-size="10" fill="#64748b">2025</text>
+  <text x="761" y="418" text-anchor="middle" font-size="10" fill="#64748b">2030</text>
+  <text x="840" y="418" text-anchor="middle" font-size="10" fill="#64748b">2036</text>
+
+  <!-- Morteratsch (blue): 6.2, 5.9, 5.5, 5.2, 4.9, 4.5, 4.1, 3.8 historical -->
+  <!-- y = 400 - (km2 * 47.86) -->
+  <polyline points="120,103 200,117 281,137 361,151 441,165 521,184 601,204 681,218"
+    fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="120" cy="103" r="3" fill="#2563eb"/>
+  <circle cx="681" cy="218" r="3" fill="#2563eb"/>
+  <!-- RCP4.5 proj -->
+  <polyline points="681,218 761,237 840,257"
+    fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,3"/>
+  <!-- RCP8.5 proj -->
+  <polyline points="681,218 761,247 840,276"
+    fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="2,2" opacity="0.6"/>
+
+  <!-- Pers (green): 4.8, 4.5, 4.2, 3.9, 3.6, 3.2, 2.8, 2.5 -->
+  <polyline points="120,170 200,184 281,199 361,213 441,228 521,247 601,266 681,280"
+    fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="120" cy="170" r="3" fill="#16a34a"/>
+  <circle cx="681" cy="280" r="3" fill="#16a34a"/>
+  <polyline points="681,280 761,295 840,314"
+    fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="5,3"/>
+  <polyline points="681,280 761,304 840,328"
+    fill="none" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="2,2" opacity="0.6"/>
+
+  <!-- Roseg (orange): 4.0, 3.7, 3.4, 3.1, 2.8, 2.5, 2.2, 2.0 -->
+  <polyline points="120,209 200,223 281,237 361,252 441,266 521,280 601,295 681,304"
+    fill="none" stroke="#ea580c" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="120" cy="209" r="3" fill="#ea580c"/>
+  <circle cx="681" cy="304" r="3" fill="#ea580c"/>
+  <polyline points="681,304 761,319 840,333"
+    fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="5,3"/>
+  <polyline points="681,304 761,323 840,347"
+    fill="none" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="2,2" opacity="0.6"/>
+
+  <!-- Labels at end -->
+  <text x="845" y="254" font-size="9" fill="#2563eb" font-weight="bold">3.0 km2</text>
+  <text x="845" y="275" font-size="8" fill="#2563eb" opacity="0.6">2.6 km2</text>
+  <text x="845" y="311" font-size="9" fill="#16a34a" font-weight="bold">1.8 km2</text>
+  <text x="845" y="325" font-size="8" fill="#16a34a" opacity="0.6">1.5 km2</text>
+  <text x="845" y="336" font-size="9" fill="#ea580c" font-weight="bold">1.4 km2</text>
+  <text x="845" y="350" font-size="8" fill="#ea580c" opacity="0.6">1.1 km2</text>
+
+  <!-- Summary box -->
+  <rect x="140" y="75" width="280" height="55" fill="white" rx="0" stroke="#ea580c" opacity="0.9"/>
+  <text x="150" y="93" font-size="11" fill="#ea580c" font-weight="bold">Gesamtverlust / Total loss (1990-2036):</text>
+  <text x="150" y="110" font-size="10" fill="#64748b">RCP4.5: -48% bis -65% Flache / area</text>
+  <text x="150" y="124" font-size="10" fill="#64748b">RCP8.5: -58% bis -73% Flache / area</text>
+
+  <!-- Legend -->
+  <rect x="120" y="440" width="660" height="45" fill="white" rx="0" stroke="#e2e8f0"/>
+  <line x1="140" y1="455" x2="170" y2="455" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="175" y="459" font-size="10" fill="#1e293b">Morteratsch</text>
+  <line x1="275" y1="455" x2="305" y2="455" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="310" y="459" font-size="10" fill="#1e293b">Pers</text>
+  <line x1="370" y1="455" x2="400" y2="455" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="405" y="459" font-size="10" fill="#1e293b">Roseg</text>
+  <line x1="475" y1="468" x2="505" y2="468" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="510" y="472" font-size="10" fill="#1e293b">RCP4.5 Proj.</text>
+  <line x1="600" y1="468" x2="630" y2="468" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <text x="635" y="472" font-size="10" fill="#1e293b">RCP8.5 Proj.</text>
+
+  <text x="450" y="510" text-anchor="middle" font-size="8" fill="#94a3b8">Quellen / Sources: GLAMOS Gletschermonitoring, CH2018 Kryospharen-Szenarien / cryosphere scenarios</text>
+</svg>

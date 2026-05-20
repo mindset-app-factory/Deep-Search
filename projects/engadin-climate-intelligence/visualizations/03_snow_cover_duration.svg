@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Arial, Helvetica, sans-serif">
+    <rect width="900" height="500" fill="#F7F6F2" rx="0"/>
+
+  <text x="450" y="35" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Schneebedeckungsdauer / Snow Cover Duration</text>
+  <text x="450" y="55" text-anchor="middle" font-size="11" fill="#64748b">Tage pro Jahr, Samedan 1709m | Days per year, Samedan 1709m</text>
+
+  <line x1="80" y1="70" x2="80" y2="400" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="80" y1="400" x2="860" y2="400" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Y-axis: 0-200 days, scale: 1 day = 1.65px -->
+  <text x="75" y="400" text-anchor="end" font-size="10" fill="#64748b">0</text>
+  <text x="75" y="318" text-anchor="end" font-size="10" fill="#64748b">50</text>
+  <text x="75" y="235" text-anchor="end" font-size="10" fill="#64748b">100</text>
+  <text x="75" y="153" text-anchor="end" font-size="10" fill="#64748b">150</text>
+  <text x="75" y="70" text-anchor="end" font-size="10" fill="#64748b">200</text>
+  <text x="25" y="240" text-anchor="middle" font-size="11" fill="#475569" transform="rotate(-90,25,240)">Tage / Days</text>
+
+  <line x1="80" y1="318" x2="860" y2="318" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="235" x2="860" y2="235" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="153" x2="860" y2="153" stroke="#e2e8f0" stroke-width="0.5"/>
+
+  <!-- Projection zone -->
+  <rect x="756" y="70" width="104" height="330" fill="#fef3c7" opacity="0.3" rx="0"/>
+
+  <!-- X-axis -->
+  <text x="80" y="418" text-anchor="middle" font-size="10" fill="#64748b">1990</text>
+  <text x="188" y="418" text-anchor="middle" font-size="10" fill="#64748b">1995</text>
+  <text x="296" y="418" text-anchor="middle" font-size="10" fill="#64748b">2000</text>
+  <text x="404" y="418" text-anchor="middle" font-size="10" fill="#64748b">2005</text>
+  <text x="512" y="418" text-anchor="middle" font-size="10" fill="#64748b">2010</text>
+  <text x="620" y="418" text-anchor="middle" font-size="10" fill="#64748b">2015</text>
+  <text x="728" y="418" text-anchor="middle" font-size="10" fill="#64748b">2020</text>
+  <text x="836" y="418" text-anchor="middle" font-size="10" fill="#64748b">2025</text>
+
+  <!-- Historical line: y = 400 - (days * 1.65) -->
+  <polyline points="80,123 102,116 123,136 145,111 166,144 188,128 210,106 231,133 253,153 274,120 296,139 318,144 339,156 361,177 382,136 404,139 425,166 447,156 469,149 490,161 512,139 534,186 555,166 577,156 599,182 620,189 642,172 664,166 685,194 707,177 728,186 750,169 771,205 793,194 814,202 836,199"
+    fill="none" stroke="#0ea5e9" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Trend line -->
+  <line x1="80" y1="120" x2="836" y2="195" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.4"/>
+
+  <!-- RCP2.6 projection -->
+  <polyline points="836,199 849,202 860,219"
+    fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,2"/>
+  <!-- RCP4.5 -->
+  <polyline points="836,199 849,210 860,242"
+    fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,2"/>
+  <!-- RCP8.5 -->
+  <polyline points="836,199 849,220 860,268"
+    fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,2"/>
+
+  <text x="865" y="222" font-size="9" fill="#22c55e" font-weight="bold">RCP2.6: 110d</text>
+  <text x="865" y="245" font-size="9" fill="#f59e0b" font-weight="bold">RCP4.5: 96d</text>
+  <text x="865" y="271" font-size="9" fill="#ef4444" font-weight="bold">RCP8.5: 80d</text>
+
+  <!-- Key annotation -->
+  <text x="450" y="90" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="bold">-35% bis -52% Reduktion / reduction by 2036</text>
+
+  <!-- Legend -->
+  <rect x="150" y="440" width="600" height="30" fill="white" rx="0" stroke="#e2e8f0"/>
+  <line x1="170" y1="455" x2="200" y2="455" stroke="#0ea5e9" stroke-width="2.5"/>
+  <text x="205" y="459" font-size="10" fill="#1e293b">Historisch / Historical</text>
+  <line x1="350" y1="455" x2="380" y2="455" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="385" y="459" font-size="10" fill="#1e293b">RCP2.6</text>
+  <line x1="450" y1="455" x2="480" y2="455" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="485" y="459" font-size="10" fill="#1e293b">RCP4.5</text>
+  <line x1="550" y1="455" x2="580" y2="455" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="585" y="459" font-size="10" fill="#1e293b">RCP8.5</text>
+
+  <text x="450" y="495" text-anchor="middle" font-size="8" fill="#94a3b8">Quellen / Sources: SLF, MeteoSwiss, CH2018 Szenarien / scenarios</text>
+</svg>

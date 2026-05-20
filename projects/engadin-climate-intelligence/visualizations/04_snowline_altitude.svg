@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Arial, Helvetica, sans-serif">
+    <rect width="900" height="500" fill="#F7F6F2" rx="0"/>
+
+  <text x="450" y="35" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Schneegrenze / Snowline Elevation</text>
+  <text x="450" y="55" text-anchor="middle" font-size="11" fill="#64748b">Veranderung uber die Zeit / Change over time (1990-2036)</text>
+
+  <line x1="80" y1="70" x2="80" y2="400" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="80" y1="400" x2="860" y2="400" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Y-axis: 2200m to 3000m, scale: 1m = 0.4125px, range=800m, height=330px -->
+  <text x="75" y="400" text-anchor="end" font-size="10" fill="#64748b">2200m</text>
+  <text x="75" y="317" text-anchor="end" font-size="10" fill="#64748b">2400m</text>
+  <text x="75" y="235" text-anchor="end" font-size="10" fill="#64748b">2600m</text>
+  <text x="75" y="152" text-anchor="end" font-size="10" fill="#64748b">2800m</text>
+  <text x="75" y="70" text-anchor="end" font-size="10" fill="#64748b">3000m</text>
+
+  <line x1="80" y1="317" x2="860" y2="317" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="235" x2="860" y2="235" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="152" x2="860" y2="152" stroke="#e2e8f0" stroke-width="0.5"/>
+
+  <!-- Projection zone -->
+  <rect x="680" y="70" width="180" height="330" fill="#fef3c7" opacity="0.25" rx="0"/>
+
+  <!-- X-axis -->
+  <text x="100" y="418" text-anchor="middle" font-size="10" fill="#64748b">1990</text>
+  <text x="213" y="418" text-anchor="middle" font-size="10" fill="#64748b">1995</text>
+  <text x="325" y="418" text-anchor="middle" font-size="10" fill="#64748b">2000</text>
+  <text x="438" y="418" text-anchor="middle" font-size="10" fill="#64748b">2005</text>
+  <text x="550" y="418" text-anchor="middle" font-size="10" fill="#64748b">2010</text>
+  <text x="663" y="418" text-anchor="middle" font-size="10" fill="#64748b">2015</text>
+  <text x="775" y="418" text-anchor="middle" font-size="10" fill="#64748b">2020</text>
+  <text x="840" y="418" text-anchor="middle" font-size="10" fill="#64748b">2025</text>
+
+  <!-- Historical: y = 400 - ((elev - 2200) * 0.4125) -->
+  <!-- 2350: 338, 2380: 326, 2420: 309, 2460: 293, 2500: 276, 2560: 252, 2620: 227, 2660: 210 -->
+  <polyline points="100,338 213,326 325,309 438,293 550,276 663,252 775,227 840,210"
+    fill="none" stroke="#7c3aed" stroke-width="3" stroke-linejoin="round" marker-start="url(#dot)" marker-mid="url(#dot)" marker-end="url(#dot)"/>
+
+  <!-- Data point circles -->
+  <circle cx="100" cy="338" r="4" fill="#7c3aed"/>
+  <circle cx="213" cy="326" r="4" fill="#7c3aed"/>
+  <circle cx="325" cy="309" r="4" fill="#7c3aed"/>
+  <circle cx="438" cy="293" r="4" fill="#7c3aed"/>
+  <circle cx="550" cy="276" r="4" fill="#7c3aed"/>
+  <circle cx="663" cy="252" r="4" fill="#7c3aed"/>
+  <circle cx="775" cy="227" r="4" fill="#7c3aed"/>
+  <circle cx="840" cy="210" r="4" fill="#7c3aed"/>
+
+  <!-- RCP2.6: 2680→2750 -->
+  <polyline points="840,210 855,202 860,173"
+    fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,3"/>
+  <!-- RCP4.5: 2690→2850 -->
+  <polyline points="840,210 855,193 860,132"
+    fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,3"/>
+  <!-- RCP8.5: 2700→2950 -->
+  <polyline points="840,210 855,185 860,91"
+    fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <text x="865" y="176" font-size="9" fill="#22c55e" font-weight="bold">2750m</text>
+  <text x="865" y="135" font-size="9" fill="#f59e0b" font-weight="bold">2850m</text>
+  <text x="865" y="94" font-size="9" fill="#ef4444" font-weight="bold">2950m</text>
+
+  <!-- Annotation -->
+  <rect x="140" y="85" width="320" height="50" fill="white" rx="0" stroke="#7c3aed" opacity="0.9"/>
+  <text x="150" y="103" font-size="11" fill="#7c3aed" font-weight="bold">+310m in 35 Jahren / in 35 years (hist.)</text>
+  <text x="150" y="120" font-size="10" fill="#64748b">+90 bis +290m weitere / additional by 2036</text>
+
+  <!-- Legend -->
+  <rect x="150" y="440" width="600" height="30" fill="white" rx="0" stroke="#e2e8f0"/>
+  <line x1="170" y1="455" x2="200" y2="455" stroke="#7c3aed" stroke-width="3"/>
+  <text x="205" y="459" font-size="10" fill="#1e293b">Historisch / Historical</text>
+  <line x1="350" y1="455" x2="380" y2="455" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="385" y="459" font-size="10" fill="#1e293b">RCP2.6</text>
+  <line x1="450" y1="455" x2="480" y2="455" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="485" y="459" font-size="10" fill="#1e293b">RCP4.5</text>
+  <line x1="550" y1="455" x2="580" y2="455" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="585" y="459" font-size="10" fill="#1e293b">RCP8.5</text>
+
+  <text x="450" y="495" text-anchor="middle" font-size="8" fill="#94a3b8">Quellen / Sources: SLF, MeteoSwiss Klimatologie, CH2018 Szenarien / scenarios</text>
+</svg>

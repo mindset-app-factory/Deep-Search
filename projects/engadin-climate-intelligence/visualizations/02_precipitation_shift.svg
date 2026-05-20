@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Arial, Helvetica, sans-serif">
+    <rect width="900" height="520" fill="#F7F6F2" rx="0"/>
+
+  <text x="450" y="32" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Niederschlagsverteilung / Precipitation Distribution</text>
+  <text x="450" y="52" text-anchor="middle" font-size="11" fill="#64748b">Monatlich: Regen vs. Schnee | Monthly: Rain vs. Snow — Historisch vs. RCP8.5</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="65" x2="80" y2="420" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="80" y1="420" x2="860" y2="420" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Y-axis -->
+  <text x="75" y="420" text-anchor="end" font-size="10" fill="#64748b">0</text>
+  <text x="75" y="350" text-anchor="end" font-size="10" fill="#64748b">25</text>
+  <text x="75" y="280" text-anchor="end" font-size="10" fill="#64748b">50</text>
+  <text x="75" y="210" text-anchor="end" font-size="10" fill="#64748b">75</text>
+  <text x="75" y="140" text-anchor="end" font-size="10" fill="#64748b">100</text>
+  <text x="75" y="75" text-anchor="end" font-size="10" fill="#64748b">120mm</text>
+  <text x="25" y="250" text-anchor="middle" font-size="11" fill="#475569" transform="rotate(-90,25,250)">mm/Monat / mm/month</text>
+
+  <!-- Grid -->
+  <line x1="80" y1="350" x2="860" y2="350" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="280" x2="860" y2="280" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="210" x2="860" y2="210" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="140" x2="860" y2="140" stroke="#e2e8f0" stroke-width="0.5"/>
+
+  <!-- Months: each month gets 2 stacked bars (historical, projected) -->
+  <!-- Jan: Hist rain=8 snow=47, Proj rain=22 snow=40 -->
+  <g transform="translate(100,0)">
+    <rect x="0" y="289" width="25" height="22" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="157" width="25" height="132" fill="#93c5fd"/>
+    <rect x="30" y="308" width="25" height="62" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="196" width="25" height="112" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Jan</text>
+  </g>
+  <!-- Feb: Hist rain=7 snow=41, Proj rain=20 snow=36 -->
+  <g transform="translate(165,0)">
+    <rect x="0" y="301" width="25" height="20" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="186" width="25" height="115" fill="#93c5fd"/>
+    <rect x="30" y="308" width="25" height="56" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="207" width="25" height="101" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Feb</text>
+  </g>
+  <!-- Mar: Hist rain=18 snow=34, Proj rain=34 snow=26 -->
+  <g transform="translate(230,0)">
+    <rect x="0" y="270" width="25" height="50" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="174" width="25" height="96" fill="#93c5fd"/>
+    <rect x="30" y="252" width="25" height="95" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="179" width="25" height="73" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Mär</text>
+  </g>
+  <!-- Apr: Hist rain=30 snow=20, Proj rain=45 snow=13 -->
+  <g transform="translate(295,0)">
+    <rect x="0" y="280" width="25" height="84" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="224" width="25" height="56" fill="#93c5fd"/>
+    <rect x="30" y="257" width="25" height="126" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="220" width="25" height="37" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Apr</text>
+  </g>
+  <!-- May: Hist rain=62 snow=10, Proj rain=76 snow=4 -->
+  <g transform="translate(360,0)">
+    <rect x="0" y="218" width="25" height="174" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="190" width="25" height="28" fill="#93c5fd"/>
+    <rect x="30" y="195" width="25" height="214" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="184" width="25" height="11" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Mai</text>
+  </g>
+  <!-- Jun: Hist rain=93 snow=2, Proj rain=87 snow=1 -->
+  <g transform="translate(425,0)">
+    <rect x="0" y="160" width="25" height="255" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="154" width="25" height="6" fill="#93c5fd"/>
+    <rect x="30" y="172" width="25" height="245" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="169" width="25" height="3" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Jun</text>
+  </g>
+  <!-- Jul: Hist rain=105 snow=0, Proj rain=94 snow=0 -->
+  <g transform="translate(490,0)">
+    <rect x="0" y="126" width="25" height="294" fill="#2563eb" opacity="0.8"/>
+    <rect x="30" y="156" width="25" height="264" fill="#dc2626" opacity="0.8"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Jul</text>
+  </g>
+  <!-- Aug: Hist rain=100 snow=0, Proj rain=90 snow=0 -->
+  <g transform="translate(555,0)">
+    <rect x="0" y="140" width="25" height="280" fill="#2563eb" opacity="0.8"/>
+    <rect x="30" y="168" width="25" height="252" fill="#dc2626" opacity="0.8"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Aug</text>
+  </g>
+  <!-- Sep: Hist rain=60 snow=8, Proj rain=68 snow=4 -->
+  <g transform="translate(620,0)">
+    <rect x="0" y="232" width="25" height="168" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="210" width="25" height="22" fill="#93c5fd"/>
+    <rect x="30" y="229" width="25" height="191" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="218" width="25" height="11" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Sep</text>
+  </g>
+  <!-- Oct: Hist rain=38 snow=20, Proj rain=52 snow=14 -->
+  <g transform="translate(685,0)">
+    <rect x="0" y="314" width="25" height="106" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="258" width="25" height="56" fill="#93c5fd"/>
+    <rect x="30" y="274" width="25" height="146" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="234" width="25" height="40" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Okt</text>
+  </g>
+  <!-- Nov: Hist rain=20 snow=42, Proj rain=36 snow=32 -->
+  <g transform="translate(750,0)">
+    <rect x="0" y="310" width="25" height="56" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="192" width="25" height="118" fill="#93c5fd"/>
+    <rect x="30" y="319" width="25" height="101" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="229" width="25" height="90" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Nov</text>
+  </g>
+  <!-- Dec: Hist rain=10 snow=42, Proj rain=24 snow=36 -->
+  <g transform="translate(815,0)">
+    <rect x="0" y="310" width="25" height="28" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="192" width="25" height="118" fill="#93c5fd"/>
+    <rect x="30" y="352" width="25" height="68" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="252" width="25" height="100" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Dez</text>
+  </g>
+
+  <!-- Legend -->
+  <rect x="120" y="460" width="660" height="45" fill="white" rx="0" stroke="#e2e8f0"/>
+  <rect x="140" y="472" width="15" height="12" fill="#2563eb" opacity="0.8"/>
+  <text x="160" y="483" font-size="10" fill="#1e293b">Hist. Regen / Rain</text>
+  <rect x="280" y="472" width="15" height="12" fill="#93c5fd"/>
+  <text x="300" y="483" font-size="10" fill="#1e293b">Hist. Schnee / Snow</text>
+  <rect x="430" y="472" width="15" height="12" fill="#dc2626" opacity="0.8"/>
+  <text x="450" y="483" font-size="10" fill="#1e293b">Proj. Regen / Rain (RCP8.5)</text>
+  <rect x="620" y="472" width="15" height="12" fill="#fca5a5"/>
+  <text x="640" y="483" font-size="10" fill="#1e293b">Proj. Schnee / Snow (RCP8.5)</text>
+
+  <text x="450" y="515" text-anchor="middle" font-size="8" fill="#94a3b8">Quellen / Sources: MeteoSwiss, CH2018 RCP8.5 Szenarien, Engadin Stationen / Engadin stations composite</text>
+</svg>

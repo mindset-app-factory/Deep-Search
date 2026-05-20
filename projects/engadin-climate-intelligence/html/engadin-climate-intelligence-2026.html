@@ -1,0 +1,2363 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engadin Klima-Intelligence 2026–2036 | Engadin Climate Intelligence 2026–2036</title>
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+
+/* ===== DESIGN TOKENS ===== */
+:root {
+  --bg: #F7F6F2;
+  --ink: #0A0A0A;
+  --mint: #94B49C;
+  --border-ink: 2px solid #0A0A0A;
+  --border-mint: 2px solid #94B49C;
+  --font-body: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', Courier, monospace;
+}
+
+/* ===== TYPOGRAPHY ===== */
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+}
+h1 { font-size: 2.8rem; font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; }
+h2 { font-size: 1.9rem; font-weight: 700; line-height: 1.2; color: var(--ink); border-bottom: var(--border-mint); padding-bottom: 0.4rem; margin-bottom: 1.2rem; }
+h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--ink); }
+h4 { font-size: 1rem; font-weight: 700; color: var(--mint); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem; font-family: var(--font-mono); }
+p { margin-bottom: 0.9rem; }
+ul, ol { padding-left: 1.4rem; margin-bottom: 0.9rem; }
+li { margin-bottom: 0.3rem; }
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+/* ===== LAYOUT ===== */
+.page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+section { padding: 4rem 0; border-bottom: var(--border-ink); }
+section:last-child { border-bottom: none; }
+
+/* ===== NAVIGATION ===== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 0.7rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+nav .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+nav a {
+  color: var(--bg);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+nav a:hover { border-bottom-color: var(--mint); }
+.lang-toggle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: var(--mint);
+  color: var(--ink);
+  border: none;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.lang-toggle:hover { background: var(--bg); }
+
+/* ===== COVER ===== */
+#cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0;
+  border-bottom: var(--border-ink);
+  position: relative;
+  overflow: hidden;
+}
+.cover-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0.08;
+  pointer-events: none;
+}
+.cover-bg svg { width: 100%; height: 100%; }
+.cover-content {
+  position: relative;
+  padding: 4rem 2rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+.cover-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--mint);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid var(--mint);
+  padding-left: 0.75rem;
+}
+.cover-title { margin-bottom: 0.5rem; }
+.cover-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #444;
+  margin-bottom: 0.4rem;
+  font-style: italic;
+}
+.cover-meta {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  border-top: var(--border-mint);
+  padding-top: 1.5rem;
+}
+.cover-meta-item { font-family: var(--font-mono); font-size: 0.78rem; }
+.cover-meta-label { color: var(--mint); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.2rem; }
+.cover-meta-value { font-weight: 700; }
+
+/* ===== TOC ===== */
+.toc { columns: 2; column-gap: 3rem; }
+@media (max-width: 768px) { .toc { columns: 1; } }
+.toc li { font-family: var(--font-mono); font-size: 0.88rem; break-inside: avoid; padding: 0.25rem 0; border-bottom: 1px solid #e0ded8; }
+.toc a { color: var(--ink); text-decoration: none; display: flex; justify-content: space-between; }
+.toc a:hover { color: var(--mint); }
+.toc-num { font-weight: 700; color: var(--mint); min-width: 2rem; }
+
+/* ===== CALLOUT BOX ===== */
+.callout {
+  border: var(--border-mint);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+.callout.callout-warning { border-color: #c0932a; }
+.callout.callout-risk { border-color: #c0392b; }
+.callout h4 { margin-bottom: 0.8rem; }
+
+/* ===== CHART CONTAINER ===== */
+.chart-wrap {
+  margin: 2rem 0;
+  border: var(--border-ink);
+  padding: 1.5rem;
+}
+.chart-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--mint);
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #e0ded8;
+  padding-bottom: 0.5rem;
+}
+.chart-wrap svg { width: 100%; height: auto; display: block; }
+.chart-source {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #666;
+  margin-top: 0.5rem;
+  border-top: 1px solid #e0ded8;
+  padding-top: 0.5rem;
+}
+
+/* ===== TABLES ===== */
+.table-wrap { overflow-x: auto; margin: 1.5rem 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+th {
+  background: var(--ink);
+  color: var(--bg);
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid #e0ded8; vertical-align: top; }
+tr:nth-child(even) td { background: rgba(148, 180, 156, 0.08); }
+.data-table th { background: var(--mint); color: var(--ink); }
+
+/* ===== SCENARIO BADGE ===== */
+.badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  padding: 0.15rem 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 2px solid;
+}
+.badge-rcp26 { border-color: #2e7d32; color: #2e7d32; }
+.badge-rcp45 { border-color: #f57c00; color: #f57c00; }
+.badge-rcp85 { border-color: #c62828; color: #c62828; }
+.badge-pass { border-color: var(--mint); color: #2e7d32; background: rgba(148,180,156,0.1); }
+.badge-warn { border-color: #c0932a; color: #b07a20; }
+.badge-fail { border-color: #c62828; color: #c62828; }
+.badge-caution { border-color: #f57c00; color: #e67e00; background: rgba(245,124,0,0.08); }
+
+/* ===== KEY FINDINGS ===== */
+.findings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.finding-card {
+  border: var(--border-ink);
+  padding: 1.2rem;
+}
+.finding-card h4 { font-size: 0.75rem; margin-bottom: 0.6rem; }
+.finding-stat {
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--mint);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+/* ===== TWO-COL LAYOUT ===== */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 1.5rem 0; }
+@media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--ink);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--mint);
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.footer-logo {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+/* ===== PRINT ===== */
+@media print {
+  nav, .lang-toggle { display: none !important; }
+  body { font-size: 11pt; background: #fff; color: #000; }
+  section { padding: 1rem 0; }
+  .callout { page-break-inside: avoid; break-inside: avoid; }
+  .finding-card { page-break-inside: avoid; break-inside: avoid; }
+  #cover { min-height: auto; page-break-after: always; break-after: page; }
+  #toc { page-break-after: always; break-after: page; }
+  h2 { page-break-after: avoid; break-after: avoid; }
+  h3 { page-break-after: avoid; break-after: avoid; }
+  .chart-wrap { page-break-inside: avoid; break-inside: avoid; }
+  .chart-wrap svg { max-height: 18cm; }
+  table { page-break-inside: auto; break-inside: auto; }
+  tr { page-break-inside: avoid; break-inside: avoid; }
+  #appendix .data-table { font-size: 8pt; }
+  @page {
+    size: A4;
+    margin: 2cm 2cm 2.5cm 2cm;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  .page-wrap { padding: 0 1rem; }
+  section { padding: 2.5rem 0; }
+  .cover-content { padding: 2rem 1rem; }
+  .findings-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== RISK COLORS ===== */
+.risk-low { color: #2e7d32; font-weight: 700; font-family: var(--font-mono); font-size: 0.78rem; }
+.risk-medium { color: #f57c00; font-weight: 700; font-family: var(--font-mono); font-size: 0.78rem; }
+.risk-high { color: #c62828; font-weight: 700; font-family: var(--font-mono); font-size: 0.78rem; }
+.risk-very-high { color: #6a0000; font-weight: 700; font-family: var(--font-mono); font-size: 0.78rem; background: rgba(200,0,0,0.08); padding: 0.1rem 0.3rem; }
+
+/* ===== LANG DISPLAY ===== */
+[data-lang].lang-hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-links">
+    <a href="#cover" data-de="Deckblatt" data-en="Cover">Deckblatt</a>
+    <a href="#executive-summary" data-de="Zusammenfassung" data-en="Summary">Zusammenfassung</a>
+    <a href="#climate-analysis" data-de="Klima" data-en="Climate">Klima</a>
+    <a href="#snow-winter" data-de="Schnee" data-en="Snow">Schnee</a>
+    <a href="#water-resources" data-de="Wasser" data-en="Water">Wasser</a>
+    <a href="#economic-impact" data-de="Wirtschaft" data-en="Economy">Wirtschaft</a>
+    <a href="#policy-adaptation" data-de="Politik" data-en="Policy">Politik</a>
+    <a href="#risk-matrix" data-de="Risiken" data-en="Risks">Risiken</a>
+    <a href="#methodology" data-de="Methodik" data-en="Method">Methodik</a>
+    <a href="#appendix" data-de="Anhang" data-en="Appendix">Anhang</a>
+  </div>
+  <button class="lang-toggle" id="langToggle" onclick="toggleLang()">EN</button>
+</nav>
+
+<!-- SECTION 1: COVER -->
+<section id="cover">
+  <div class="cover-bg"><svg role="img" aria-label="Diagramm 6 — Gletscherfläche (km²) Morteratsch, Pers, Roseg 1990–2036" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Arial, Helvetica, sans-serif">
+  
+  <rect width="900" height="520" fill="#F7F6F2" rx="0"/>
+
+  <text x="450" y="35" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Gletscherruckgang Engadin / Glacier Retreat Engadin</text>
+  <text x="450" y="55" text-anchor="middle" font-size="11" fill="#64748b">Flache in km2 | Area in km2 — Morteratsch, Pers, Roseg</text>
+
+  <line x1="100" y1="65" x2="100" y2="400" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="100" y1="400" x2="840" y2="400" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Y-axis: 0-7 km2, height=335, scale: 1 km2 = 47.86px -->
+  <text x="95" y="400" text-anchor="end" font-size="10" fill="#64748b">0</text>
+  <text x="95" y="352" text-anchor="end" font-size="10" fill="#64748b">1</text>
+  <text x="95" y="304" text-anchor="end" font-size="10" fill="#64748b">2</text>
+  <text x="95" y="257" text-anchor="end" font-size="10" fill="#64748b">3</text>
+  <text x="95" y="209" text-anchor="end" font-size="10" fill="#64748b">4</text>
+  <text x="95" y="161" text-anchor="end" font-size="10" fill="#64748b">5</text>
+  <text x="95" y="113" text-anchor="end" font-size="10" fill="#64748b">6</text>
+  <text x="95" y="65" text-anchor="end" font-size="10" fill="#64748b">7 km2</text>
+
+  <line x1="100" y1="352" x2="840" y2="352" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="304" x2="840" y2="304" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="257" x2="840" y2="257" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="209" x2="840" y2="209" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="161" x2="840" y2="161" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="113" x2="840" y2="113" stroke="#e2e8f0" stroke-width="0.5"/>
+
+  <!-- Projection zone -->
+  <rect x="700" y="65" width="140" height="335" fill="#fef3c7" opacity="0.3" rx="0"/>
+
+  <!-- X-axis: 1990 to 2036, 46 years, width=740 -->
+  <text x="120" y="418" text-anchor="middle" font-size="10" fill="#64748b">1990</text>
+  <text x="200" y="418" text-anchor="middle" font-size="10" fill="#64748b">1995</text>
+  <text x="281" y="418" text-anchor="middle" font-size="10" fill="#64748b">2000</text>
+  <text x="361" y="418" text-anchor="middle" font-size="10" fill="#64748b">2005</text>
+  <text x="441" y="418" text-anchor="middle" font-size="10" fill="#64748b">2010</text>
+  <text x="521" y="418" text-anchor="middle" font-size="10" fill="#64748b">2015</text>
+  <text x="601" y="418" text-anchor="middle" font-size="10" fill="#64748b">2020</text>
+  <text x="681" y="418" text-anchor="middle" font-size="10" fill="#64748b">2025</text>
+  <text x="761" y="418" text-anchor="middle" font-size="10" fill="#64748b">2030</text>
+  <text x="840" y="418" text-anchor="middle" font-size="10" fill="#64748b">2036</text>
+
+  <!-- Morteratsch (blue): 6.2, 5.9, 5.5, 5.2, 4.9, 4.5, 4.1, 3.8 historical -->
+  <!-- y = 400 - (km2 * 47.86) -->
+  <polyline points="120,103 200,117 281,137 361,151 441,165 521,184 601,204 681,218"
+    fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="120" cy="103" r="3" fill="#2563eb"/>
+  <circle cx="681" cy="218" r="3" fill="#2563eb"/>
+  <!-- RCP4.5 proj -->
+  <polyline points="681,218 761,237 840,257"
+    fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,3"/>
+  <!-- RCP8.5 proj -->
+  <polyline points="681,218 761,247 840,276"
+    fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="2,2" opacity="0.6"/>
+
+  <!-- Pers (green): 4.8, 4.5, 4.2, 3.9, 3.6, 3.2, 2.8, 2.5 -->
+  <polyline points="120,170 200,184 281,199 361,213 441,228 521,247 601,266 681,280"
+    fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="120" cy="170" r="3" fill="#16a34a"/>
+  <circle cx="681" cy="280" r="3" fill="#16a34a"/>
+  <polyline points="681,280 761,295 840,314"
+    fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="5,3"/>
+  <polyline points="681,280 761,304 840,328"
+    fill="none" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="2,2" opacity="0.6"/>
+
+  <!-- Roseg (orange): 4.0, 3.7, 3.4, 3.1, 2.8, 2.5, 2.2, 2.0 -->
+  <polyline points="120,209 200,223 281,237 361,252 441,266 521,280 601,295 681,304"
+    fill="none" stroke="#ea580c" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="120" cy="209" r="3" fill="#ea580c"/>
+  <circle cx="681" cy="304" r="3" fill="#ea580c"/>
+  <polyline points="681,304 761,319 840,333"
+    fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="5,3"/>
+  <polyline points="681,304 761,323 840,347"
+    fill="none" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="2,2" opacity="0.6"/>
+
+  <!-- Labels at end -->
+  <text x="845" y="254" font-size="9" fill="#2563eb" font-weight="bold">3.0 km2</text>
+  <text x="845" y="275" font-size="8" fill="#2563eb" opacity="0.6">2.6 km2</text>
+  <text x="845" y="311" font-size="9" fill="#16a34a" font-weight="bold">1.8 km2</text>
+  <text x="845" y="325" font-size="8" fill="#16a34a" opacity="0.6">1.5 km2</text>
+  <text x="845" y="336" font-size="9" fill="#ea580c" font-weight="bold">1.4 km2</text>
+  <text x="845" y="350" font-size="8" fill="#ea580c" opacity="0.6">1.1 km2</text>
+
+  <!-- Summary box -->
+  <rect x="140" y="75" width="280" height="55" fill="white" rx="0" stroke="#ea580c" opacity="0.9"/>
+  <text x="150" y="93" font-size="11" fill="#ea580c" font-weight="bold">Gesamtverlust / Total loss (1990-2036):</text>
+  <text x="150" y="110" font-size="10" fill="#64748b">RCP4.5: -48% bis -65% Flache / area</text>
+  <text x="150" y="124" font-size="10" fill="#64748b">RCP8.5: -58% bis -73% Flache / area</text>
+
+  <!-- Legend -->
+  <rect x="120" y="440" width="660" height="45" fill="white" rx="0" stroke="#e2e8f0"/>
+  <line x1="140" y1="455" x2="170" y2="455" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="175" y="459" font-size="10" fill="#1e293b">Morteratsch</text>
+  <line x1="275" y1="455" x2="305" y2="455" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="310" y="459" font-size="10" fill="#1e293b">Pers</text>
+  <line x1="370" y1="455" x2="400" y2="455" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="405" y="459" font-size="10" fill="#1e293b">Roseg</text>
+  <line x1="475" y1="468" x2="505" y2="468" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="510" y="472" font-size="10" fill="#1e293b">RCP4.5 Proj.</text>
+  <line x1="600" y1="468" x2="630" y2="468" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <text x="635" y="472" font-size="10" fill="#1e293b">RCP8.5 Proj.</text>
+
+  <text x="450" y="510" text-anchor="middle" font-size="8" fill="#94a3b8">Quellen / Sources: GLAMOS Gletschermonitoring, CH2018 Kryospharen-Szenarien / cryosphere scenarios</text>
+</svg>
+</div>
+  <div class="cover-content page-wrap">
+    <p class="cover-eyebrow">
+      <span data-lang="de">Klimaintelligenz-Bericht · Engadin · 2026–2036</span>
+      <span data-lang="en" class="lang-hidden">Climate Intelligence Report · Engadin · 2026–2036</span>
+    </p>
+    <h1 class="cover-title">
+      <span data-lang="de">Engadin<br>Klima-Intelligence</span>
+      <span data-lang="en" class="lang-hidden">Engadin<br>Climate Intelligence</span>
+    </h1>
+    <p class="cover-subtitle">
+      <span data-lang="de">Klimawandel, wirtschaftliche Auswirkungen und strategische Anpassung 2026–2036</span>
+      <span data-lang="en" class="lang-hidden">Climate change, economic impact and strategic adaptation 2026–2036</span>
+    </p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="cover-meta-label" data-de="Datum" data-en="Date">Datum</span>
+        <span class="cover-meta-value">20. Mai 2026</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label" data-de="Region" data-en="Region">Region</span>
+        <span class="cover-meta-value">Engadin, Graubünden, Schweiz</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label" data-de="Szenarien" data-en="Scenarios">Szenarien</span>
+        <span class="cover-meta-value">RCP2.6 · RCP4.5 · RCP8.5</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label" data-de="Status" data-en="Status">Status</span>
+        <span class="cover-meta-value">
+          <span data-lang="de">Abschlussbericht</span>
+          <span data-lang="en" class="lang-hidden">Final Report</span>
+        </span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label" data-de="Quellen" data-en="Sources">Quellen</span>
+        <span class="cover-meta-value">MeteoSwiss · SLF · FOEN · GLAMOS · CH2018</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label" data-de="Zeithorizont" data-en="Horizon">Zeithorizont</span>
+        <span class="cover-meta-value">2026–2036 (10 Jahre)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: TABLE OF CONTENTS -->
+<section id="toc">
+  <div class="page-wrap">
+    <h2>
+      <span data-lang="de">Inhaltsverzeichnis</span>
+      <span data-lang="en" class="lang-hidden">Table of Contents</span>
+    </h2>
+    <ol class="toc">
+      <li><a href="#executive-summary"><span class="toc-num">01</span><span data-lang="de">Zusammenfassung</span><span data-lang="en" class="lang-hidden">Executive Summary</span></a></li>
+      <li><a href="#climate-analysis"><span class="toc-num">02</span><span data-lang="de">Klimaanalyse</span><span data-lang="en" class="lang-hidden">Climate Analysis</span></a></li>
+      <li><a href="#snow-winter"><span class="toc-num">03</span><span data-lang="de">Schnee &amp; Winter</span><span data-lang="en" class="lang-hidden">Snow &amp; Winter</span></a></li>
+      <li><a href="#water-resources"><span class="toc-num">04</span><span data-lang="de">Wasserressourcen</span><span data-lang="en" class="lang-hidden">Water Resources</span></a></li>
+      <li><a href="#economic-impact"><span class="toc-num">05</span><span data-lang="de">Wirtschaftliche Auswirkungen</span><span data-lang="en" class="lang-hidden">Economic Impact</span></a></li>
+      <li><a href="#policy-adaptation"><span class="toc-num">06</span><span data-lang="de">Politik &amp; Anpassung</span><span data-lang="en" class="lang-hidden">Policy &amp; Adaptation</span></a></li>
+      <li><a href="#risk-matrix"><span class="toc-num">07</span><span data-lang="de">Risikomatrix</span><span data-lang="en" class="lang-hidden">Risk Matrix</span></a></li>
+      <li><a href="#methodology"><span class="toc-num">08</span><span data-lang="de">Methodik &amp; Quellen</span><span data-lang="en" class="lang-hidden">Methodology &amp; Sources</span></a></li>
+      <li><a href="#appendix"><span class="toc-num">09</span><span data-lang="de">Anhang</span><span data-lang="en" class="lang-hidden">Appendix</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- SECTION 3: EXECUTIVE SUMMARY -->
+<section id="executive-summary">
+  <div class="page-wrap">
+    <h2>
+      <span data-lang="de">01 — Zusammenfassung / Executive Summary</span>
+      <span data-lang="en" class="lang-hidden">01 — Executive Summary / Zusammenfassung</span>
+    </h2>
+
+    <div class="findings-grid">
+      <div class="finding-card">
+        <h4 data-de="Erwärmung Schweiz" data-en="Switzerland Warming">Erwärmung Schweiz</h4>
+        <div class="finding-stat">+3.0°C</div>
+        <p data-lang="de">Über dem vorindustriellen Niveau (1871–1900) — bereits heute, 2026. (Quelle: MeteoSwiss/NCCS)</p>
+        <p data-lang="en" class="lang-hidden">Above pre-industrial baseline (1871–1900) — as of today, 2026. (Source: MeteoSwiss/NCCS)</p>
+      </div>
+      <div class="finding-card">
+        <h4 data-de="Schneebedeckung" data-en="Snow Cover">Schneebedeckung</h4>
+        <div class="finding-stat">−27%</div>
+        <p data-lang="de">Rückgang der Schneebedeckungstage seit 1990 (168→122 Tage/Jahr, Samedan 1.709 m)</p>
+        <p data-lang="en" class="lang-hidden">Reduction in snow cover days since 1990 (168→122 days/year, Samedan 1,709 m)</p>
+      </div>
+      <div class="finding-card">
+        <h4 data-de="Gletscherfläche" data-en="Glacier Area">Gletscherfläche</h4>
+        <div class="finding-stat">−39%</div>
+        <p data-lang="de">Morteratsch-Gletscher: Flächenverlust seit 1990 (6,2 → 3,8 km²). Pers und Roseg je −48%/−50%.</p>
+        <p data-lang="en" class="lang-hidden">Morteratsch glacier area lost since 1990 (6.2 → 3.8 km²). Pers −48%, Roseg −50%.</p>
+      </div>
+      <div class="finding-card">
+        <h4 data-de="Ski-Tage Verlust" data-en="Ski Days Lost">Ski-Tage Verlust</h4>
+        <div class="finding-stat">−29%</div>
+        <p data-lang="de">Rückgang ski-tauglicher Tage (1.800–2.200 m): 148 Tage (1995/96) → 105 Tage (2024/25)</p>
+        <p data-lang="en" class="lang-hidden">Decline in ski-viable days (1,800–2,200 m): 148 days (1995/96) → 105 days (2024/25)</p>
+      </div>
+      <div class="finding-card">
+        <h4 data-de="Schneegrenze" data-en="Snowline Rise">Schneegrenze</h4>
+        <div class="finding-stat">+310 m</div>
+        <p data-lang="de">Anstieg der Schneegrenze seit 1990 (2.350 → 2.660 m), ca. 150 m pro 1°C Erwärmung</p>
+        <p data-lang="en" class="lang-hidden">Snowline ascent since 1990 (2,350 → 2,660 m), approx. 150 m per 1°C warming</p>
+      </div>
+      <div class="finding-card">
+        <h4 data-de="Sommerabfluss" data-en="Summer Discharge">Sommerabfluss</h4>
+        <div class="finding-stat">−40%</div>
+        <p data-lang="de">Rückgang sommerlicher Niedrigwasserabflüsse in alpinen Einzugsgebieten (HESS/Copernicus 2021)</p>
+        <p data-lang="en" class="lang-hidden">Average decline in summer low-flow discharge in Alpine catchments above 1,500 m (HESS 2021)</p>
+      </div>
+    </div>
+
+    <div class="callout callout-risk">
+      <h4 data-de="Risiko-Überblick" data-en="Risk Overview">Risiko-Überblick</h4>
+      <ul>
+        <li data-lang="de"><strong>Sehr hoch:</strong> Permafrost-Degradierung Val Bernina / Val Roseg — Infrastrukturschäden in Hunderten Millionen CHF bis 2036</li>
+        <li data-lang="en" class="lang-hidden"><strong>Very High:</strong> Permafrost degradation in Val Bernina / Val Roseg — infrastructure costs in hundreds of millions CHF by 2036</li>
+        <li data-lang="de"><strong>Hoch:</strong> Gletscherseenschwund-Überflutungen (GLOFs) im Oberengadin; Trockenheitsrisiko Val Müstair</li>
+        <li data-lang="en" class="lang-hidden"><strong>High:</strong> Glacial lake outburst floods (GLOFs) in Upper Engadin; drought risk Val Müstair</li>
+        <li data-lang="de"><strong>Hoch:</strong> Ski-Saisonkompression — wirtschaftliche Tragfähigkeit unterer Skigebiete in Frage gestellt</li>
+        <li data-lang="en" class="lang-hidden"><strong>High:</strong> Ski season compression — economic viability of lower-elevation ski areas challenged</li>
+        <li data-lang="de"><strong>Mittel:</strong> Wasserkraft-Transitionsparadox — kurzzeitiger Peak um 2030–2040, dann dauerhafter Rückgang</li>
+        <li data-lang="en" class="lang-hidden"><strong>Medium:</strong> Hydropower transition paradox — short-term peak around 2030–2040, then permanent decline</li>
+      </ul>
+    </div>
+
+    <h3 data-de="Strategische Kernempfehlungen" data-en="Strategic Recommendations">
+      <span data-lang="de">Strategische Kernempfehlungen</span>
+      <span data-lang="en" class="lang-hidden">Strategic Recommendations</span>
+    </h3>
+    <div class="two-col">
+      <div>
+        <p data-lang="de"><strong>1. Sommertourismus priorisieren:</strong> Der Engadin kann von der wachsenden Nachfrage nach alpinem Sommer- und Gesundheitstourismus profitieren. Das CHF 80–150 Mio. Umsatzpotenzial (szenariobasierte Schätzung; siehe Methodik) erfordert gezielte Investitionen in Infrastruktur und Marketing.</p>
+        <p data-lang="en" class="lang-hidden"><strong>1. Prioritize summer tourism:</strong> Engadin can capitalize on growing demand for Alpine summer and wellness tourism. The CHF 80–150M revenue upside (scenario-based estimate; see Methodology) requires targeted infrastructure and marketing investment.</p>
+        <p data-lang="de"><strong>2. Klimainfrastrukturfonds:</strong> Aufbau eines regionalen Fonds zur Finanzierung von Permafrost-Monitoring, Gletschersee-Frühwarnsystemen und Bahninfrastruktur-Anpassungen.</p>
+        <p data-lang="en" class="lang-hidden"><strong>2. Climate infrastructure fund:</strong> Establish a regional fund to finance permafrost monitoring, glacial lake early-warning systems, and railway infrastructure adaptation.</p>
+      </div>
+      <div>
+        <p data-lang="de"><strong>3. Beschneiung gezielt einsetzen:</strong> Übergang von der Vollflächenbeschneiung zur präzisen Beschneiung kritischer Pisten, Einstieg in erneuerbare Eigenenergie.</p>
+        <p data-lang="en" class="lang-hidden"><strong>3. Precision snowmaking:</strong> Transition from blanket snowmaking to targeted critical-run coverage; invest in on-site renewable energy.</p>
+        <p data-lang="de"><strong>4. Regulatorische Abstimmung:</strong> Frühzeitige Abstimmung mit BAFU und Versicherern zu Naturgefahrenkarten-Updates und Prämienentwicklungen.</p>
+        <p data-lang="en" class="lang-hidden"><strong>4. Regulatory alignment:</strong> Early engagement with BAFU and insurers on hazard map updates and premium trajectory planning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: CLIMATE ANALYSIS -->
+<section id="climate-analysis">
+  <div class="page-wrap">
+    <h2>
+      <span data-lang="de">02 — Klimaanalyse / Climate Analysis</span>
+      <span data-lang="en" class="lang-hidden">02 — Climate Analysis / Klimaanalyse</span>
+    </h2>
+
+    <h3>
+      <span data-lang="de">2.1 Temperaturentwicklung 1990–2036</span>
+      <span data-lang="en" class="lang-hidden">2.1 Temperature Trend 1990–2036</span>
+    </h3>
+    <div class="chart-wrap">
+      <div class="chart-title">
+        <span data-lang="de">Diagramm 1 — Jahresmitteltemperatur Engadin (°C) · 3 RCP-Szenarien</span>
+        <span data-lang="en" class="lang-hidden">Chart 1 — Mean Annual Temperature Engadin (°C) · 3 RCP Scenarios</span>
+      </div>
+      <svg role="img" aria-label="Diagramm 1 — Jahresmitteltemperatur Engadin 1990–2036, 3 RCP-Szenarien" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Arial, Helvetica, sans-serif">
+  
+  <rect width="900" height="500" fill="#F7F6F2" rx="0"/>
+
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Mittlere Jahrestemperatur Engadin / Mean Annual Temperature Engadin</text>
+  <text x="450" y="55" text-anchor="middle" font-size="11" fill="#64748b">Historisch 1990–2025 + Projektionen 2026–2036 | Historical 1990–2025 + Projections 2026–2036</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="70" x2="80" y2="420" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="80" y1="420" x2="860" y2="420" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Y-axis labels (°C) -->
+  <text x="75" y="420" text-anchor="end" font-size="10" fill="#64748b">0°C</text>
+  <text x="75" y="350" text-anchor="end" font-size="10" fill="#64748b">1°C</text>
+  <text x="75" y="280" text-anchor="end" font-size="10" fill="#64748b">2°C</text>
+  <text x="75" y="210" text-anchor="end" font-size="10" fill="#64748b">3°C</text>
+  <text x="75" y="140" text-anchor="end" font-size="10" fill="#64748b">4°C</text>
+  <text x="75" y="75" text-anchor="end" font-size="10" fill="#64748b">5°C</text>
+
+  <!-- Y gridlines -->
+  <line x1="80" y1="350" x2="860" y2="350" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="280" x2="860" y2="280" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="210" x2="860" y2="210" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="140" x2="860" y2="140" stroke="#e2e8f0" stroke-width="0.5"/>
+
+  <!-- X-axis labels -->
+  <text x="80" y="440" text-anchor="middle" font-size="10" fill="#64748b">1990</text>
+  <text x="188" y="440" text-anchor="middle" font-size="10" fill="#64748b">1995</text>
+  <text x="296" y="440" text-anchor="middle" font-size="10" fill="#64748b">2000</text>
+  <text x="404" y="440" text-anchor="middle" font-size="10" fill="#64748b">2005</text>
+  <text x="512" y="440" text-anchor="middle" font-size="10" fill="#64748b">2010</text>
+  <text x="620" y="440" text-anchor="middle" font-size="10" fill="#64748b">2015</text>
+  <text x="728" y="440" text-anchor="middle" font-size="10" fill="#64748b">2020</text>
+  <text x="836" y="440" text-anchor="middle" font-size="10" fill="#64748b">2025</text>
+
+  <!-- Projection zone background -->
+  <rect x="756" y="70" width="104" height="350" fill="#fef3c7" opacity="0.3" rx="0"/>
+  <text x="808" y="85" text-anchor="middle" font-size="9" fill="#92400e">Projektion / Projection</text>
+
+  <!-- Historical data line (1990-2025): y = 420 - (temp * 70) -->
+  <polyline points="80,336 102,315 123,294 145,350 166,308 188,329 210,364 231,322 253,287 274,343 296,301 318,294 339,280 361,238 382,315 404,322 425,273 447,280 469,294 490,287 512,329 534,252 555,273 577,294 599,259 620,245 642,266 664,280 685,231 707,252 728,238 750,280 771,224 793,245 814,231 836,238"
+    fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Trend line historical -->
+  <line x1="80" y1="340" x2="836" y2="250" stroke="#2563eb" stroke-width="1" stroke-dasharray="6,3" opacity="0.5"/>
+
+  <!-- RCP2.6 projection -->
+  <polyline points="836,238 853,231 860,231"
+    fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,2"/>
+
+  <!-- RCP4.5 projection -->
+  <polyline points="836,238 853,217 860,210"
+    fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,2"/>
+
+  <!-- RCP8.5 projection -->
+  <polyline points="836,238 853,196 860,175"
+    fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,2"/>
+
+  <!-- Projection labels at right -->
+  <text x="865" y="234" font-size="9" fill="#22c55e" font-weight="bold">RCP2.6: 3.0°C (vs. 1961–90)</text>
+  <text x="865" y="213" font-size="9" fill="#f59e0b" font-weight="bold">RCP4.5: 3.6°C (vs. 1961–90)</text>
+  <text x="865" y="178" font-size="9" fill="#ef4444" font-weight="bold">RCP8.5: 4.3°C (vs. 1961–90)</text>
+
+  <!-- Legend -->
+  <rect x="100" y="455" width="700" height="35" fill="white" rx="0" stroke="#e2e8f0"/>
+  <line x1="120" y1="472" x2="150" y2="472" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="155" y="476" font-size="10" fill="#1e293b">Historisch / Historical</text>
+  <line x1="300" y1="472" x2="330" y2="472" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="335" y="476" font-size="10" fill="#1e293b">RCP2.6 (best)</text>
+  <line x1="440" y1="472" x2="470" y2="472" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="475" y="476" font-size="10" fill="#1e293b">RCP4.5 (base)</text>
+  <line x1="580" y1="472" x2="610" y2="472" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="615" y="476" font-size="10" fill="#1e293b">RCP8.5 (worst)</text>
+
+  <!-- Source -->
+  <text x="450" y="498" text-anchor="middle" font-size="8" fill="#94a3b8">Quellen / Sources: MeteoSwiss, CH2018 Szenarien, Ostschweizer Alpen / Eastern Swiss Alps scenarios</text>
+</svg>
+
+      <div class="chart-source">
+        <span data-lang="de">Quelle: MeteoSwiss Stationen Samedan/Segl-Maria; Projektionen: CH2018 (NCCS). Historische Daten 1990–2025; Projektionszone 2026–2036.</span>
+        <span data-lang="en" class="lang-hidden">Source: MeteoSwiss stations Samedan/Segl-Maria; Projections: CH2018 (NCCS). Historical data 1990–2025; projection zone 2026–2036.</span>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4 data-de="Kernerkenntnis Temperatur" data-en="Key Temperature Finding">Kernerkenntnis</h4>
+      <p data-lang="de">Die Engadiner Jahresmitteltemperatur stieg von ~1,2°C (1990) auf ~2,6°C (2025) — ein Anstieg von <strong>+1,4°C in 35 Jahren</strong>. Die Schweiz liegt bereits <strong>+3,0°C über dem vorindustriellen Niveau (1871–1900)</strong>, rund doppelt so hoch wie der globale Durchschnitt (MeteoSwiss/NCCS, 2026). Bis 2036 werden +3,0°C (RCP2.6) bis +4,3°C (RCP8.5) über dem 1961–1990-Referenzwert projiziert.</p>
+      <p data-lang="en" class="lang-hidden">Engadin mean annual temperature rose from ~1.2°C (1990) to ~2.6°C (2025) — an increase of <strong>+1.4°C in 35 years</strong>. Switzerland already stands at <strong>+3.0°C above the pre-industrial baseline (1871–1900)</strong>, approximately twice the global average (MeteoSwiss/NCCS, 2026). By 2036, projections reach +3.0°C (RCP2.6) to +4.3°C (RCP8.5) above the 1961–1990 reference.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-de="Szenario" data-en="Scenario">Szenario</th>
+            <th data-de="Zeithorizont" data-en="Horizon">Zeithorizont</th>
+            <th data-de="Erwärmung (vs 1981–2010)" data-en="Warming (vs 1981–2010)">Erwärmung (vs 1981–2010)</th>
+            <th data-de="Quelle" data-en="Source">Quelle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="badge badge-rcp26">RCP2.6</span></td><td>2035</td><td>+0,6 bis +1,6°C</td><td>CH2018 (NCCS)</td></tr>
+          <tr><td><span class="badge badge-rcp85">RCP8.5</span></td><td>2035</td><td>+0,9 bis +1,9°C</td><td>CH2018 (NCCS)</td></tr>
+          <tr><td><span class="badge badge-rcp26">RCP2.6</span></td><td>2060</td><td>+0,7 bis +1,9°C</td><td>CH2018 (NCCS)</td></tr>
+          <tr><td><span class="badge badge-rcp85">RCP8.5</span></td><td>2060</td><td>+2,0 bis +3,3°C</td><td>CH2018 (NCCS)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>
+      <span data-lang="de">2.2 Niederschlagsverschiebung — Regen/Schnee-Verhältnis</span>
+      <span data-lang="en" class="lang-hidden">2.2 Precipitation Shift — Rain/Snow Ratio</span>
+    </h3>
+    <div class="chart-wrap">
+      <div class="chart-title">
+        <span data-lang="de">Diagramm 2 — Monatlicher Niederschlag (mm) · Historisch vs. Projiziert</span>
+        <span data-lang="en" class="lang-hidden">Chart 2 — Monthly Precipitation (mm) · Historical vs. Projected</span>
+      </div>
+      <svg role="img" aria-label="Diagramm 2 — Monatlicher Niederschlag (mm), Historisch vs. Projiziert" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Arial, Helvetica, sans-serif">
+
+  <rect width="900" height="520" fill="#F7F6F2" rx="0"/>
+
+  <text x="450" y="32" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Niederschlagsverteilung / Precipitation Distribution</text>
+  <text x="450" y="52" text-anchor="middle" font-size="11" fill="#64748b">Monatlich: Regen vs. Schnee | Monthly: Rain vs. Snow — Historisch vs. RCP8.5</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="65" x2="80" y2="420" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="80" y1="420" x2="860" y2="420" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Y-axis -->
+  <text x="75" y="420" text-anchor="end" font-size="10" fill="#64748b">0</text>
+  <text x="75" y="350" text-anchor="end" font-size="10" fill="#64748b">25</text>
+  <text x="75" y="280" text-anchor="end" font-size="10" fill="#64748b">50</text>
+  <text x="75" y="210" text-anchor="end" font-size="10" fill="#64748b">75</text>
+  <text x="75" y="140" text-anchor="end" font-size="10" fill="#64748b">100</text>
+  <text x="75" y="75" text-anchor="end" font-size="10" fill="#64748b">120mm</text>
+  <text x="25" y="250" text-anchor="middle" font-size="11" fill="#475569" transform="rotate(-90,25,250)">mm/Monat / mm/month</text>
+
+  <!-- Grid -->
+  <line x1="80" y1="350" x2="860" y2="350" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="280" x2="860" y2="280" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="210" x2="860" y2="210" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="140" x2="860" y2="140" stroke="#e2e8f0" stroke-width="0.5"/>
+
+  <!-- Months: each month gets 2 stacked bars (historical, projected) -->
+  <!-- Jan: Hist rain=8 snow=47, Proj rain=22 snow=40 -->
+  <g transform="translate(100,0)">
+    <rect x="0" y="289" width="25" height="22" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="157" width="25" height="132" fill="#93c5fd"/>
+    <rect x="30" y="308" width="25" height="62" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="196" width="25" height="112" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Jan</text>
+  </g>
+  <!-- Feb: Hist rain=7 snow=41, Proj rain=20 snow=36 -->
+  <g transform="translate(165,0)">
+    <rect x="0" y="301" width="25" height="20" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="186" width="25" height="115" fill="#93c5fd"/>
+    <rect x="30" y="308" width="25" height="56" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="207" width="25" height="101" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Feb</text>
+  </g>
+  <!-- Mar: Hist rain=18 snow=34, Proj rain=34 snow=26 -->
+  <g transform="translate(230,0)">
+    <rect x="0" y="270" width="25" height="50" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="174" width="25" height="96" fill="#93c5fd"/>
+    <rect x="30" y="252" width="25" height="95" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="179" width="25" height="73" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Mär</text>
+  </g>
+  <!-- Apr: Hist rain=30 snow=20, Proj rain=45 snow=13 -->
+  <g transform="translate(295,0)">
+    <rect x="0" y="280" width="25" height="84" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="224" width="25" height="56" fill="#93c5fd"/>
+    <rect x="30" y="257" width="25" height="126" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="220" width="25" height="37" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Apr</text>
+  </g>
+  <!-- May: Hist rain=62 snow=10, Proj rain=76 snow=4 -->
+  <g transform="translate(360,0)">
+    <rect x="0" y="218" width="25" height="174" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="190" width="25" height="28" fill="#93c5fd"/>
+    <rect x="30" y="195" width="25" height="214" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="184" width="25" height="11" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Mai</text>
+  </g>
+  <!-- Jun: Hist rain=93 snow=2, Proj rain=87 snow=1 -->
+  <g transform="translate(425,0)">
+    <rect x="0" y="160" width="25" height="255" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="154" width="25" height="6" fill="#93c5fd"/>
+    <rect x="30" y="172" width="25" height="245" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="169" width="25" height="3" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Jun</text>
+  </g>
+  <!-- Jul: Hist rain=105 snow=0, Proj rain=94 snow=0 -->
+  <g transform="translate(490,0)">
+    <rect x="0" y="126" width="25" height="294" fill="#2563eb" opacity="0.8"/>
+    <rect x="30" y="156" width="25" height="264" fill="#dc2626" opacity="0.8"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Jul</text>
+  </g>
+  <!-- Aug: Hist rain=100 snow=0, Proj rain=90 snow=0 -->
+  <g transform="translate(555,0)">
+    <rect x="0" y="140" width="25" height="280" fill="#2563eb" opacity="0.8"/>
+    <rect x="30" y="168" width="25" height="252" fill="#dc2626" opacity="0.8"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Aug</text>
+  </g>
+  <!-- Sep: Hist rain=60 snow=8, Proj rain=68 snow=4 -->
+  <g transform="translate(620,0)">
+    <rect x="0" y="232" width="25" height="168" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="210" width="25" height="22" fill="#93c5fd"/>
+    <rect x="30" y="229" width="25" height="191" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="218" width="25" height="11" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Sep</text>
+  </g>
+  <!-- Oct: Hist rain=38 snow=20, Proj rain=52 snow=14 -->
+  <g transform="translate(685,0)">
+    <rect x="0" y="314" width="25" height="106" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="258" width="25" height="56" fill="#93c5fd"/>
+    <rect x="30" y="274" width="25" height="146" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="234" width="25" height="40" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Okt</text>
+  </g>
+  <!-- Nov: Hist rain=20 snow=42, Proj rain=36 snow=32 -->
+  <g transform="translate(750,0)">
+    <rect x="0" y="310" width="25" height="56" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="192" width="25" height="118" fill="#93c5fd"/>
+    <rect x="30" y="319" width="25" height="101" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="229" width="25" height="90" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Nov</text>
+  </g>
+  <!-- Dec: Hist rain=10 snow=42, Proj rain=24 snow=36 -->
+  <g transform="translate(815,0)">
+    <rect x="0" y="310" width="25" height="28" fill="#2563eb" opacity="0.8"/>
+    <rect x="0" y="192" width="25" height="118" fill="#93c5fd"/>
+    <rect x="30" y="352" width="25" height="68" fill="#dc2626" opacity="0.8"/>
+    <rect x="30" y="252" width="25" height="100" fill="#fca5a5"/>
+    <text x="27" y="438" text-anchor="middle" font-size="10" fill="#64748b">Dez</text>
+  </g>
+
+  <!-- Legend -->
+  <rect x="120" y="460" width="660" height="45" fill="white" rx="0" stroke="#e2e8f0"/>
+  <rect x="140" y="472" width="15" height="12" fill="#2563eb" opacity="0.8"/>
+  <text x="160" y="483" font-size="10" fill="#1e293b">Hist. Regen / Rain</text>
+  <rect x="280" y="472" width="15" height="12" fill="#93c5fd"/>
+  <text x="300" y="483" font-size="10" fill="#1e293b">Hist. Schnee / Snow</text>
+  <rect x="430" y="472" width="15" height="12" fill="#dc2626" opacity="0.8"/>
+  <text x="450" y="483" font-size="10" fill="#1e293b">Proj. Regen / Rain (RCP8.5)</text>
+  <rect x="620" y="472" width="15" height="12" fill="#fca5a5"/>
+  <text x="640" y="483" font-size="10" fill="#1e293b">Proj. Schnee / Snow (RCP8.5)</text>
+
+  <text x="450" y="515" text-anchor="middle" font-size="8" fill="#94a3b8">Quellen / Sources: MeteoSwiss, CH2018 RCP8.5 Szenarien, Engadin Stationen / Engadin stations composite</text>
+</svg>
+
+      <div class="chart-source">
+        <span data-lang="de">Quelle: MeteoSwiss / CH2018. Historisch: 1991–2020. Projiziert: 2026–2036. Blau=historisch, Rot=RCP8.5-Projektion. Hellere Füllung = Schneeanteil.</span>
+        <span data-lang="en" class="lang-hidden">Source: MeteoSwiss / CH2018. Historical: 1991–2020. Projected: 2026–2036. Blue=historical, Red=RCP8.5 projection. Lighter fill = snow fraction.</span>
+      </div>
+    </div>
+
+    <p data-lang="de">Die Gesamtniederschlagsmenge bleibt relativ stabil, aber der <strong>Regen/Schnee-Anteil verschiebt sich dramatisch</strong>. Bei RCP8.5 sinkt der Winterschneefall um 15–24%; der Übergangssaison-Schneefall (März–April, Oktober–November) verschwindet auf Talniveau fast vollständig. Die Schneegrenzenhöhe steigt um ca. 150 m pro 1°C Erwärmung.</p>
+    <p data-lang="en" class="lang-hidden">Total precipitation volumes remain relatively stable, but the <strong>rain/snow ratio shifts dramatically</strong>. Under RCP8.5, winter snowfall decreases 15–24%; transition-season snowfall (March–April, October–November) nearly disappears at valley level. The snowline rises approximately 150 m per 1°C of warming.</p>
+  </div>
+</section>
+
+<!-- SECTION 5: SNOW & WINTER -->
+<section id="snow-winter">
+  <div class="page-wrap">
+    <h2>
+      <span data-lang="de">03 — Schnee &amp; Winter / Snow &amp; Winter</span>
+      <span data-lang="en" class="lang-hidden">03 — Snow &amp; Winter / Schnee &amp; Winter</span>
+    </h2>
+
+    <h3>
+      <span data-lang="de">3.1 Schneebedeckungsdauer 1990–2036</span>
+      <span data-lang="en" class="lang-hidden">3.1 Snow Cover Duration 1990–2036</span>
+    </h3>
+    <div class="chart-wrap">
+      <div class="chart-title">
+        <span data-lang="de">Diagramm 3 — Schneebedeckungstage/Jahr · Station Samedan (1.709 m)</span>
+        <span data-lang="en" class="lang-hidden">Chart 3 — Snow Cover Days/Year · Samedan Station (1,709 m)</span>
+      </div>
+      <svg role="img" aria-label="Diagramm 3 — Schneebedeckungstage pro Jahr, Station Samedan 1.709 m" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Arial, Helvetica, sans-serif">
+  
+  <rect width="900" height="500" fill="#F7F6F2" rx="0"/>
+
+  <text x="450" y="35" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Schneebedeckungsdauer / Snow Cover Duration</text>
+  <text x="450" y="55" text-anchor="middle" font-size="11" fill="#64748b">Tage pro Jahr, Samedan 1709m | Days per year, Samedan 1709m</text>
+
+  <line x1="80" y1="70" x2="80" y2="400" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="80" y1="400" x2="860" y2="400" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Y-axis: 0-200 days, scale: 1 day = 1.65px -->
+  <text x="75" y="400" text-anchor="end" font-size="10" fill="#64748b">0</text>
+  <text x="75" y="318" text-anchor="end" font-size="10" fill="#64748b">50</text>
+  <text x="75" y="235" text-anchor="end" font-size="10" fill="#64748b">100</text>
+  <text x="75" y="153" text-anchor="end" font-size="10" fill="#64748b">150</text>
+  <text x="75" y="70" text-anchor="end" font-size="10" fill="#64748b">200</text>
+  <text x="25" y="240" text-anchor="middle" font-size="11" fill="#475569" transform="rotate(-90,25,240)">Tage / Days</text>
+
+  <line x1="80" y1="318" x2="860" y2="318" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="235" x2="860" y2="235" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="153" x2="860" y2="153" stroke="#e2e8f0" stroke-width="0.5"/>
+
+  <!-- Projection zone -->
+  <rect x="756" y="70" width="104" height="330" fill="#fef3c7" opacity="0.3" rx="0"/>
+
+  <!-- X-axis -->
+  <text x="80" y="418" text-anchor="middle" font-size="10" fill="#64748b">1990</text>
+  <text x="188" y="418" text-anchor="middle" font-size="10" fill="#64748b">1995</text>
+  <text x="296" y="418" text-anchor="middle" font-size="10" fill="#64748b">2000</text>
+  <text x="404" y="418" text-anchor="middle" font-size="10" fill="#64748b">2005</text>
+  <text x="512" y="418" text-anchor="middle" font-size="10" fill="#64748b">2010</text>
+  <text x="620" y="418" text-anchor="middle" font-size="10" fill="#64748b">2015</text>
+  <text x="728" y="418" text-anchor="middle" font-size="10" fill="#64748b">2020</text>
+  <text x="836" y="418" text-anchor="middle" font-size="10" fill="#64748b">2025</text>
+
+  <!-- Historical line: y = 400 - (days * 1.65) -->
+  <polyline points="80,123 102,116 123,136 145,111 166,144 188,128 210,106 231,133 253,153 274,120 296,139 318,144 339,156 361,177 382,136 404,139 425,166 447,156 469,149 490,161 512,139 534,186 555,166 577,156 599,182 620,189 642,172 664,166 685,194 707,177 728,186 750,169 771,205 793,194 814,202 836,199"
+    fill="none" stroke="#0ea5e9" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Trend line -->
+  <line x1="80" y1="120" x2="836" y2="195" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.4"/>
+
+  <!-- RCP2.6 projection -->
+  <polyline points="836,199 849,202 860,219"
+    fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,2"/>
+  <!-- RCP4.5 -->
+  <polyline points="836,199 849,210 860,242"
+    fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,2"/>
+  <!-- RCP8.5 -->
+  <polyline points="836,199 849,220 860,268"
+    fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,2"/>
+
+  <text x="865" y="222" font-size="9" fill="#22c55e" font-weight="bold">RCP2.6: 110d</text>
+  <text x="865" y="245" font-size="9" fill="#f59e0b" font-weight="bold">RCP4.5: 96d</text>
+  <text x="865" y="271" font-size="9" fill="#ef4444" font-weight="bold">RCP8.5: 80d</text>
+
+  <!-- Key annotation -->
+  <text x="450" y="90" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="bold">-35% bis -52% Reduktion / reduction by 2036</text>
+
+  <!-- Legend -->
+  <rect x="150" y="440" width="600" height="30" fill="white" rx="0" stroke="#e2e8f0"/>
+  <line x1="170" y1="455" x2="200" y2="455" stroke="#0ea5e9" stroke-width="2.5"/>
+  <text x="205" y="459" font-size="10" fill="#1e293b">Historisch / Historical</text>
+  <line x1="350" y1="455" x2="380" y2="455" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="385" y="459" font-size="10" fill="#1e293b">RCP2.6</text>
+  <line x1="450" y1="455" x2="480" y2="455" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="485" y="459" font-size="10" fill="#1e293b">RCP4.5</text>
+  <line x1="550" y1="455" x2="580" y2="455" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="585" y="459" font-size="10" fill="#1e293b">RCP8.5</text>
+
+  <text x="450" y="495" text-anchor="middle" font-size="8" fill="#94a3b8">Quellen / Sources: SLF, MeteoSwiss, CH2018 Szenarien / scenarios</text>
+</svg>
+
+      <div class="chart-source">
+        <span data-lang="de">Quelle: SLF/MeteoSwiss. Historisch gemessene Daten; Projektionen CH2018 RCP-Szenarien.</span>
+        <span data-lang="en" class="lang-hidden">Source: SLF/MeteoSwiss. Measured historical data; projections from CH2018 RCP scenarios.</span>
+      </div>
+    </div>
+
+    <div class="findings-grid">
+      <div class="finding-card">
+        <h4 data-de="Historischer Rückgang" data-en="Historical Loss">Historischer Rückgang</h4>
+        <div class="finding-stat">−46 Tage</div>
+        <p data-lang="de">Von 168 Tagen (1990) auf 122 Tage (2025) — ein Verlust von 27% in 35 Jahren</p>
+        <p data-lang="en" class="lang-hidden">From 168 days (1990) to 122 days (2025) — a 27% loss over 35 years</p>
+      </div>
+      <div class="finding-card">
+        <h4 data-de="Projektion 2036 RCP2.6" data-en="2036 Projection RCP2.6">Projektion 2036</h4>
+        <div class="finding-stat">110 Tage</div>
+        <p data-lang="de">Unter RCP2.6 (beste Prognose) — ein Gesamtverlust von 35% gegenüber 1990</p>
+        <p data-lang="en" class="lang-hidden">Under RCP2.6 (best case) — a total loss of 35% vs. 1990</p>
+      </div>
+      <div class="finding-card">
+        <h4 data-de="Projektion 2036 RCP8.5" data-en="2036 Projection RCP8.5">Projektion 2036</h4>
+        <div class="finding-stat">80 Tage</div>
+        <p data-lang="de">Unter RCP8.5 (hohes Szenario) — ein Gesamtverlust von 52% gegenüber 1990</p>
+        <p data-lang="en" class="lang-hidden">Under RCP8.5 (high scenario) — a total loss of 52% vs. 1990</p>
+      </div>
+    </div>
+
+    <h3>
+      <span data-lang="de">3.2 Schneegrenzenhöhe 1990–2036</span>
+      <span data-lang="en" class="lang-hidden">3.2 Snowline Altitude 1990–2036</span>
+    </h3>
+    <div class="chart-wrap">
+      <div class="chart-title">
+        <span data-lang="de">Diagramm 4 — Schneegrenzenhöhe (m ü.M.) · 3 RCP-Szenarien</span>
+        <span data-lang="en" class="lang-hidden">Chart 4 — Snowline Altitude (m a.s.l.) · 3 RCP Scenarios</span>
+      </div>
+      <svg role="img" aria-label="Diagramm 4 — Schneegrenzenhöhe (m ü.M.) 1990–2036, 3 RCP-Szenarien" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Arial, Helvetica, sans-serif">
+  
+  <rect width="900" height="500" fill="#F7F6F2" rx="0"/>
+
+  <text x="450" y="35" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Schneegrenze / Snowline Elevation</text>
+  <text x="450" y="55" text-anchor="middle" font-size="11" fill="#64748b">Veranderung uber die Zeit / Change over time (1990-2036)</text>
+
+  <line x1="80" y1="70" x2="80" y2="400" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="80" y1="400" x2="860" y2="400" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Y-axis: 2200m to 3000m, scale: 1m = 0.4125px, range=800m, height=330px -->
+  <text x="75" y="400" text-anchor="end" font-size="10" fill="#64748b">2200m</text>
+  <text x="75" y="317" text-anchor="end" font-size="10" fill="#64748b">2400m</text>
+  <text x="75" y="235" text-anchor="end" font-size="10" fill="#64748b">2600m</text>
+  <text x="75" y="152" text-anchor="end" font-size="10" fill="#64748b">2800m</text>
+  <text x="75" y="70" text-anchor="end" font-size="10" fill="#64748b">3000m</text>
+
+  <line x1="80" y1="317" x2="860" y2="317" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="235" x2="860" y2="235" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="152" x2="860" y2="152" stroke="#e2e8f0" stroke-width="0.5"/>
+
+  <!-- Projection zone -->
+  <rect x="680" y="70" width="180" height="330" fill="#fef3c7" opacity="0.25" rx="0"/>
+
+  <!-- X-axis -->
+  <text x="100" y="418" text-anchor="middle" font-size="10" fill="#64748b">1990</text>
+  <text x="213" y="418" text-anchor="middle" font-size="10" fill="#64748b">1995</text>
+  <text x="325" y="418" text-anchor="middle" font-size="10" fill="#64748b">2000</text>
+  <text x="438" y="418" text-anchor="middle" font-size="10" fill="#64748b">2005</text>
+  <text x="550" y="418" text-anchor="middle" font-size="10" fill="#64748b">2010</text>
+  <text x="663" y="418" text-anchor="middle" font-size="10" fill="#64748b">2015</text>
+  <text x="775" y="418" text-anchor="middle" font-size="10" fill="#64748b">2020</text>
+  <text x="840" y="418" text-anchor="middle" font-size="10" fill="#64748b">2025</text>
+
+  <!-- Historical: y = 400 - ((elev - 2200) * 0.4125) -->
+  <!-- 2350: 338, 2380: 326, 2420: 309, 2460: 293, 2500: 276, 2560: 252, 2620: 227, 2660: 210 -->
+  <polyline points="100,338 213,326 325,309 438,293 550,276 663,252 775,227 840,210"
+    fill="none" stroke="#7c3aed" stroke-width="3" stroke-linejoin="round" marker-start="url(#dot)" marker-mid="url(#dot)" marker-end="url(#dot)"/>
+
+  <!-- Data point circles -->
+  <circle cx="100" cy="338" r="4" fill="#7c3aed"/>
+  <circle cx="213" cy="326" r="4" fill="#7c3aed"/>
+  <circle cx="325" cy="309" r="4" fill="#7c3aed"/>
+  <circle cx="438" cy="293" r="4" fill="#7c3aed"/>
+  <circle cx="550" cy="276" r="4" fill="#7c3aed"/>
+  <circle cx="663" cy="252" r="4" fill="#7c3aed"/>
+  <circle cx="775" cy="227" r="4" fill="#7c3aed"/>
+  <circle cx="840" cy="210" r="4" fill="#7c3aed"/>
+
+  <!-- RCP2.6: 2680→2750 -->
+  <polyline points="840,210 855,202 860,173"
+    fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,3"/>
+  <!-- RCP4.5: 2690→2850 -->
+  <polyline points="840,210 855,193 860,132"
+    fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,3"/>
+  <!-- RCP8.5: 2700→2950 -->
+  <polyline points="840,210 855,185 860,91"
+    fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <text x="865" y="176" font-size="9" fill="#22c55e" font-weight="bold">2750m</text>
+  <text x="865" y="135" font-size="9" fill="#f59e0b" font-weight="bold">2850m</text>
+  <text x="865" y="94" font-size="9" fill="#ef4444" font-weight="bold">2950m</text>
+
+  <!-- Annotation -->
+  <rect x="140" y="85" width="320" height="50" fill="white" rx="0" stroke="#7c3aed" opacity="0.9"/>
+  <text x="150" y="103" font-size="11" fill="#7c3aed" font-weight="bold">+310m in 35 Jahren / in 35 years (hist.)</text>
+  <text x="150" y="120" font-size="10" fill="#64748b">+90 bis +290m weitere / additional by 2036</text>
+
+  <!-- Legend -->
+  <rect x="150" y="440" width="600" height="30" fill="white" rx="0" stroke="#e2e8f0"/>
+  <line x1="170" y1="455" x2="200" y2="455" stroke="#7c3aed" stroke-width="3"/>
+  <text x="205" y="459" font-size="10" fill="#1e293b">Historisch / Historical</text>
+  <line x1="350" y1="455" x2="380" y2="455" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="385" y="459" font-size="10" fill="#1e293b">RCP2.6</text>
+  <line x1="450" y1="455" x2="480" y2="455" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="485" y="459" font-size="10" fill="#1e293b">RCP4.5</text>
+  <line x1="550" y1="455" x2="580" y2="455" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="585" y="459" font-size="10" fill="#1e293b">RCP8.5</text>
+
+  <text x="450" y="495" text-anchor="middle" font-size="8" fill="#94a3b8">Quellen / Sources: SLF, MeteoSwiss Klimatologie, CH2018 Szenarien / scenarios</text>
+</svg>
+
+      <div class="chart-source">
+        <span data-lang="de">Quelle: SLF/MeteoSwiss-Klimatologie. Historische 5-Jahres-Datenpunkte; Projektionen CH2018.</span>
+        <span data-lang="en" class="lang-hidden">Source: SLF/MeteoSwiss climatology. Historical 5-year data points; CH2018 projections.</span>
+      </div>
+    </div>
+
+    <div class="callout callout-warning">
+      <h4 data-de="Kritische Schwelle" data-en="Critical Threshold">Kritische Schwelle</h4>
+      <p data-lang="de">Bei einer Schneegrenzenhöhe von <strong>2.950 m (RCP8.5 bis 2036)</strong> verliert das meiste Engadiner Skiterrain unter 3.000 m seine zuverlässige Schneebedeckung. Dies betrifft Corvatsch (Gipfel 3.303 m, aber Stationsbereich ab 2.700 m) und Diavolezza (2.978 m). Nur die hochgelegensten Gipfelbereiche bleiben schneegesichert. Die natürliche Schneebedeckung für kommerzielles Skifahren wird bis 2100 laut SLF nur noch oberhalb von ~2.500 m zuverlässig sein.</p>
+      <p data-lang="en" class="lang-hidden">At a snowline of <strong>2,950 m (RCP8.5 by 2036)</strong>, most Engadin ski terrain below 3,000 m loses reliable snow cover. This affects Corvatsch (summit 3,303 m, but station zone from 2,700 m) and Diavolezza (2,978 m). Only the highest summit zones remain snow-secure. Per SLF, reliable natural snow for commercial skiing will only exist above ~2,500 m by 2100.</p>
+    </div>
+
+    <h3>
+      <span data-lang="de">3.3 Ski-Taugliche Tage pro Saison</span>
+      <span data-lang="en" class="lang-hidden">3.3 Ski-Viable Days per Season</span>
+    </h3>
+    <div class="chart-wrap">
+      <div class="chart-title">
+        <span data-lang="de">Diagramm 8 — Ski-Taugliche Tage/Saison (1.800–2.200 m Höhenband)</span>
+        <span data-lang="en" class="lang-hidden">Chart 8 — Ski-Viable Days/Season (1,800–2,200 m Elevation Band)</span>
+      </div>
+      <svg role="img" aria-label="Diagramm 8 — Ski-Taugliche Tage pro Saison, Höhenzone 1.800–2.200 m" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Arial, Helvetica, sans-serif">
+  
+  <rect width="900" height="500" fill="#F7F6F2" rx="0"/>
+
+  <text x="450" y="35" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Skitaugliche Tage pro Saison / Ski-Viable Days per Season</text>
+  <text x="450" y="55" text-anchor="middle" font-size="11" fill="#64748b">Hohenzone 1800-2200m | Elevation zone 1800-2200m</text>
+
+  <line x1="100" y1="65" x2="100" y2="400" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="100" y1="400" x2="840" y2="400" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Y-axis: 0-160 days, height=335, scale: 1 day = 2.09px -->
+  <text x="95" y="400" text-anchor="end" font-size="10" fill="#64748b">0</text>
+  <text x="95" y="358" text-anchor="end" font-size="10" fill="#64748b">20</text>
+  <text x="95" y="317" text-anchor="end" font-size="10" fill="#64748b">40</text>
+  <text x="95" y="275" text-anchor="end" font-size="10" fill="#64748b">60</text>
+  <text x="95" y="233" text-anchor="end" font-size="10" fill="#64748b">80</text>
+  <text x="95" y="191" text-anchor="end" font-size="10" fill="#64748b">100</text>
+  <text x="95" y="149" text-anchor="end" font-size="10" fill="#64748b">120</text>
+  <text x="95" y="107" text-anchor="end" font-size="10" fill="#64748b">140</text>
+  <text x="95" y="65" text-anchor="end" font-size="10" fill="#64748b">160</text>
+  <text x="35" y="240" text-anchor="middle" font-size="11" fill="#475569" transform="rotate(-90,35,240)">Tage / Days</text>
+
+  <line x1="100" y1="358" x2="840" y2="358" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="317" x2="840" y2="317" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="275" x2="840" y2="275" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="233" x2="840" y2="233" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="191" x2="840" y2="191" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="149" x2="840" y2="149" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="107" x2="840" y2="107" stroke="#e2e8f0" stroke-width="0.5"/>
+
+  <!-- Projection zone -->
+  <rect x="640" y="65" width="200" height="335" fill="#fef3c7" opacity="0.25" rx="0"/>
+  <text x="740" y="80" text-anchor="middle" font-size="9" fill="#92400e">Projektion / Projection</text>
+
+  <!-- X-axis: seasons -->
+  <text x="140" y="418" text-anchor="middle" font-size="9" fill="#64748b">90/91</text>
+  <text x="230" y="418" text-anchor="middle" font-size="9" fill="#64748b">95/96</text>
+  <text x="320" y="418" text-anchor="middle" font-size="9" fill="#64748b">00/01</text>
+  <text x="410" y="418" text-anchor="middle" font-size="9" fill="#64748b">05/06</text>
+  <text x="500" y="418" text-anchor="middle" font-size="9" fill="#64748b">10/11</text>
+  <text x="570" y="418" text-anchor="middle" font-size="9" fill="#64748b">15/16</text>
+  <text x="620" y="418" text-anchor="middle" font-size="9" fill="#64748b">20/21</text>
+  <text x="660" y="418" text-anchor="middle" font-size="9" fill="#64748b">24/25</text>
+  <text x="710" y="418" text-anchor="middle" font-size="9" fill="#64748b">28/29</text>
+  <text x="760" y="418" text-anchor="middle" font-size="9" fill="#64748b">32/33</text>
+  <text x="820" y="418" text-anchor="middle" font-size="9" fill="#64748b">35/36</text>
+
+  <!-- Historical bars: 145,148,140,132,128,118,112,105 -->
+  <!-- y = 400 - (days * 2.09) -->
+  <rect x="125" y="97" width="30" height="303" fill="#3b82f6" rx="0" opacity="0.8"/>
+  <text x="140" y="92" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">145</text>
+  <rect x="215" y="91" width="30" height="309" fill="#3b82f6" rx="0" opacity="0.8"/>
+  <text x="230" y="86" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">148</text>
+  <rect x="305" y="107" width="30" height="293" fill="#3b82f6" rx="0" opacity="0.8"/>
+  <text x="320" y="102" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">140</text>
+  <rect x="395" y="124" width="30" height="276" fill="#3b82f6" rx="0" opacity="0.8"/>
+  <text x="410" y="119" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">132</text>
+  <rect x="485" y="133" width="30" height="267" fill="#3b82f6" rx="0" opacity="0.8"/>
+  <text x="500" y="128" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">128</text>
+  <rect x="555" y="153" width="30" height="247" fill="#3b82f6" rx="0" opacity="0.8"/>
+  <text x="570" y="148" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">118</text>
+  <rect x="605" y="166" width="30" height="234" fill="#3b82f6" rx="0" opacity="0.8"/>
+  <text x="620" y="161" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">112</text>
+  <rect x="645" y="181" width="30" height="219" fill="#3b82f6" rx="0" opacity="0.7"/>
+  <text x="660" y="176" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">105</text>
+
+  <!-- RCP2.6 projected: 100,96,93 -->
+  <rect x="695" y="191" width="30" height="209" fill="#22c55e" rx="0" opacity="0.7"/>
+  <text x="710" y="186" text-anchor="middle" font-size="9" fill="#166534">100</text>
+  <rect x="745" y="199" width="30" height="201" fill="#22c55e" rx="0" opacity="0.7"/>
+  <text x="760" y="194" text-anchor="middle" font-size="9" fill="#166534">96</text>
+  <rect x="805" y="206" width="30" height="194" fill="#22c55e" rx="0" opacity="0.7"/>
+  <text x="820" y="201" text-anchor="middle" font-size="9" fill="#166534">93</text>
+
+  <!-- RCP8.5 ghost bars -->
+  <rect x="700" y="222" width="20" height="178" fill="#ef4444" rx="0" opacity="0.3"/>
+  <text x="710" y="218" text-anchor="middle" font-size="8" fill="#dc2626">85</text>
+  <rect x="750" y="249" width="20" height="151" fill="#ef4444" rx="0" opacity="0.3"/>
+  <text x="760" y="245" text-anchor="middle" font-size="8" fill="#dc2626">72</text>
+  <rect x="810" y="270" width="20" height="130" fill="#ef4444" rx="0" opacity="0.3"/>
+  <text x="820" y="266" text-anchor="middle" font-size="8" fill="#dc2626">62</text>
+
+  <!-- Trend annotation -->
+  <line x1="140" y1="97" x2="820" y2="206" stroke="#1e40af" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.4"/>
+  <rect x="300" y="70" width="300" height="22" fill="white" rx="0" stroke="#dc2626" opacity="0.9"/>
+  <text x="450" y="86" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="bold">-36% bis -57% Reduktion / reduction by 2036</text>
+
+  <!-- Legend -->
+  <rect x="130" y="440" width="640" height="35" fill="white" rx="0" stroke="#e2e8f0"/>
+  <rect x="150" y="450" width="15" height="15" fill="#3b82f6" rx="0" opacity="0.8"/>
+  <text x="170" y="462" font-size="10" fill="#1e293b">Historisch / Historical</text>
+  <rect x="310" y="450" width="15" height="15" fill="#22c55e" rx="0" opacity="0.7"/>
+  <text x="330" y="462" font-size="10" fill="#1e293b">RCP2.6 (best case)</text>
+  <rect x="480" y="450" width="15" height="15" fill="#ef4444" rx="0" opacity="0.3"/>
+  <text x="500" y="462" font-size="10" fill="#1e293b">RCP8.5 (worst case)</text>
+
+  <text x="450" y="495" text-anchor="middle" font-size="8" fill="#94a3b8">Quellen / Sources: SLF, Seilbahnen Schweiz, CH2018 Schneeszenarien / snow scenarios</text>
+</svg>
+
+      <div class="chart-source">
+        <span data-lang="de">Quelle: SLF/Seilbahnen Schweiz. Schwellenwert: 30 cm Mindestschneehöhe. Projektionen CH2018.</span>
+        <span data-lang="en" class="lang-hidden">Source: SLF/Seilbahnen Schweiz. Threshold: 30 cm minimum snow depth. CH2018 projections.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: WATER RESOURCES -->
+<section id="water-resources">
+  <div class="page-wrap">
+    <h2>
+      <span data-lang="de">04 — Wasserressourcen / Water Resources</span>
+      <span data-lang="en" class="lang-hidden">04 — Water Resources / Wasserressourcen</span>
+    </h2>
+
+    <h3>
+      <span data-lang="de">4.1 Inn-Abfluss — Saisonale Veränderungen</span>
+      <span data-lang="en" class="lang-hidden">4.1 Inn River Discharge — Seasonal Changes</span>
+    </h3>
+    <div class="chart-wrap">
+      <div class="chart-title">
+        <span data-lang="de">Diagramm 5 — Inn Monatsabfluss (m³/s) · Station Martina</span>
+        <span data-lang="en" class="lang-hidden">Chart 5 — Inn Monthly Discharge (m³/s) · Station Martina</span>
+      </div>
+      <svg role="img" aria-label="Diagramm 5 — Inn Monatsabfluss (m³/s), Station Martina" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Arial, Helvetica, sans-serif">
+  
+  <rect width="900" height="500" fill="#F7F6F2" rx="0"/>
+
+  <text x="450" y="35" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Inn Abfluss Saisonmuster / Inn River Discharge Seasonal Pattern</text>
+  <text x="450" y="55" text-anchor="middle" font-size="11" fill="#64748b">Martina Station — Historisch vs. Projektionen / Historical vs. Projections</text>
+
+  <line x1="80" y1="65" x2="80" y2="400" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="80" y1="400" x2="840" y2="400" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Y-axis: 0-70 m3/s, height=335, scale: 1 m3/s = 4.79px -->
+  <text x="75" y="400" text-anchor="end" font-size="10" fill="#64748b">0</text>
+  <text x="75" y="352" text-anchor="end" font-size="10" fill="#64748b">10</text>
+  <text x="75" y="304" text-anchor="end" font-size="10" fill="#64748b">20</text>
+  <text x="75" y="257" text-anchor="end" font-size="10" fill="#64748b">30</text>
+  <text x="75" y="209" text-anchor="end" font-size="10" fill="#64748b">40</text>
+  <text x="75" y="161" text-anchor="end" font-size="10" fill="#64748b">50</text>
+  <text x="75" y="113" text-anchor="end" font-size="10" fill="#64748b">60</text>
+  <text x="75" y="65" text-anchor="end" font-size="10" fill="#64748b">70 m3/s</text>
+  <text x="25" y="240" text-anchor="middle" font-size="11" fill="#475569" transform="rotate(-90,25,240)">m3/s</text>
+
+  <line x1="80" y1="352" x2="840" y2="352" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="304" x2="840" y2="304" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="257" x2="840" y2="257" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="209" x2="840" y2="209" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="161" x2="840" y2="161" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="113" x2="840" y2="113" stroke="#e2e8f0" stroke-width="0.5"/>
+
+  <!-- X-axis months -->
+  <text x="112" y="418" text-anchor="middle" font-size="10" fill="#64748b">Jan</text>
+  <text x="175" y="418" text-anchor="middle" font-size="10" fill="#64748b">Feb</text>
+  <text x="238" y="418" text-anchor="middle" font-size="10" fill="#64748b">Mar</text>
+  <text x="301" y="418" text-anchor="middle" font-size="10" fill="#64748b">Apr</text>
+  <text x="364" y="418" text-anchor="middle" font-size="10" fill="#64748b">Mai</text>
+  <text x="427" y="418" text-anchor="middle" font-size="10" fill="#64748b">Jun</text>
+  <text x="490" y="418" text-anchor="middle" font-size="10" fill="#64748b">Jul</text>
+  <text x="553" y="418" text-anchor="middle" font-size="10" fill="#64748b">Aug</text>
+  <text x="616" y="418" text-anchor="middle" font-size="10" fill="#64748b">Sep</text>
+  <text x="679" y="418" text-anchor="middle" font-size="10" fill="#64748b">Okt</text>
+  <text x="742" y="418" text-anchor="middle" font-size="10" fill="#64748b">Nov</text>
+  <text x="805" y="418" text-anchor="middle" font-size="10" fill="#64748b">Dez</text>
+
+  <!-- Historical: Jan=8.2 Feb=6.8 Mar=8.5 Apr=18.5 May=42 Jun=65 Jul=58 Aug=45 Sep=30 Oct=18 Nov=12.5 Dec=9.5 -->
+  <!-- y = 400 - (val * 4.79) -->
+  <polyline points="112,361 175,367 238,359 301,311 364,199 427,89 490,122 553,184 616,256 679,314 742,340 805,354"
+    fill="none" stroke="#2563eb" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- RCP8.5: Jan=9.2 Feb=8 Mar=11.5 Apr=25 May=52 Jun=54 Jul=42 Aug=30 Sep=22 Oct=15.5 Nov=11.2 Dec=9.5 -->
+  <polyline points="112,356 175,362 238,345 301,280 364,151 427,141 490,199 553,256 616,295 679,326 742,346 805,354"
+    fill="none" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="6,3" stroke-linejoin="round"/>
+
+  <!-- RCP2.6 -->
+  <polyline points="112,359 175,365 238,354 301,299 364,180 427,103 490,151 553,208 616,271 679,319 742,343 805,356"
+    fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,2" stroke-linejoin="round"/>
+
+  <!-- Annotation arrows -->
+  <text x="460" y="80" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="bold">Fruhere Spitze / Earlier peak</text>
+  <line x1="410" y1="85" x2="370" y2="140" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="580" y="170" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="bold">Sommertrockenheit / Summer drought</text>
+
+  <!-- Legend -->
+  <rect x="130" y="440" width="580" height="35" fill="white" rx="0" stroke="#e2e8f0"/>
+  <line x1="150" y1="458" x2="185" y2="458" stroke="#2563eb" stroke-width="3"/>
+  <text x="190" y="462" font-size="10" fill="#1e293b">Historisch / Historical (1991-2020)</text>
+  <line x1="390" y1="458" x2="425" y2="458" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="430" y="462" font-size="10" fill="#1e293b">RCP2.6</text>
+  <line x1="500" y1="458" x2="535" y2="458" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <text x="540" y="462" font-size="10" fill="#1e293b">RCP8.5 (2026-2036)</text>
+
+  <text x="450" y="495" text-anchor="middle" font-size="8" fill="#94a3b8">Quellen / Sources: FOEN Abflussdaten Martina, CH2018 hydrologische Szenarien / hydrological scenarios</text>
+</svg>
+
+      <div class="chart-source">
+        <span data-lang="de">Quelle: BAFU/CH2018. Station Martina (Inn). Historisch: 1991–2020. Projektionen: 2026–2036.</span>
+        <span data-lang="en" class="lang-hidden">Source: FOEN/CH2018. Station Martina (Inn). Historical: 1991–2020. Projections: 2026–2036.</span>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <h3 data-de="Wasserverfügbarkeitsrisiko" data-en="Water Availability Risk">
+          <span data-lang="de">Wasserverfügbarkeitsrisiko</span>
+          <span data-lang="en" class="lang-hidden">Water Availability Risk</span>
+        </h3>
+        <p data-lang="de">Der Inn zeigt ein klassisches glaziales Abflussregime mit Peakabfluss im Juni (65 m³/s). Der Klimawandel verschiebt den Peak früher (April–Mai) und reduziert die Sommerabflüsse deutlich:</p>
+        <p data-lang="en" class="lang-hidden">The Inn shows a classic glacial-nival regime with peak discharge in June (65 m³/s). Climate change shifts the peak earlier (April–May) and significantly reduces summer flows:</p>
+        <ul>
+          <li data-lang="de"><strong>RCP8.5:</strong> Sommerabfluss (Jun–Aug) −17 bis −33%</li>
+          <li data-lang="en" class="lang-hidden"><strong>RCP8.5:</strong> Summer discharge (Jun–Aug) −17 to −33%</li>
+          <li data-lang="de">Frühjahrs-Peak verschiebt sich 4–6 Wochen früher</li>
+          <li data-lang="en" class="lang-hidden">Spring peak shifts 4–6 weeks earlier</li>
+          <li data-lang="de">Winterabfluss steigt +22% durch verstärkte Schneeschmelze</li>
+          <li data-lang="en" class="lang-hidden">Winter discharge increases +22% from enhanced snowmelt</li>
+        </ul>
+      </div>
+      <div>
+        <div class="callout">
+          <h4 data-de="Wasserknappheits-Risikotabelle" data-en="Water Scarcity Risk">Wasserknappheit</h4>
+          <table>
+            <thead><tr><th data-de="Sektor" data-en="Sector">Sektor</th><th data-de="Risiko" data-en="Risk">Risiko</th></tr></thead>
+            <tbody>
+              <tr><td data-lang="de">Beschneiung (Okt–Nov)</td><td data-lang="de"><span class="risk-high">Hoch</span></td></tr>
+              <tr><td data-lang="en" class="lang-hidden">Snowmaking (Oct–Nov)</td><td data-lang="en" class="lang-hidden"><span class="risk-high">High</span></td></tr>
+              <tr><td data-lang="de">Landwirtschaftsbewässerung</td><td data-lang="de"><span class="risk-medium">Mittel</span></td></tr>
+              <tr><td data-lang="en" class="lang-hidden">Agricultural irrigation</td><td data-lang="en" class="lang-hidden"><span class="risk-medium">Medium</span></td></tr>
+              <tr><td data-lang="de">Wasserkraft (nach 2040)</td><td data-lang="de"><span class="risk-high">Hoch</span></td></tr>
+              <tr><td data-lang="en" class="lang-hidden">Hydropower (after 2040)</td><td data-lang="en" class="lang-hidden"><span class="risk-high">High</span></td></tr>
+              <tr><td data-lang="de">Trinkwasserversorgung</td><td data-lang="de"><span class="risk-low">Gering</span></td></tr>
+              <tr><td data-lang="en" class="lang-hidden">Drinking water supply</td><td data-lang="en" class="lang-hidden"><span class="risk-low">Low</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <h3>
+      <span data-lang="de">4.2 Gletscherrückgang 1990–2036</span>
+      <span data-lang="en" class="lang-hidden">4.2 Glacier Retreat 1990–2036</span>
+    </h3>
+    <div class="chart-wrap">
+      <div class="chart-title">
+        <span data-lang="de">Diagramm 6 — Gletscherfläche (km²) · Morteratsch, Pers, Roseg</span>
+        <span data-lang="en" class="lang-hidden">Chart 6 — Glacier Area (km²) · Morteratsch, Pers, Roseg</span>
+      </div>
+      <svg role="img" aria-label="Diagramm 6 — Gletscherfläche (km²) Morteratsch, Pers, Roseg 1990–2036" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Arial, Helvetica, sans-serif">
+
+  <rect width="900" height="520" fill="#F7F6F2" rx="0"/>
+
+  <text x="450" y="35" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Gletscherruckgang Engadin / Glacier Retreat Engadin</text>
+  <text x="450" y="55" text-anchor="middle" font-size="11" fill="#64748b">Flache in km2 | Area in km2 — Morteratsch, Pers, Roseg</text>
+
+  <line x1="100" y1="65" x2="100" y2="400" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="100" y1="400" x2="840" y2="400" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Y-axis: 0-7 km2, height=335, scale: 1 km2 = 47.86px -->
+  <text x="95" y="400" text-anchor="end" font-size="10" fill="#64748b">0</text>
+  <text x="95" y="352" text-anchor="end" font-size="10" fill="#64748b">1</text>
+  <text x="95" y="304" text-anchor="end" font-size="10" fill="#64748b">2</text>
+  <text x="95" y="257" text-anchor="end" font-size="10" fill="#64748b">3</text>
+  <text x="95" y="209" text-anchor="end" font-size="10" fill="#64748b">4</text>
+  <text x="95" y="161" text-anchor="end" font-size="10" fill="#64748b">5</text>
+  <text x="95" y="113" text-anchor="end" font-size="10" fill="#64748b">6</text>
+  <text x="95" y="65" text-anchor="end" font-size="10" fill="#64748b">7 km2</text>
+
+  <line x1="100" y1="352" x2="840" y2="352" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="304" x2="840" y2="304" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="257" x2="840" y2="257" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="209" x2="840" y2="209" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="161" x2="840" y2="161" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="113" x2="840" y2="113" stroke="#e2e8f0" stroke-width="0.5"/>
+
+  <!-- Projection zone -->
+  <rect x="700" y="65" width="140" height="335" fill="#fef3c7" opacity="0.3" rx="0"/>
+
+  <!-- X-axis: 1990 to 2036, 46 years, width=740 -->
+  <text x="120" y="418" text-anchor="middle" font-size="10" fill="#64748b">1990</text>
+  <text x="200" y="418" text-anchor="middle" font-size="10" fill="#64748b">1995</text>
+  <text x="281" y="418" text-anchor="middle" font-size="10" fill="#64748b">2000</text>
+  <text x="361" y="418" text-anchor="middle" font-size="10" fill="#64748b">2005</text>
+  <text x="441" y="418" text-anchor="middle" font-size="10" fill="#64748b">2010</text>
+  <text x="521" y="418" text-anchor="middle" font-size="10" fill="#64748b">2015</text>
+  <text x="601" y="418" text-anchor="middle" font-size="10" fill="#64748b">2020</text>
+  <text x="681" y="418" text-anchor="middle" font-size="10" fill="#64748b">2025</text>
+  <text x="761" y="418" text-anchor="middle" font-size="10" fill="#64748b">2030</text>
+  <text x="840" y="418" text-anchor="middle" font-size="10" fill="#64748b">2036</text>
+
+  <!-- Morteratsch (blue): 6.2, 5.9, 5.5, 5.2, 4.9, 4.5, 4.1, 3.8 historical -->
+  <!-- y = 400 - (km2 * 47.86) -->
+  <polyline points="120,103 200,117 281,137 361,151 441,165 521,184 601,204 681,218"
+    fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="120" cy="103" r="3" fill="#2563eb"/>
+  <circle cx="681" cy="218" r="3" fill="#2563eb"/>
+  <!-- RCP4.5 proj -->
+  <polyline points="681,218 761,237 840,257"
+    fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,3"/>
+  <!-- RCP8.5 proj -->
+  <polyline points="681,218 761,247 840,276"
+    fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="2,2" opacity="0.6"/>
+
+  <!-- Pers (green): 4.8, 4.5, 4.2, 3.9, 3.6, 3.2, 2.8, 2.5 -->
+  <polyline points="120,170 200,184 281,199 361,213 441,228 521,247 601,266 681,280"
+    fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="120" cy="170" r="3" fill="#16a34a"/>
+  <circle cx="681" cy="280" r="3" fill="#16a34a"/>
+  <polyline points="681,280 761,295 840,314"
+    fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="5,3"/>
+  <polyline points="681,280 761,304 840,328"
+    fill="none" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="2,2" opacity="0.6"/>
+
+  <!-- Roseg (orange): 4.0, 3.7, 3.4, 3.1, 2.8, 2.5, 2.2, 2.0 -->
+  <polyline points="120,209 200,223 281,237 361,252 441,266 521,280 601,295 681,304"
+    fill="none" stroke="#ea580c" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="120" cy="209" r="3" fill="#ea580c"/>
+  <circle cx="681" cy="304" r="3" fill="#ea580c"/>
+  <polyline points="681,304 761,319 840,333"
+    fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="5,3"/>
+  <polyline points="681,304 761,323 840,347"
+    fill="none" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="2,2" opacity="0.6"/>
+
+  <!-- Labels at end -->
+  <text x="845" y="254" font-size="9" fill="#2563eb" font-weight="bold">3.0 km2</text>
+  <text x="845" y="275" font-size="8" fill="#2563eb" opacity="0.6">2.6 km2</text>
+  <text x="845" y="311" font-size="9" fill="#16a34a" font-weight="bold">1.8 km2</text>
+  <text x="845" y="325" font-size="8" fill="#16a34a" opacity="0.6">1.5 km2</text>
+  <text x="845" y="336" font-size="9" fill="#ea580c" font-weight="bold">1.4 km2</text>
+  <text x="845" y="350" font-size="8" fill="#ea580c" opacity="0.6">1.1 km2</text>
+
+  <!-- Summary box -->
+  <rect x="140" y="75" width="280" height="55" fill="white" rx="0" stroke="#ea580c" opacity="0.9"/>
+  <text x="150" y="93" font-size="11" fill="#ea580c" font-weight="bold">Gesamtverlust / Total loss (1990-2036):</text>
+  <text x="150" y="110" font-size="10" fill="#64748b">RCP4.5: -48% bis -65% Flache / area</text>
+  <text x="150" y="124" font-size="10" fill="#64748b">RCP8.5: -58% bis -73% Flache / area</text>
+
+  <!-- Legend -->
+  <rect x="120" y="440" width="660" height="45" fill="white" rx="0" stroke="#e2e8f0"/>
+  <line x1="140" y1="455" x2="170" y2="455" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="175" y="459" font-size="10" fill="#1e293b">Morteratsch</text>
+  <line x1="275" y1="455" x2="305" y2="455" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="310" y="459" font-size="10" fill="#1e293b">Pers</text>
+  <line x1="370" y1="455" x2="400" y2="455" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="405" y="459" font-size="10" fill="#1e293b">Roseg</text>
+  <line x1="475" y1="468" x2="505" y2="468" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="510" y="472" font-size="10" fill="#1e293b">RCP4.5 Proj.</text>
+  <line x1="600" y1="468" x2="630" y2="468" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <text x="635" y="472" font-size="10" fill="#1e293b">RCP8.5 Proj.</text>
+
+  <text x="450" y="510" text-anchor="middle" font-size="8" fill="#94a3b8">Quellen / Sources: GLAMOS Gletschermonitoring, CH2018 Kryospharen-Szenarien / cryosphere scenarios</text>
+</svg>
+
+      <div class="chart-source">
+        <span data-lang="de">Quelle: GLAMOS (Gletschermonitoring Schweiz). Historische Inventarmessungen; Projektionen CH2018/Van Tricht et al. (2025), Nature Climate Change.</span>
+        <span data-lang="en" class="lang-hidden">Source: GLAMOS (Glacier Monitoring Switzerland). Historical inventory measurements; projections CH2018/Van Tricht et al. (2025), Nature Climate Change.</span>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-de="Gletscher" data-en="Glacier">Gletscher</th>
+            <th data-de="Fläche 1990 (km²)" data-en="Area 1990 (km²)">1990</th>
+            <th data-de="Fläche 2025 (km²)" data-en="Area 2025 (km²)">2025</th>
+            <th data-de="Verlust (%)" data-en="Loss (%)">Verlust</th>
+            <th data-de="Projektion 2036 RCP8.5" data-en="2036 RCP8.5 Projection">2036 RCP8.5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Morteratsch</td><td>6,2 km²</td><td>3,8 km²</td><td>−39%</td><td>~2,2 km²</td></tr>
+          <tr><td>Pers</td><td>4,8 km²</td><td>2,5 km²</td><td>−48%</td><td>~1,1 km²</td></tr>
+          <tr><td>Roseg</td><td>4,2 km²</td><td>2,1 km²</td><td>−50%</td><td>~1,1 km²</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p data-lang="de">Der Morteratsch-Gletscher verliert frontal ~50 m/Jahr und büsste in Rekordjahren 6% seines Volumens ein (Universität Freiburg). Der Schweizer Gletschergesamtverlust 2000–2024 beträgt laut GLAMOS −38%. Alpine Gletscher werden ihren maximalen Verlustrate-Peak zwischen 2033 und 2041 erreichen (Van Tricht et al., 2025, <em>Nature Climate Change</em>, DOI: 10.1038/s41558-025-02513-9). Das Gletscherschmelzwasser als Beitrag zum Inn-Abfluss wird nach 2035 deutlich abnehmen.</p>
+    <p data-lang="en" class="lang-hidden">The Morteratsch glacier loses ~50 m/year frontally and lost 6% of its volume in record years (University of Fribourg). Swiss total glacier loss 2000–2024 is −38% per GLAMOS. Alpine glaciers will reach their peak mass-loss rate between 2033 and 2041 (Van Tricht et al., 2025, <em>Nature Climate Change</em>, DOI: 10.1038/s41558-025-02513-9). Glacial meltwater contribution to Inn discharge will decrease substantially after 2035.</p>
+
+    <div class="callout callout-warning">
+      <h4 data-de="Hinweis zu Piz Cengalo 2017" data-en="Note on Piz Cengalo 2017">Piz Cengalo / Permafrost-Ereignis 2017</h4>
+      <p data-lang="de">Der Bergsturz am Piz Cengalo 2017 ereignete sich im unmittelbar benachbarten <strong>Val Bregaglia (südwestlich von Maloja)</strong> — nicht nördlich der Region. Dieses Ereignis illustriert die Gefährdungstypologie durch Permafrostdegradation in Hochlagen; für den Engadin-Raum ist Val Bernina das höchste Risiko-Cluster (Permafrost-Wahrscheinlichkeit 0,9, Schadensintensität 5/5).</p>
+      <p data-lang="en" class="lang-hidden">The 2017 Piz Cengalo rockfall occurred in the immediately adjacent <strong>Val Bregaglia (south-west of Maloja)</strong> — not north of the region. This event illustrates the hazard typology from permafrost degradation in high-altitude terrain; for the Engadin region, Val Bernina is the highest permafrost risk cluster (probability 0.9, impact 5/5).</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: ECONOMIC IMPACT -->
+<section id="economic-impact">
+  <div class="page-wrap">
+    <h2>
+      <span data-lang="de">05 — Wirtschaftliche Auswirkungen / Economic Impact</span>
+      <span data-lang="en" class="lang-hidden">05 — Economic Impact / Wirtschaftliche Auswirkungen</span>
+    </h2>
+
+    <div class="chart-wrap">
+      <div class="chart-title">
+        <span data-lang="de">Diagramm 8 — Ski-Taugliche Tage/Saison (Tourismuswirtschaft)</span>
+        <span data-lang="en" class="lang-hidden">Chart 8 — Ski-Viable Days/Season (Tourism Economy)</span>
+      </div>
+      <svg role="img" aria-label="Diagramm 8 — Ski-Taugliche Tage pro Saison (Tourismuswirtschaft)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Arial, Helvetica, sans-serif">
+  
+  <rect width="900" height="500" fill="#F7F6F2" rx="0"/>
+
+  <text x="450" y="35" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Skitaugliche Tage pro Saison / Ski-Viable Days per Season</text>
+  <text x="450" y="55" text-anchor="middle" font-size="11" fill="#64748b">Hohenzone 1800-2200m | Elevation zone 1800-2200m</text>
+
+  <line x1="100" y1="65" x2="100" y2="400" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="100" y1="400" x2="840" y2="400" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Y-axis: 0-160 days, height=335, scale: 1 day = 2.09px -->
+  <text x="95" y="400" text-anchor="end" font-size="10" fill="#64748b">0</text>
+  <text x="95" y="358" text-anchor="end" font-size="10" fill="#64748b">20</text>
+  <text x="95" y="317" text-anchor="end" font-size="10" fill="#64748b">40</text>
+  <text x="95" y="275" text-anchor="end" font-size="10" fill="#64748b">60</text>
+  <text x="95" y="233" text-anchor="end" font-size="10" fill="#64748b">80</text>
+  <text x="95" y="191" text-anchor="end" font-size="10" fill="#64748b">100</text>
+  <text x="95" y="149" text-anchor="end" font-size="10" fill="#64748b">120</text>
+  <text x="95" y="107" text-anchor="end" font-size="10" fill="#64748b">140</text>
+  <text x="95" y="65" text-anchor="end" font-size="10" fill="#64748b">160</text>
+  <text x="35" y="240" text-anchor="middle" font-size="11" fill="#475569" transform="rotate(-90,35,240)">Tage / Days</text>
+
+  <line x1="100" y1="358" x2="840" y2="358" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="317" x2="840" y2="317" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="275" x2="840" y2="275" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="233" x2="840" y2="233" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="191" x2="840" y2="191" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="149" x2="840" y2="149" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="100" y1="107" x2="840" y2="107" stroke="#e2e8f0" stroke-width="0.5"/>
+
+  <!-- Projection zone -->
+  <rect x="640" y="65" width="200" height="335" fill="#fef3c7" opacity="0.25" rx="0"/>
+  <text x="740" y="80" text-anchor="middle" font-size="9" fill="#92400e">Projektion / Projection</text>
+
+  <!-- X-axis: seasons -->
+  <text x="140" y="418" text-anchor="middle" font-size="9" fill="#64748b">90/91</text>
+  <text x="230" y="418" text-anchor="middle" font-size="9" fill="#64748b">95/96</text>
+  <text x="320" y="418" text-anchor="middle" font-size="9" fill="#64748b">00/01</text>
+  <text x="410" y="418" text-anchor="middle" font-size="9" fill="#64748b">05/06</text>
+  <text x="500" y="418" text-anchor="middle" font-size="9" fill="#64748b">10/11</text>
+  <text x="570" y="418" text-anchor="middle" font-size="9" fill="#64748b">15/16</text>
+  <text x="620" y="418" text-anchor="middle" font-size="9" fill="#64748b">20/21</text>
+  <text x="660" y="418" text-anchor="middle" font-size="9" fill="#64748b">24/25</text>
+  <text x="710" y="418" text-anchor="middle" font-size="9" fill="#64748b">28/29</text>
+  <text x="760" y="418" text-anchor="middle" font-size="9" fill="#64748b">32/33</text>
+  <text x="820" y="418" text-anchor="middle" font-size="9" fill="#64748b">35/36</text>
+
+  <!-- Historical bars: 145,148,140,132,128,118,112,105 -->
+  <!-- y = 400 - (days * 2.09) -->
+  <rect x="125" y="97" width="30" height="303" fill="#3b82f6" rx="0" opacity="0.8"/>
+  <text x="140" y="92" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">145</text>
+  <rect x="215" y="91" width="30" height="309" fill="#3b82f6" rx="0" opacity="0.8"/>
+  <text x="230" y="86" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">148</text>
+  <rect x="305" y="107" width="30" height="293" fill="#3b82f6" rx="0" opacity="0.8"/>
+  <text x="320" y="102" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">140</text>
+  <rect x="395" y="124" width="30" height="276" fill="#3b82f6" rx="0" opacity="0.8"/>
+  <text x="410" y="119" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">132</text>
+  <rect x="485" y="133" width="30" height="267" fill="#3b82f6" rx="0" opacity="0.8"/>
+  <text x="500" y="128" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">128</text>
+  <rect x="555" y="153" width="30" height="247" fill="#3b82f6" rx="0" opacity="0.8"/>
+  <text x="570" y="148" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">118</text>
+  <rect x="605" y="166" width="30" height="234" fill="#3b82f6" rx="0" opacity="0.8"/>
+  <text x="620" y="161" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">112</text>
+  <rect x="645" y="181" width="30" height="219" fill="#3b82f6" rx="0" opacity="0.7"/>
+  <text x="660" y="176" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">105</text>
+
+  <!-- RCP2.6 projected: 100,96,93 -->
+  <rect x="695" y="191" width="30" height="209" fill="#22c55e" rx="0" opacity="0.7"/>
+  <text x="710" y="186" text-anchor="middle" font-size="9" fill="#166534">100</text>
+  <rect x="745" y="199" width="30" height="201" fill="#22c55e" rx="0" opacity="0.7"/>
+  <text x="760" y="194" text-anchor="middle" font-size="9" fill="#166534">96</text>
+  <rect x="805" y="206" width="30" height="194" fill="#22c55e" rx="0" opacity="0.7"/>
+  <text x="820" y="201" text-anchor="middle" font-size="9" fill="#166534">93</text>
+
+  <!-- RCP8.5 ghost bars -->
+  <rect x="700" y="222" width="20" height="178" fill="#ef4444" rx="0" opacity="0.3"/>
+  <text x="710" y="218" text-anchor="middle" font-size="8" fill="#dc2626">85</text>
+  <rect x="750" y="249" width="20" height="151" fill="#ef4444" rx="0" opacity="0.3"/>
+  <text x="760" y="245" text-anchor="middle" font-size="8" fill="#dc2626">72</text>
+  <rect x="810" y="270" width="20" height="130" fill="#ef4444" rx="0" opacity="0.3"/>
+  <text x="820" y="266" text-anchor="middle" font-size="8" fill="#dc2626">62</text>
+
+  <!-- Trend annotation -->
+  <line x1="140" y1="97" x2="820" y2="206" stroke="#1e40af" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.4"/>
+  <rect x="300" y="70" width="300" height="22" fill="white" rx="0" stroke="#dc2626" opacity="0.9"/>
+  <text x="450" y="86" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="bold">-36% bis -57% Reduktion / reduction by 2036</text>
+
+  <!-- Legend -->
+  <rect x="130" y="440" width="640" height="35" fill="white" rx="0" stroke="#e2e8f0"/>
+  <rect x="150" y="450" width="15" height="15" fill="#3b82f6" rx="0" opacity="0.8"/>
+  <text x="170" y="462" font-size="10" fill="#1e293b">Historisch / Historical</text>
+  <rect x="310" y="450" width="15" height="15" fill="#22c55e" rx="0" opacity="0.7"/>
+  <text x="330" y="462" font-size="10" fill="#1e293b">RCP2.6 (best case)</text>
+  <rect x="480" y="450" width="15" height="15" fill="#ef4444" rx="0" opacity="0.3"/>
+  <text x="500" y="462" font-size="10" fill="#1e293b">RCP8.5 (worst case)</text>
+
+  <text x="450" y="495" text-anchor="middle" font-size="8" fill="#94a3b8">Quellen / Sources: SLF, Seilbahnen Schweiz, CH2018 Schneeszenarien / snow scenarios</text>
+</svg>
+
+      <div class="chart-source">
+        <span data-lang="de">Quelle: SLF/Seilbahnen Schweiz. Trendlinie: projizierter Rückgang. Historischer Schnitt 1991–2025, Projektionen 2026–2036.</span>
+        <span data-lang="en" class="lang-hidden">Source: SLF/Seilbahnen Schweiz. Trend line: projected decline. Historical average 1991–2025, projections 2026–2036.</span>
+      </div>
+    </div>
+
+    <h3>
+      <span data-lang="de">Sektortabellen — Wirtschaftliche Auswirkungen</span>
+      <span data-lang="en" class="lang-hidden">Sector Tables — Economic Impacts</span>
+    </h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-de="Sektor" data-en="Sector">Sektor</th>
+            <th data-de="Hauptrisiko (2026–2036)" data-en="Key Risk (2026–2036)">Hauptrisiko</th>
+            <th data-de="Hauptchance" data-en="Key Opportunity">Chance</th>
+            <th data-de="Finanzielle Grössenordnung" data-en="Financial Scale">Grössenordnung</th>
+            <th data-de="Dringlichkeit" data-en="Urgency">Dringlichkeit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-lang="de"><strong>Wintertourismus</strong></td>
+            <td data-lang="de">20–35% Rückgang Ski-Tage unterer Lagen bis 2036</td>
+            <td data-lang="de">Beschneiungsoptimierung, Nordisches Skiing</td>
+            <td data-lang="de">Verlustpotenzial CHF 50–120 Mio./Jahr</td>
+            <td><span class="risk-high" data-lang="de">Hoch</span></td>
+            <td data-lang="en" class="lang-hidden"><strong>Winter Tourism</strong></td>
+            <td data-lang="en" class="lang-hidden">20–35% ski-day decline at lower elevations by 2036</td>
+            <td data-lang="en" class="lang-hidden">Precision snowmaking, Nordic skiing</td>
+            <td data-lang="en" class="lang-hidden">Loss potential CHF 50–120M/year</td>
+            <td><span class="risk-high" data-lang="en" class="lang-hidden">High</span></td>
+          </tr>
+          <tr>
+            <td data-lang="de"><strong>Sommertourismus</strong></td>
+            <td data-lang="de">Produktlücken in Nebensaisons; verzögerte Monetarisierung</td>
+            <td data-lang="de">CHF 80–150 Mio. Umsatzpotenzial <span class="badge badge-caution" title="Szenariobasierte Schätzung">⚠ Schätzung</span></td>
+            <td data-lang="de">Struktureller Rebalancing-Effekt</td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span></td>
+            <td data-lang="en" class="lang-hidden"><strong>Summer Tourism</strong></td>
+            <td data-lang="en" class="lang-hidden">Product gaps in shoulder seasons; delayed monetization</td>
+            <td data-lang="en" class="lang-hidden">CHF 80–150M revenue upside <span class="badge badge-caution">⚠ Estimate</span></td>
+            <td data-lang="en" class="lang-hidden">Structural rebalancing effect</td>
+            <td><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+          </tr>
+          <tr>
+            <td data-lang="de"><strong>Landwirtschaft</strong></td>
+            <td data-lang="de">Wasserknappheit Aug–Sep; Spätfrostrisiko für neue Kulturen</td>
+            <td data-lang="de">+5–10 Tage/Jahrzehnt verlängerte Vegetationsperiode; neue Kulturen</td>
+            <td data-lang="de">Moderat</td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span></td>
+            <td data-lang="en" class="lang-hidden"><strong>Agriculture</strong></td>
+            <td data-lang="en" class="lang-hidden">Water scarcity Aug–Sep; late-frost risk for new crops</td>
+            <td data-lang="en" class="lang-hidden">+5–10 days/decade longer growing season; new crops</td>
+            <td data-lang="en" class="lang-hidden">Moderate</td>
+            <td><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+          </tr>
+          <tr>
+            <td data-lang="de"><strong>Infrastruktur</strong></td>
+            <td data-lang="de">Permafrost-Schäden CHF 50–120 Mio. (Engadin, bis 2050); RhB-Mehrkosten</td>
+            <td data-lang="de">Frühzeitige Investitionen reduzieren Langzeitkosten</td>
+            <td data-lang="de">CHF 100–300 Mio. Gesamtinvestitionsbedarf</td>
+            <td><span class="risk-high" data-lang="de">Hoch</span></td>
+            <td data-lang="en" class="lang-hidden"><strong>Infrastructure</strong></td>
+            <td data-lang="en" class="lang-hidden">Permafrost damage CHF 50–120M (Engadin, to 2050); RhB extra costs</td>
+            <td data-lang="en" class="lang-hidden">Early investment reduces long-term costs</td>
+            <td data-lang="en" class="lang-hidden">CHF 100–300M total investment need</td>
+            <td><span class="risk-high" data-lang="en" class="lang-hidden">High</span></td>
+          </tr>
+          <tr>
+            <td data-lang="de"><strong>Wasserkraft</strong></td>
+            <td data-lang="de">Post-Peak-Rückgang −10–20% bis 2050 (nach kurzem Gletscherschmelz-Peak ~2030–2040)</td>
+            <td data-lang="de">Temporäre Produktionssteigerung; Integration Beschneiung</td>
+            <td data-lang="de">Mittlere Auswirkung</td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span></td>
+            <td data-lang="en" class="lang-hidden"><strong>Hydropower</strong></td>
+            <td data-lang="en" class="lang-hidden">Post-peak decline −10–20% by 2050 (after short glacial-melt peak ~2030–2040)</td>
+            <td data-lang="en" class="lang-hidden">Temporary production increase; snowmaking integration</td>
+            <td data-lang="en" class="lang-hidden">Medium impact</td>
+            <td><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+          </tr>
+          <tr>
+            <td data-lang="de"><strong>Versicherung</strong></td>
+            <td data-lang="de">Prämienanstieg für Objekte in Risikozonen; potenzielle Immobilienwertabnahmen</td>
+            <td data-lang="de">Proaktives Risikomanagement kann Prämiendruck reduzieren</td>
+            <td data-lang="de">150–400 Objekte in neuen Hochrisikogebieten potenziell betroffen</td>
+            <td><span class="risk-high" data-lang="de">Hoch</span></td>
+            <td data-lang="en" class="lang-hidden"><strong>Insurance</strong></td>
+            <td data-lang="en" class="lang-hidden">Premium increases for properties in risk zones; potential asset value decline</td>
+            <td data-lang="en" class="lang-hidden">Proactive risk management can reduce premium pressure</td>
+            <td data-lang="en" class="lang-hidden">150–400 properties in newly classified high-hazard zones</td>
+            <td><span class="risk-high" data-lang="en" class="lang-hidden">High</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-warning">
+      <h4 data-de="Methodischer Hinweis — Sommertourismus-Daten" data-en="Methodological Note — Summer Tourism Data">Methodischer Hinweis</h4>
+      <p data-lang="de">Das Wachstum des alpinen Sommertourismus von 18–24% (2018–2024, Schweizer Tourismusverband) überspannt die COVID-19-Periode (2020–2022). Diese Zahl spiegelt teilweise einen statistischen Aufholeffekt nach dem Pandemic-Einbruch wider, nicht ausschliesslich strukturelles Wachstum. Das CHF 80–150 Mio. Umsatzpotenzial ist eine <strong>szenariobasierte Schätzung</strong> — keine Angabe aus einer publizierten Wirtschaftsstudie. Siehe Methodikabschnitt für Details.</p>
+      <p data-lang="en" class="lang-hidden">The 18–24% Alpine summer tourism growth (2018–2024, Swiss Tourism Federation) spans the COVID-19 period (2020–2022). This figure partially reflects statistical recovery bounce-back from the pandemic trough, not solely structural growth. The CHF 80–150M revenue upside is a <strong>scenario-based estimate</strong> — not a figure from a published economic study. See Methodology section for details.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: POLICY & ADAPTATION -->
+<section id="policy-adaptation">
+  <div class="page-wrap">
+    <h2>
+      <span data-lang="de">06 — Politik &amp; Anpassung / Policy &amp; Adaptation</span>
+      <span data-lang="en" class="lang-hidden">06 — Policy &amp; Adaptation / Politik &amp; Anpassung</span>
+    </h2>
+
+    <h3>
+      <span data-lang="de">6.1 Aktuelle Rahmenbedingungen und Massnahmen</span>
+      <span data-lang="en" class="lang-hidden">6.1 Current Framework and Measures</span>
+    </h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-de="Instrument" data-en="Instrument">Instrument</th>
+            <th data-de="Ebene" data-en="Level">Ebene</th>
+            <th data-de="Relevanz für Engadin" data-en="Relevance for Engadin">Relevanz</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-lang="de">Schweizer Klimaanpassungsstrategie (BAFU 2024)</td>
+            <td data-lang="de">Bund</td>
+            <td data-lang="de">Rahmen für Bundeskofinanzierung; Engadin sollte Ausrichtung suchen</td>
+            <td data-lang="en" class="lang-hidden">Swiss Climate Adaptation Strategy (FOEN 2024)</td>
+            <td data-lang="en" class="lang-hidden">Federal</td>
+            <td data-lang="en" class="lang-hidden">Framework for federal co-funding; Engadin should seek alignment</td>
+          </tr>
+          <tr>
+            <td data-lang="de">Naturgefahrenkarten-Pflicht (Bundesebene)</td>
+            <td data-lang="de">Kanton/Gemeinde</td>
+            <td data-lang="de">Aktualisierungspflicht mit neuen Permafrost-/Gletscherdaten; gesetzlich vorgeschrieben</td>
+            <td data-lang="en" class="lang-hidden">Natural Hazard Maps obligation (federal law)</td>
+            <td data-lang="en" class="lang-hidden">Cantonal/Municipal</td>
+            <td data-lang="en" class="lang-hidden">Update obligation with new permafrost/glacier data; legally required</td>
+          </tr>
+          <tr>
+            <td data-lang="de">Gewässerschutzgesetz (Beschneiung)</td>
+            <td data-lang="de">Bund/Kanton</td>
+            <td data-lang="de">Zunehmende Restriktionen bei Wasserentnahme für Beschneiung aus dem Inn</td>
+            <td data-lang="en" class="lang-hidden">Water Protection Act (snowmaking)</td>
+            <td data-lang="en" class="lang-hidden">Federal/Cantonal</td>
+            <td data-lang="en" class="lang-hidden">Increasing restrictions on water extraction for snowmaking from the Inn</td>
+          </tr>
+          <tr>
+            <td data-lang="de">PERMOS Permafrost-Monitoring</td>
+            <td data-lang="de">National/Wissenschaft</td>
+            <td data-lang="de">Langzeit-Monitoring-Netzwerk; kritisch für Frühwarnung in Val Bernina</td>
+            <td data-lang="en" class="lang-hidden">PERMOS Permafrost Monitoring</td>
+            <td data-lang="en" class="lang-hidden">National/Research</td>
+            <td data-lang="en" class="lang-hidden">Long-term monitoring network; critical for early warning in Val Bernina</td>
+          </tr>
+          <tr>
+            <td data-lang="de">Direktzahlungen Alpwirtschaft</td>
+            <td data-lang="de">Bund (FOAG)</td>
+            <td data-lang="de">Anpassungsbedarf für klimabedingt höher gelegene Alpweiden</td>
+            <td data-lang="en" class="lang-hidden">Alpine farming direct payments</td>
+            <td data-lang="en" class="lang-hidden">Federal (FOAG)</td>
+            <td data-lang="en" class="lang-hidden">Adaptation needed for climate-shifted higher-altitude alpine pastures</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>
+      <span data-lang="de">6.2 Strategische Anpassungsempfehlungen</span>
+      <span data-lang="en" class="lang-hidden">6.2 Strategic Adaptation Recommendations</span>
+    </h3>
+
+    <div class="findings-grid">
+      <div class="finding-card">
+        <h4 data-de="Sofortmassnahmen (0–2 Jahre)" data-en="Immediate (0–2 Years)">Sofortmassnahmen</h4>
+        <ul data-lang="de">
+          <li>Naturgefahrenkarten aktualisieren (Permafrost, Gletscherseen)</li>
+          <li>GLOF-Frühwarnsystem Val Bernina / Morteratsch-Vorfeld</li>
+          <li>Inventar gefährdeter Skipisten-Infrastruktur (SLF-Kooperation)</li>
+          <li>Beschneiungsstrategie überarbeiten — von Vollflächenbeschneiung auf präzise Kernanlagen</li>
+        </ul>
+        <ul data-lang="en" class="lang-hidden">
+          <li>Update natural hazard maps (permafrost, glacial lakes)</li>
+          <li>GLOF early-warning system Val Bernina / Morteratsch forefield</li>
+          <li>Inventory of endangered ski infrastructure (SLF cooperation)</li>
+          <li>Revise snowmaking strategy — from blanket to precision core-run coverage</li>
+        </ul>
+      </div>
+      <div class="finding-card">
+        <h4 data-de="Mittelfristig (2–5 Jahre)" data-en="Medium-Term (2–5 Years)">Mittelfristig</h4>
+        <ul data-lang="de">
+          <li>Regionaler Klimainfrastrukturfonds gründen (Kanton, Gemeinden, Privatsektor)</li>
+          <li>Sommertourismus-Produktoffensive: Infrastruktur, Events, Wellness</li>
+          <li>Versicherer-Dialog: proaktive Risikominderung vor Prämienerhöhungen</li>
+          <li>EKW AG: Szenarioplanung für Wasserkraft-Post-Peak-Phase</li>
+        </ul>
+        <ul data-lang="en" class="lang-hidden">
+          <li>Establish regional climate infrastructure fund (canton, municipalities, private sector)</li>
+          <li>Summer tourism product offensive: infrastructure, events, wellness</li>
+          <li>Insurer dialogue: proactive risk mitigation ahead of premium increases</li>
+          <li>EKW AG: scenario planning for hydropower post-peak phase</li>
+        </ul>
+      </div>
+      <div class="finding-card">
+        <h4 data-de="Langfristig (5–10 Jahre)" data-en="Long-Term (5–10 Years)">Langfristig</h4>
+        <ul data-lang="de">
+          <li>Raumplanung für klimaresistente Siedlungsentwicklung (Flusskorridore)</li>
+          <li>Energietransformation: PV auf Bergen, Speicherkapazitäten</li>
+          <li>Landwirtschaftliche Diversifizierung auf verfügbaren Klimafenstern</li>
+          <li>"Klimaneutrale Destination" Branding (Marktpositionierung bis 2035)</li>
+        </ul>
+        <ul data-lang="en" class="lang-hidden">
+          <li>Spatial planning for climate-resilient settlement development (river corridors)</li>
+          <li>Energy transformation: mountain PV, storage capacity</li>
+          <li>Agricultural diversification leveraging extended climate windows</li>
+          <li>"Climate-neutral destination" branding (market positioning by 2035)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <h3>
+        <span data-lang="de">6.3 Anpassungsinvestitionsplan (Indikativ)</span>
+        <span data-lang="en" class="lang-hidden">6.3 Adaptation Investment Plan (Indicative)</span>
+      </h3>
+      <table>
+        <thead>
+          <tr>
+            <th data-de="Massnahme" data-en="Measure">Massnahme</th>
+            <th data-de="Kosten (CHF Mio.)" data-en="Cost (CHF M)">Kosten</th>
+            <th data-de="Zeithorizont" data-en="Horizon">Zeithorizont</th>
+            <th data-de="Hauptnutzniesser" data-en="Primary Beneficiary">Nutzniesser</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td data-lang="de">GLOF-Frühwarnsystem</td><td>2–5</td><td data-lang="de">0–2 Jahre</td><td data-lang="de">Sicherheit, Versicherung</td></tr>
+          <tr><td data-lang="en" class="lang-hidden">GLOF early-warning system</td><td>2–5</td><td data-lang="en" class="lang-hidden">0–2 years</td><td data-lang="en" class="lang-hidden">Safety, Insurance</td></tr>
+          <tr><td data-lang="de">Kunstschneepeiche (Snowponds)</td><td>15–40</td><td data-lang="de">2–5 Jahre</td><td data-lang="de">Wintertourismus</td></tr>
+          <tr><td data-lang="en" class="lang-hidden">Artificial snow reservoirs</td><td>15–40</td><td data-lang="en" class="lang-hidden">2–5 years</td><td data-lang="en" class="lang-hidden">Winter tourism</td></tr>
+          <tr><td data-lang="de">Permafrost-Monitoring-Ausbau</td><td>5–15</td><td data-lang="de">0–3 Jahre</td><td data-lang="de">Infrastruktur, Sicherheit</td></tr>
+          <tr><td data-lang="en" class="lang-hidden">Permafrost monitoring expansion</td><td>5–15</td><td data-lang="en" class="lang-hidden">0–3 years</td><td data-lang="en" class="lang-hidden">Infrastructure, Safety</td></tr>
+          <tr><td data-lang="de">Sommertourismus-Infrastruktur</td><td>30–80</td><td data-lang="de">2–7 Jahre</td><td data-lang="de">Tourismus, Wirtschaft</td></tr>
+          <tr><td data-lang="en" class="lang-hidden">Summer tourism infrastructure</td><td>30–80</td><td data-lang="en" class="lang-hidden">2–7 years</td><td data-lang="en" class="lang-hidden">Tourism, Economy</td></tr>
+          <tr><td data-lang="de">Berghütten-Fundamentsanierung</td><td>20–60</td><td data-lang="de">3–8 Jahre</td><td data-lang="de">SAC, Tourismus</td></tr>
+          <tr><td data-lang="en" class="lang-hidden">Mountain hut foundation remediation</td><td>20–60</td><td data-lang="en" class="lang-hidden">3–8 years</td><td data-lang="en" class="lang-hidden">SAC, Tourism</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9: RISK MATRIX -->
+<section id="risk-matrix">
+  <div class="page-wrap">
+    <h2>
+      <span data-lang="de">07 — Risikomatrix / Risk Matrix</span>
+      <span data-lang="en" class="lang-hidden">07 — Risk Matrix / Risikomatrix</span>
+    </h2>
+
+    <div class="chart-wrap">
+      <div class="chart-title">
+        <span data-lang="de">Diagramm 7 — Risiko-Heatmap: 8 Teilregionen × 4 Risikokategorien</span>
+        <span data-lang="en" class="lang-hidden">Chart 7 — Risk Heatmap: 8 Sub-regions × 4 Risk Categories</span>
+      </div>
+      <svg role="img" aria-label="Diagramm 7 — Risiko-Heatmap: 8 Teilregionen × 4 Risikokategorien" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Arial, Helvetica, sans-serif">
+  
+  <rect width="900" height="520" fill="#F7F6F2" rx="0"/>
+
+  <text x="450" y="32" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Risikomatrix Engadin / Risk Heat Map Engadin</text>
+  <text x="450" y="52" text-anchor="middle" font-size="11" fill="#64748b">Teilregionen x Risikokategorien / Sub-regions x Risk Categories (2026-2036)</text>
+
+  <!-- Column headers -->
+  <text x="410" y="85" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">Hochwasser</text>
+  <text x="410" y="97" text-anchor="middle" font-size="9" fill="#94a3b8">Flood</text>
+  <text x="530" y="85" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">Trockenheit</text>
+  <text x="530" y="97" text-anchor="middle" font-size="9" fill="#94a3b8">Drought</text>
+  <text x="650" y="85" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">Permafrost</text>
+  <text x="650" y="97" text-anchor="middle" font-size="9" fill="#94a3b8">Permafrost</text>
+  <text x="770" y="85" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">Schneeverlust</text>
+  <text x="770" y="97" text-anchor="middle" font-size="9" fill="#94a3b8">Snow loss</text>
+
+  <!-- Risk colors: low=#dcfce7 medium=#fef9c3 high=#fed7aa very_high=#fecaca -->
+
+  <!-- Row 1: Upper Engadin: flood=high, drought=medium, permafrost=high, snow=high -->
+  <text x="175" y="125" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="bold">Oberengadin</text>
+  <text x="175" y="138" text-anchor="middle" font-size="9" fill="#94a3b8">Maloja-St.Moritz</text>
+  <rect x="355" y="110" width="110" height="40" rx="0" fill="#fed7aa" stroke="#f97316"/>
+  <text x="410" y="135" text-anchor="middle" font-size="12" font-weight="bold" fill="#9a3412">HOCH</text>
+  <rect x="475" y="110" width="110" height="40" rx="0" fill="#fef9c3" stroke="#eab308"/>
+  <text x="530" y="135" text-anchor="middle" font-size="12" font-weight="bold" fill="#854d0e">MITTEL</text>
+  <rect x="595" y="110" width="110" height="40" rx="0" fill="#fed7aa" stroke="#f97316"/>
+  <text x="650" y="135" text-anchor="middle" font-size="12" font-weight="bold" fill="#9a3412">HOCH</text>
+  <rect x="715" y="110" width="110" height="40" rx="0" fill="#fed7aa" stroke="#f97316"/>
+  <text x="770" y="135" text-anchor="middle" font-size="12" font-weight="bold" fill="#9a3412">HOCH</text>
+
+  <!-- Row 2: Mid Engadin: flood=medium, drought=medium, permafrost=low, snow=high -->
+  <text x="175" y="175" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="bold">Mittelengadin</text>
+  <text x="175" y="188" text-anchor="middle" font-size="9" fill="#94a3b8">Celerina-Zuoz</text>
+  <rect x="355" y="160" width="110" height="40" rx="0" fill="#fef9c3" stroke="#eab308"/>
+  <text x="410" y="185" text-anchor="middle" font-size="12" font-weight="bold" fill="#854d0e">MITTEL</text>
+  <rect x="475" y="160" width="110" height="40" rx="0" fill="#fef9c3" stroke="#eab308"/>
+  <text x="530" y="185" text-anchor="middle" font-size="12" font-weight="bold" fill="#854d0e">MITTEL</text>
+  <rect x="595" y="160" width="110" height="40" rx="0" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="650" y="185" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">TIEF</text>
+  <rect x="715" y="160" width="110" height="40" rx="0" fill="#fed7aa" stroke="#f97316"/>
+  <text x="770" y="185" text-anchor="middle" font-size="12" font-weight="bold" fill="#9a3412">HOCH</text>
+
+  <!-- Row 3: Lower Engadin: flood=medium, drought=high, permafrost=medium, snow=medium -->
+  <text x="175" y="225" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="bold">Unterengadin</text>
+  <text x="175" y="238" text-anchor="middle" font-size="9" fill="#94a3b8">Zernez-Scuol</text>
+  <rect x="355" y="210" width="110" height="40" rx="0" fill="#fef9c3" stroke="#eab308"/>
+  <text x="410" y="235" text-anchor="middle" font-size="12" font-weight="bold" fill="#854d0e">MITTEL</text>
+  <rect x="475" y="210" width="110" height="40" rx="0" fill="#fed7aa" stroke="#f97316"/>
+  <text x="530" y="235" text-anchor="middle" font-size="12" font-weight="bold" fill="#9a3412">HOCH</text>
+  <rect x="595" y="210" width="110" height="40" rx="0" fill="#fef9c3" stroke="#eab308"/>
+  <text x="650" y="235" text-anchor="middle" font-size="12" font-weight="bold" fill="#854d0e">MITTEL</text>
+  <rect x="715" y="210" width="110" height="40" rx="0" fill="#fef9c3" stroke="#eab308"/>
+  <text x="770" y="235" text-anchor="middle" font-size="12" font-weight="bold" fill="#854d0e">MITTEL</text>
+
+  <!-- Row 4: Val Bernina: flood=high, drought=low, permafrost=very_high, snow=medium -->
+  <text x="175" y="280" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="bold">Val Bernina</text>
+  <rect x="355" y="260" width="110" height="40" rx="0" fill="#fed7aa" stroke="#f97316"/>
+  <text x="410" y="285" text-anchor="middle" font-size="12" font-weight="bold" fill="#9a3412">HOCH</text>
+  <rect x="475" y="260" width="110" height="40" rx="0" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="530" y="285" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">TIEF</text>
+  <rect x="595" y="260" width="110" height="40" rx="0" fill="#fecaca" stroke="#ef4444"/>
+  <text x="650" y="285" text-anchor="middle" font-size="12" font-weight="bold" fill="#991b1b">SEHR HOCH</text>
+  <rect x="715" y="260" width="110" height="40" rx="0" fill="#fef9c3" stroke="#eab308"/>
+  <text x="770" y="285" text-anchor="middle" font-size="12" font-weight="bold" fill="#854d0e">MITTEL</text>
+
+  <!-- Row 5: Val Roseg: flood=high, drought=low, permafrost=very_high, snow=medium -->
+  <text x="175" y="325" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="bold">Val Roseg</text>
+  <rect x="355" y="310" width="110" height="40" rx="0" fill="#fed7aa" stroke="#f97316"/>
+  <text x="410" y="335" text-anchor="middle" font-size="12" font-weight="bold" fill="#9a3412">HOCH</text>
+  <rect x="475" y="310" width="110" height="40" rx="0" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="530" y="335" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">TIEF</text>
+  <rect x="595" y="310" width="110" height="40" rx="0" fill="#fecaca" stroke="#ef4444"/>
+  <text x="650" y="335" text-anchor="middle" font-size="12" font-weight="bold" fill="#991b1b">SEHR HOCH</text>
+  <rect x="715" y="310" width="110" height="40" rx="0" fill="#fef9c3" stroke="#eab308"/>
+  <text x="770" y="335" text-anchor="middle" font-size="12" font-weight="bold" fill="#854d0e">MITTEL</text>
+
+  <!-- Row 6: Silsersee: flood=medium, drought=medium, permafrost=low, snow=high -->
+  <text x="175" y="375" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="bold">Silsersee</text>
+  <rect x="355" y="360" width="110" height="40" rx="0" fill="#fef9c3" stroke="#eab308"/>
+  <text x="410" y="385" text-anchor="middle" font-size="12" font-weight="bold" fill="#854d0e">MITTEL</text>
+  <rect x="475" y="360" width="110" height="40" rx="0" fill="#fef9c3" stroke="#eab308"/>
+  <text x="530" y="385" text-anchor="middle" font-size="12" font-weight="bold" fill="#854d0e">MITTEL</text>
+  <rect x="595" y="360" width="110" height="40" rx="0" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="650" y="385" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">TIEF</text>
+  <rect x="715" y="360" width="110" height="40" rx="0" fill="#fed7aa" stroke="#f97316"/>
+  <text x="770" y="385" text-anchor="middle" font-size="12" font-weight="bold" fill="#9a3412">HOCH</text>
+
+  <!-- Row 7: Nationalpark: flood=low, drought=high, permafrost=medium, snow=low -->
+  <text x="175" y="425" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="bold">Nationalpark</text>
+  <rect x="355" y="410" width="110" height="40" rx="0" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="410" y="435" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">TIEF</text>
+  <rect x="475" y="410" width="110" height="40" rx="0" fill="#fed7aa" stroke="#f97316"/>
+  <text x="530" y="435" text-anchor="middle" font-size="12" font-weight="bold" fill="#9a3412">HOCH</text>
+  <rect x="595" y="410" width="110" height="40" rx="0" fill="#fef9c3" stroke="#eab308"/>
+  <text x="650" y="435" text-anchor="middle" font-size="12" font-weight="bold" fill="#854d0e">MITTEL</text>
+  <rect x="715" y="410" width="110" height="40" rx="0" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="770" y="435" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">TIEF</text>
+
+  <!-- Row 8: Val Mustair: flood=low, drought=very_high, permafrost=low, snow=medium -->
+  <text x="175" y="475" text-anchor="middle" font-size="11" fill="#1e293b" font-weight="bold">Val Mustair</text>
+  <rect x="355" y="460" width="110" height="40" rx="0" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="410" y="485" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">TIEF</text>
+  <rect x="475" y="460" width="110" height="40" rx="0" fill="#fecaca" stroke="#ef4444"/>
+  <text x="530" y="485" text-anchor="middle" font-size="12" font-weight="bold" fill="#991b1b">SEHR HOCH</text>
+  <rect x="595" y="460" width="110" height="40" rx="0" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="650" y="485" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">TIEF</text>
+  <rect x="715" y="460" width="110" height="40" rx="0" fill="#fef9c3" stroke="#eab308"/>
+  <text x="770" y="485" text-anchor="middle" font-size="12" font-weight="bold" fill="#854d0e">MITTEL</text>
+
+  <text x="450" y="515" text-anchor="middle" font-size="8" fill="#94a3b8">Quellen / Sources: CH2018, FOEN, SLF — Wahrscheinlichkeit x Auswirkung / Probability x Impact composite assessment</text>
+</svg>
+
+      <div class="chart-source">
+        <span data-lang="de">Quelle: CH2018/BAFU/SLF-Komposit. Risikobewertung: Wahrscheinlichkeit × Schadensintensität (Skala 1–5). Zeithorizont 2026–2036.</span>
+        <span data-lang="en" class="lang-hidden">Source: CH2018/FOEN/SLF composite. Risk rating: probability × impact (scale 1–5). Horizon 2026–2036.</span>
+      </div>
+    </div>
+
+    <h3>
+      <span data-lang="de">Risikoregister — Detail</span>
+      <span data-lang="en" class="lang-hidden">Risk Register — Detail</span>
+    </h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-de="Teilregion" data-en="Sub-region">Teilregion</th>
+            <th data-de="Überschwemmung" data-en="Flood">Überschwemmung</th>
+            <th data-de="Dürre" data-en="Drought">Dürre</th>
+            <th data-de="Permafrost" data-en="Permafrost">Permafrost</th>
+            <th data-de="Schneeverlust" data-en="Snow Loss">Schneeverlust</th>
+            <th data-de="Gesamtrisiko" data-en="Overall">Gesamt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Upper Engadin (Maloja–St.Moritz)</td>
+            <td><span class="risk-high" data-lang="de">Hoch</span><span class="risk-high" data-lang="en" class="lang-hidden">High</span></td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+            <td><span class="risk-high" data-lang="de">Hoch</span><span class="risk-high" data-lang="en" class="lang-hidden">High</span></td>
+            <td><span class="risk-high" data-lang="de">Hoch</span><span class="risk-high" data-lang="en" class="lang-hidden">High</span></td>
+            <td><span class="risk-high" data-lang="de">Hoch</span><span class="risk-high" data-lang="en" class="lang-hidden">High</span></td>
+          </tr>
+          <tr>
+            <td>Mid Engadin (Celerina–Zuoz)</td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+            <td><span class="risk-low" data-lang="de">Gering</span><span class="risk-low" data-lang="en" class="lang-hidden">Low</span></td>
+            <td><span class="risk-high" data-lang="de">Hoch</span><span class="risk-high" data-lang="en" class="lang-hidden">High</span></td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Lower Engadin (Zernez–Scuol)</td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+            <td><span class="risk-high" data-lang="de">Hoch</span><span class="risk-high" data-lang="en" class="lang-hidden">High</span></td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Val Bernina</td>
+            <td><span class="risk-high" data-lang="de">Hoch</span><span class="risk-high" data-lang="en" class="lang-hidden">High</span></td>
+            <td><span class="risk-low" data-lang="de">Gering</span><span class="risk-low" data-lang="en" class="lang-hidden">Low</span></td>
+            <td><span class="risk-very-high" data-lang="de">Sehr hoch</span><span class="risk-very-high" data-lang="en" class="lang-hidden">Very High</span></td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+            <td><span class="risk-high" data-lang="de">Hoch</span><span class="risk-high" data-lang="en" class="lang-hidden">High</span></td>
+          </tr>
+          <tr>
+            <td>Val Roseg</td>
+            <td><span class="risk-very-high" data-lang="de">Sehr hoch</span><span class="risk-very-high" data-lang="en" class="lang-hidden">Very High</span></td>
+            <td><span class="risk-low" data-lang="de">Gering</span><span class="risk-low" data-lang="en" class="lang-hidden">Low</span></td>
+            <td><span class="risk-very-high" data-lang="de">Sehr hoch</span><span class="risk-very-high" data-lang="en" class="lang-hidden">Very High</span></td>
+            <td><span class="risk-low" data-lang="de">Gering</span><span class="risk-low" data-lang="en" class="lang-hidden">Low</span></td>
+            <td><span class="risk-very-high" data-lang="de">Sehr hoch</span><span class="risk-very-high" data-lang="en" class="lang-hidden">Very High</span></td>
+          </tr>
+          <tr>
+            <td>Val Müstair</td>
+            <td><span class="risk-low" data-lang="de">Gering</span><span class="risk-low" data-lang="en" class="lang-hidden">Low</span></td>
+            <td><span class="risk-very-high" data-lang="de">Sehr hoch</span><span class="risk-very-high" data-lang="en" class="lang-hidden">Very High</span></td>
+            <td><span class="risk-low" data-lang="de">Gering</span><span class="risk-low" data-lang="en" class="lang-hidden">Low</span></td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+            <td><span class="risk-high" data-lang="de">Hoch</span><span class="risk-high" data-lang="en" class="lang-hidden">High</span></td>
+          </tr>
+          <tr>
+            <td>Val Bregaglia</td>
+            <td><span class="risk-high" data-lang="de">Hoch</span><span class="risk-high" data-lang="en" class="lang-hidden">High</span></td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+            <td><span class="risk-high" data-lang="de">Hoch</span><span class="risk-high" data-lang="en" class="lang-hidden">High</span></td>
+            <td><span class="risk-low" data-lang="de">Gering</span><span class="risk-low" data-lang="en" class="lang-hidden">Low</span></td>
+            <td><span class="risk-high" data-lang="de">Hoch</span><span class="risk-high" data-lang="en" class="lang-hidden">High</span></td>
+          </tr>
+          <tr>
+            <td>Surses/Albula</td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+            <td><span class="risk-high" data-lang="de">Hoch</span><span class="risk-high" data-lang="en" class="lang-hidden">High</span></td>
+            <td><span class="risk-medium" data-lang="de">Mittel</span><span class="risk-medium" data-lang="en" class="lang-hidden">Medium</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 10: METHODOLOGY & SOURCES -->
+<section id="methodology">
+  <div class="page-wrap">
+    <h2>
+      <span data-lang="de">08 — Methodik &amp; Quellen / Methodology &amp; Sources</span>
+      <span data-lang="en" class="lang-hidden">08 — Methodology &amp; Sources / Methodik &amp; Quellen</span>
+    </h2>
+
+    <h3>
+      <span data-lang="de">8.1 Szenariorahmen</span>
+      <span data-lang="en" class="lang-hidden">8.1 Scenario Framework</span>
+    </h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-de="Szenario" data-en="Scenario">Szenario</th>
+            <th data-de="Beschreibung" data-en="Description">Beschreibung</th>
+            <th data-de="Globale Erwärmung bis 2100" data-en="Global Warming by 2100">2100</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge badge-rcp26">RCP2.6</span></td>
+            <td data-lang="de">Starker Minderungspfad, Pariser Ziele erreicht</td>
+            <td data-lang="de">~1,5–2°C</td>
+            <td data-lang="en" class="lang-hidden">Strong mitigation, Paris Agreement targets met</td>
+            <td data-lang="en" class="lang-hidden">~1.5–2°C</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-rcp45">RCP4.5</span></td>
+            <td data-lang="de">Moderate Minderung, Emissionen sinken nach 2040</td>
+            <td data-lang="de">~2,5–3°C</td>
+            <td data-lang="en" class="lang-hidden">Moderate mitigation, emissions decline after 2040</td>
+            <td data-lang="en" class="lang-hidden">~2.5–3°C</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-rcp85">RCP8.5</span></td>
+            <td data-lang="de">Kein Minderungspfad, Business-as-usual</td>
+            <td data-lang="de">~4–5°C</td>
+            <td data-lang="en" class="lang-hidden">No mitigation, business-as-usual fossil fuel use</td>
+            <td data-lang="en" class="lang-hidden">~4–5°C</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-warning">
+      <h4 data-de="Disclaimer — Daten vs. Prognosen" data-en="Disclaimer — Data vs. Projections">Disclaimer</h4>
+      <p data-lang="de"><strong>Historische Werte (1990–2025)</strong> basieren auf gemessenen Stationsdaten (MeteoSwiss, SLF, FOEN, GLAMOS) — hohe Konfidenz. <strong>Projektionen (2026–2036)</strong> sind szenariobasierte Modellwerte aus CH2018 (NCCS), keine Vorhersagen. Tatsächliche Ergebnisse hängen von globalen Emissionspfaden und regionaler Klimadynamik ab. Niederschlagsprojektionen haben höhere Unsicherheit als Temperaturprojektionen.</p>
+      <p data-lang="en" class="lang-hidden"><strong>Historical values (1990–2025)</strong> are based on measured station data (MeteoSwiss, SLF, FOEN, GLAMOS) — high confidence. <strong>Projections (2026–2036)</strong> are scenario-based model outputs from CH2018 (NCCS), not predictions. Actual outcomes depend on global emission trajectories and regional climate dynamics. Precipitation projections carry higher uncertainty than temperature projections.</p>
+    </div>
+
+    <h3>
+      <span data-lang="de">8.2 Datenquellen-Tabelle</span>
+      <span data-lang="en" class="lang-hidden">8.2 Data Sources Table</span>
+    </h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-de="Quelle" data-en="Source">Quelle</th>
+            <th data-de="Datentyp" data-en="Data Type">Datentyp</th>
+            <th data-de="Abdeckung" data-en="Coverage">Abdeckung</th>
+            <th data-de="Bewertung" data-en="Rating">Bewertung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>MeteoSwiss</td>
+            <td data-lang="de">Temperatur, Niederschlag</td>
+            <td data-lang="de">Samedan, Segl-Maria, Scuol</td>
+            <td><span class="badge badge-pass">A — Primärquelle</span></td>
+            <td data-lang="en" class="lang-hidden">Temperature, precipitation</td>
+            <td data-lang="en" class="lang-hidden">Samedan, Segl-Maria, Scuol</td>
+          </tr>
+          <tr>
+            <td>SLF / WSL</td>
+            <td data-lang="de">Schneedecke, Schneegrenze, Lawinenrisiko</td>
+            <td data-lang="de">Engadin-weit</td>
+            <td><span class="badge badge-pass">A — Primärquelle</span></td>
+            <td data-lang="en" class="lang-hidden">Snow depth, snow cover, avalanche risk</td>
+            <td data-lang="en" class="lang-hidden">Engadin-wide</td>
+          </tr>
+          <tr>
+            <td>FOEN (BAFU)</td>
+            <td data-lang="de">Flussabfluss, Naturgefahren</td>
+            <td data-lang="de">Inn bei Martina</td>
+            <td><span class="badge badge-pass">A — Primärquelle</span></td>
+            <td data-lang="en" class="lang-hidden">River discharge, natural hazards</td>
+            <td data-lang="en" class="lang-hidden">Inn at Martina</td>
+          </tr>
+          <tr>
+            <td>GLAMOS</td>
+            <td data-lang="de">Gletscherfläche, -volumen, Rückzug</td>
+            <td data-lang="de">Morteratsch, Pers, Roseg</td>
+            <td><span class="badge badge-pass">A — Primärquelle</span></td>
+            <td data-lang="en" class="lang-hidden">Glacier area, volume, retreat</td>
+            <td data-lang="en" class="lang-hidden">Morteratsch, Pers, Roseg</td>
+          </tr>
+          <tr>
+            <td>CH2018 / NCCS</td>
+            <td data-lang="de">Klimaszenarien RCP2.6, RCP8.5</td>
+            <td data-lang="de">Ostschweizer Alpen-Raster</td>
+            <td><span class="badge badge-pass">A — Offizielle Szenarien</span></td>
+            <td data-lang="en" class="lang-hidden">Climate scenarios RCP2.6, RCP8.5</td>
+            <td data-lang="en" class="lang-hidden">Eastern Swiss Alps grid</td>
+          </tr>
+          <tr>
+            <td>Seilbahnen Schweiz</td>
+            <td data-lang="de">Ski-taugliche Tage</td>
+            <td data-lang="de">Engadin Skigebiete</td>
+            <td><span class="badge badge-pass">A — Branchendaten</span></td>
+            <td data-lang="en" class="lang-hidden">Ski-viable days</td>
+            <td data-lang="en" class="lang-hidden">Engadin ski areas</td>
+          </tr>
+          <tr>
+            <td>PERMOS</td>
+            <td data-lang="de">Permafrost-Temperatur, Bodentemperatur</td>
+            <td data-lang="de">Murtèl-Corvatsch, Graubünden</td>
+            <td><span class="badge badge-pass">A — Nationales Monitoring</span></td>
+            <td data-lang="en" class="lang-hidden">Permafrost temperature</td>
+            <td data-lang="en" class="lang-hidden">Murtèl-Corvatsch, Graubünden</td>
+          </tr>
+          <tr>
+            <td>Van Tricht et al. (2025)</td>
+            <td data-lang="de">Alpine Gletschermassenverlustkurven</td>
+            <td data-lang="de">Europäische Alpen</td>
+            <td><span class="badge badge-pass">A — Nature Climate Change</span></td>
+            <td data-lang="en" class="lang-hidden">Alpine glacier mass-loss curves</td>
+            <td data-lang="en" class="lang-hidden">European Alps</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>
+      <span data-lang="de">8.3 Quellenvalidierung — Status-Übersicht</span>
+      <span data-lang="en" class="lang-hidden">8.3 Source Validation — Status Overview</span>
+    </h3>
+    <div class="findings-grid">
+      <div class="finding-card">
+        <h4 data-de="Bestätigt" data-en="Verified"><span class="badge badge-pass">✅ Bestätigt</span></h4>
+        <div class="finding-stat">18</div>
+        <p data-lang="de">Kernaussagen durch zugängliche Primärquellen verifiziert (MeteoSwiss, SLF, BAFU, GLAMOS, CH2018)</p>
+        <p data-lang="en" class="lang-hidden">Core claims verified by accessible primary sources (MeteoSwiss, SLF, FOEN, GLAMOS, CH2018)</p>
+      </div>
+      <div class="finding-card">
+        <h4 data-de="Eingeschränkt" data-en="Caveated"><span class="badge badge-warn">⚠ Eingeschränkt</span></h4>
+        <div class="finding-stat">11</div>
+        <p data-lang="de">Plausibel, aber mit methodischen Einschränkungen oder fehlenden Primär-URLs (inkl. Tourismuszahlen)</p>
+        <p data-lang="en" class="lang-hidden">Plausible but with methodological limitations or missing primary URLs (incl. tourism figures)</p>
+      </div>
+      <div class="finding-card">
+        <h4 data-de="Korrigiert" data-en="Corrected"><span class="badge badge-fail">❌→✅ Korrigiert</span></h4>
+        <div class="finding-stat">2</div>
+        <p data-lang="de">Sachliche Fehler wurden im vorliegenden Bericht korrigiert: (1) Temperaturbasislinie, (2) Piz Cengalo Geografie</p>
+        <p data-lang="en" class="lang-hidden">Factual errors corrected in this report: (1) temperature baseline, (2) Piz Cengalo geography</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 11: APPENDIX -->
+<section id="appendix">
+  <div class="page-wrap">
+    <h2>
+      <span data-lang="de">09 — Anhang / Appendix</span>
+      <span data-lang="en" class="lang-hidden">09 — Appendix / Anhang</span>
+    </h2>
+    <p data-lang="de">Vollständige Rohdatentabellen der 8 Datensätze. Historische Daten 1990–2025; Projektionswerte 2026–2036 (szenariobasiert). Alle Werte gemäss Quellenangaben in Abschnitt 8.</p>
+    <p data-lang="en" class="lang-hidden">Complete raw data tables from the 8 datasets. Historical data 1990–2025; projection values 2026–2036 (scenario-based). All values per sources in Section 8.</p>
+
+    <h3>
+      <span data-lang="de">A1 — Jahresmitteltemperatur (Auszug)</span>
+      <span data-lang="en" class="lang-hidden">A1 — Mean Annual Temperature (Excerpt)</span>
+    </h3>
+    <div class="table-wrap"><table class="data-table">
+  <thead><tr><th>Year</th><th>Mean_Annual_Temp_C</th><th>Scenario</th><th>Source</th><th>Confidence</th></tr></thead>
+  <tbody><tr><td>1990</td><td>1.2</td><td>historical</td><td>MeteoSwiss Samedan/Segl-Maria composite</td><td>high</td></tr><tr><td>1991</td><td>1.5</td><td>historical</td><td>MeteoSwiss Samedan/Segl-Maria composite</td><td>high</td></tr><tr><td>1992</td><td>1.8</td><td>historical</td><td>MeteoSwiss Samedan/Segl-Maria composite</td><td>high</td></tr><tr><td>1993</td><td>1.0</td><td>historical</td><td>MeteoSwiss Samedan/Segl-Maria composite</td><td>high</td></tr><tr><td>1994</td><td>1.6</td><td>historical</td><td>MeteoSwiss Samedan/Segl-Maria composite</td><td>high</td></tr><tr><td>1995</td><td>1.3</td><td>historical</td><td>MeteoSwiss Samedan/Segl-Maria composite</td><td>high</td></tr><tr><td>1996</td><td>0.8</td><td>historical</td><td>MeteoSwiss Samedan/Segl-Maria composite</td><td>high</td></tr><tr><td>1997</td><td>1.4</td><td>historical</td><td>MeteoSwiss Samedan/Segl-Maria composite</td><td>high</td></tr><tr><td>1998</td><td>1.9</td><td>historical</td><td>MeteoSwiss Samedan/Segl-Maria composite</td><td>high</td></tr><tr><td>1999</td><td>1.1</td><td>historical</td><td>MeteoSwiss Samedan/Segl-Maria composite</td><td>high</td></tr><tr><td>2000</td><td>1.7</td><td>historical</td><td>MeteoSwiss Samedan/Segl-Maria composite</td><td>high</td></tr><tr><td>2001</td><td>1.8</td><td>historical</td><td>MeteoSwiss Samedan/Segl-Maria composite</td><td>high</td></tr><tr><td>2002</td><td>2.0</td><td>historical</td><td>MeteoSwiss Samedan/Segl-Maria composite</td><td>high</td></tr><tr><td>2003</td><td>2.6</td><td>historical</td><td>MeteoSwiss Samedan/Segl-Maria composite</td><td>high</td></tr><tr><td>2004</td><td>1.5</td><td>historical</td><td>MeteoSwiss Samedan/Segl-Maria composite</td><td>high</td></tr></tbody></table></div>
+
+    <h3>
+      <span data-lang="de">A2 — Monatlicher Niederschlag (Auszug)</span>
+      <span data-lang="en" class="lang-hidden">A2 — Monthly Precipitation (Excerpt)</span>
+    </h3>
+    <div class="table-wrap"><table class="data-table">
+  <thead><tr><th>Month</th><th>Historical_Total_mm</th><th>Historical_Rain_mm</th><th>Historical_Snow_mm</th><th>Projected_RCP26_Total_mm</th><th>Projected_RCP26_Rain_mm</th><th>Projected_RCP26_Snow_mm</th><th>Projected_RCP85_Total_mm</th><th>Projected_RCP85_Rain_mm</th><th>Projected_RCP85_Snow_mm</th><th>Period_Historical</th><th>Period_Projected</th><th>Source</th></tr></thead>
+  <tbody><tr><td>Jan</td><td>55</td><td>8</td><td>47</td><td>58</td><td>14</td><td>44</td><td>62</td><td>22</td><td>40</td><td>1991-2020</td><td>2026-2036</td><td>MeteoSwiss/CH2018</td></tr><tr><td>Feb</td><td>48</td><td>7</td><td>41</td><td>52</td><td>13</td><td>39</td><td>56</td><td>20</td><td>36</td><td>1991-2020</td><td>2026-2036</td><td>MeteoSwiss/CH2018</td></tr><tr><td>Mar</td><td>52</td><td>18</td><td>34</td><td>56</td><td>26</td><td>30</td><td>60</td><td>34</td><td>26</td><td>1991-2020</td><td>2026-2036</td><td>MeteoSwiss/CH2018</td></tr><tr><td>Apr</td><td>50</td><td>30</td><td>20</td><td>54</td><td>38</td><td>16</td><td>58</td><td>45</td><td>13</td><td>1991-2020</td><td>2026-2036</td><td>MeteoSwiss/CH2018</td></tr><tr><td>May</td><td>72</td><td>62</td><td>10</td><td>76</td><td>70</td><td>6</td><td>80</td><td>76</td><td>4</td><td>1991-2020</td><td>2026-2036</td><td>MeteoSwiss/CH2018</td></tr><tr><td>Jun</td><td>95</td><td>93</td><td>2</td><td>92</td><td>91</td><td>1</td><td>88</td><td>87</td><td>1</td><td>1991-2020</td><td>2026-2036</td><td>MeteoSwiss/CH2018</td></tr><tr><td>Jul</td><td>105</td><td>105</td><td>0</td><td>100</td><td>100</td><td>0</td><td>94</td><td>94</td><td>0</td><td>1991-2020</td><td>2026-2036</td><td>MeteoSwiss/CH2018</td></tr><tr><td>Aug</td><td>100</td><td>100</td><td>0</td><td>96</td><td>96</td><td>0</td><td>90</td><td>90</td><td>0</td><td>1991-2020</td><td>2026-2036</td><td>MeteoSwiss/CH2018</td></tr><tr><td>Sep</td><td>68</td><td>60</td><td>8</td><td>70</td><td>65</td><td>5</td><td>72</td><td>68</td><td>4</td><td>1991-2020</td><td>2026-2036</td><td>MeteoSwiss/CH2018</td></tr><tr><td>Oct</td><td>58</td><td>38</td><td>20</td><td>62</td><td>46</td><td>16</td><td>66</td><td>52</td><td>14</td><td>1991-2020</td><td>2026-2036</td><td>MeteoSwiss/CH2018</td></tr><tr><td>Nov</td><td>62</td><td>20</td><td>42</td><td>65</td><td>28</td><td>37</td><td>68</td><td>36</td><td>32</td><td>1991-2020</td><td>2026-2036</td><td>MeteoSwiss/CH2018</td></tr><tr><td>Dec</td><td>52</td><td>10</td><td>42</td><td>56</td><td>16</td><td>40</td><td>60</td><td>24</td><td>36</td><td>1991-2020</td><td>2026-2036</td><td>MeteoSwiss/CH2018</td></tr></tbody></table></div>
+
+    <h3>
+      <span data-lang="de">A3 — Schneebedeckungsdauer (Auszug)</span>
+      <span data-lang="en" class="lang-hidden">A3 — Snow Cover Duration (Excerpt)</span>
+    </h3>
+    <div class="table-wrap"><table class="data-table">
+  <thead><tr><th>Year</th><th>Snow_Cover_Days</th><th>Scenario</th><th>Station</th><th>Source</th><th>Confidence</th></tr></thead>
+  <tbody><tr><td>1990</td><td>168</td><td>historical</td><td>Samedan (1709m)</td><td>SLF/MeteoSwiss</td><td>high</td></tr><tr><td>1991</td><td>172</td><td>historical</td><td>Samedan (1709m)</td><td>SLF/MeteoSwiss</td><td>high</td></tr><tr><td>1992</td><td>160</td><td>historical</td><td>Samedan (1709m)</td><td>SLF/MeteoSwiss</td><td>high</td></tr><tr><td>1993</td><td>175</td><td>historical</td><td>Samedan (1709m)</td><td>SLF/MeteoSwiss</td><td>high</td></tr><tr><td>1994</td><td>155</td><td>historical</td><td>Samedan (1709m)</td><td>SLF/MeteoSwiss</td><td>high</td></tr><tr><td>1995</td><td>165</td><td>historical</td><td>Samedan (1709m)</td><td>SLF/MeteoSwiss</td><td>high</td></tr><tr><td>1996</td><td>178</td><td>historical</td><td>Samedan (1709m)</td><td>SLF/MeteoSwiss</td><td>high</td></tr><tr><td>1997</td><td>162</td><td>historical</td><td>Samedan (1709m)</td><td>SLF/MeteoSwiss</td><td>high</td></tr><tr><td>1998</td><td>150</td><td>historical</td><td>Samedan (1709m)</td><td>SLF/MeteoSwiss</td><td>high</td></tr><tr><td>1999</td><td>170</td><td>historical</td><td>Samedan (1709m)</td><td>SLF/MeteoSwiss</td><td>high</td></tr><tr><td>2000</td><td>158</td><td>historical</td><td>Samedan (1709m)</td><td>SLF/MeteoSwiss</td><td>high</td></tr><tr><td>2001</td><td>155</td><td>historical</td><td>Samedan (1709m)</td><td>SLF/MeteoSwiss</td><td>high</td></tr><tr><td>2002</td><td>148</td><td>historical</td><td>Samedan (1709m)</td><td>SLF/MeteoSwiss</td><td>high</td></tr><tr><td>2003</td><td>135</td><td>historical</td><td>Samedan (1709m)</td><td>SLF/MeteoSwiss</td><td>high</td></tr><tr><td>2004</td><td>160</td><td>historical</td><td>Samedan (1709m)</td><td>SLF/MeteoSwiss</td><td>high</td></tr></tbody></table></div>
+
+    <h3>
+      <span data-lang="de">A4 — Schneegrenzenhöhe</span>
+      <span data-lang="en" class="lang-hidden">A4 — Snowline Altitude</span>
+    </h3>
+    <div class="table-wrap"><table class="data-table">
+  <thead><tr><th>Year</th><th>Snowline_Elevation_m</th><th>Scenario</th><th>Source</th><th>Confidence</th></tr></thead>
+  <tbody><tr><td>1990</td><td>2350</td><td>historical</td><td>SLF/MeteoSwiss climatology</td><td>high</td></tr><tr><td>1995</td><td>2380</td><td>historical</td><td>SLF/MeteoSwiss climatology</td><td>high</td></tr><tr><td>2000</td><td>2420</td><td>historical</td><td>SLF/MeteoSwiss climatology</td><td>high</td></tr><tr><td>2005</td><td>2460</td><td>historical</td><td>SLF/MeteoSwiss climatology</td><td>high</td></tr><tr><td>2010</td><td>2500</td><td>historical</td><td>SLF/MeteoSwiss climatology</td><td>high</td></tr><tr><td>2015</td><td>2560</td><td>historical</td><td>SLF/MeteoSwiss climatology</td><td>high</td></tr><tr><td>2020</td><td>2620</td><td>historical</td><td>SLF/MeteoSwiss climatology</td><td>high</td></tr><tr><td>2025</td><td>2660</td><td>historical</td><td>SLF/MeteoSwiss climatology</td><td>high</td></tr><tr><td>2026</td><td>2680</td><td>projected_RCP2.6</td><td>CH2018 Eastern Swiss Alps</td><td>medium</td></tr><tr><td>2028</td><td>2700</td><td>projected_RCP2.6</td><td>CH2018 Eastern Swiss Alps</td><td>medium</td></tr><tr><td>2030</td><td>2720</td><td>projected_RCP2.6</td><td>CH2018 Eastern Swiss Alps</td><td>medium</td></tr><tr><td>2032</td><td>2730</td><td>projected_RCP2.6</td><td>CH2018 Eastern Swiss Alps</td><td>medium</td></tr><tr><td>2034</td><td>2740</td><td>projected_RCP2.6</td><td>CH2018 Eastern Swiss Alps</td><td>medium</td></tr><tr><td>2036</td><td>2750</td><td>projected_RCP2.6</td><td>CH2018 Eastern Swiss Alps</td><td>medium</td></tr><tr><td>2026</td><td>2690</td><td>projected_RCP4.5</td><td>CH2018 Eastern Swiss Alps</td><td>medium</td></tr><tr><td>2028</td><td>2720</td><td>projected_RCP4.5</td><td>CH2018 Eastern Swiss Alps</td><td>medium</td></tr><tr><td>2030</td><td>2760</td><td>projected_RCP4.5</td><td>CH2018 Eastern Swiss Alps</td><td>medium</td></tr><tr><td>2032</td><td>2790</td><td>projected_RCP4.5</td><td>CH2018 Eastern Swiss Alps</td><td>medium</td></tr><tr><td>2034</td><td>2820</td><td>projected_RCP4.5</td><td>CH2018 Eastern Swiss Alps</td><td>medium</td></tr><tr><td>2036</td><td>2850</td><td>projected_RCP4.5</td><td>CH2018 Eastern Swiss Alps</td><td>medium</td></tr></tbody></table></div>
+
+    <h3>
+      <span data-lang="de">A5 — Inn-Abfluss (Monatlich)</span>
+      <span data-lang="en" class="lang-hidden">A5 — Inn River Discharge (Monthly)</span>
+    </h3>
+    <div class="table-wrap"><table class="data-table">
+  <thead><tr><th>Month</th><th>Historical_Discharge_m3s</th><th>Projected_RCP26_m3s</th><th>Projected_RCP45_m3s</th><th>Projected_RCP85_m3s</th><th>Period_Historical</th><th>Period_Projected</th><th>Station</th><th>Source</th></tr></thead>
+  <tbody><tr><td>Jan</td><td>8.2</td><td>8.5</td><td>8.8</td><td>9.2</td><td>1991-2020</td><td>2026-2036</td><td>Martina (Inn)</td><td>FOEN/CH2018</td></tr><tr><td>Feb</td><td>6.8</td><td>7.2</td><td>7.5</td><td>8.0</td><td>1991-2020</td><td>2026-2036</td><td>Martina (Inn)</td><td>FOEN/CH2018</td></tr><tr><td>Mar</td><td>8.5</td><td>9.5</td><td>10.2</td><td>11.5</td><td>1991-2020</td><td>2026-2036</td><td>Martina (Inn)</td><td>FOEN/CH2018</td></tr><tr><td>Apr</td><td>18.5</td><td>21.0</td><td>22.5</td><td>25.0</td><td>1991-2020</td><td>2026-2036</td><td>Martina (Inn)</td><td>FOEN/CH2018</td></tr><tr><td>May</td><td>42.0</td><td>46.0</td><td>48.5</td><td>52.0</td><td>1991-2020</td><td>2026-2036</td><td>Martina (Inn)</td><td>FOEN/CH2018</td></tr><tr><td>Jun</td><td>65.0</td><td>62.0</td><td>58.0</td><td>54.0</td><td>1991-2020</td><td>2026-2036</td><td>Martina (Inn)</td><td>FOEN/CH2018</td></tr><tr><td>Jul</td><td>58.0</td><td>52.0</td><td>48.0</td><td>42.0</td><td>1991-2020</td><td>2026-2036</td><td>Martina (Inn)</td><td>FOEN/CH2018</td></tr><tr><td>Aug</td><td>45.0</td><td>40.0</td><td>36.0</td><td>30.0</td><td>1991-2020</td><td>2026-2036</td><td>Martina (Inn)</td><td>FOEN/CH2018</td></tr><tr><td>Sep</td><td>30.0</td><td>27.0</td><td>25.0</td><td>22.0</td><td>1991-2020</td><td>2026-2036</td><td>Martina (Inn)</td><td>FOEN/CH2018</td></tr><tr><td>Oct</td><td>18.0</td><td>17.0</td><td>16.5</td><td>15.5</td><td>1991-2020</td><td>2026-2036</td><td>Martina (Inn)</td><td>FOEN/CH2018</td></tr><tr><td>Nov</td><td>12.5</td><td>12.0</td><td>11.8</td><td>11.2</td><td>1991-2020</td><td>2026-2036</td><td>Martina (Inn)</td><td>FOEN/CH2018</td></tr><tr><td>Dec</td><td>9.5</td><td>9.2</td><td>9.0</td><td>9.5</td><td>1991-2020</td><td>2026-2036</td><td>Martina (Inn)</td><td>FOEN/CH2018</td></tr></tbody></table></div>
+
+    <h3>
+      <span data-lang="de">A6 — Gletscherrückgang</span>
+      <span data-lang="en" class="lang-hidden">A6 — Glacier Retreat</span>
+    </h3>
+    <div class="table-wrap"><table class="data-table">
+  <thead><tr><th>Year</th><th>Glacier</th><th>Area_km2</th><th>Volume_km3</th><th>Scenario</th><th>Source</th><th>Confidence</th></tr></thead>
+  <tbody><tr><td>1990</td><td>Morteratsch</td><td>6.2</td><td>0.95</td><td>historical</td><td>GLAMOS</td><td>high</td></tr><tr><td>1995</td><td>Morteratsch</td><td>5.9</td><td>0.88</td><td>historical</td><td>GLAMOS</td><td>high</td></tr><tr><td>2000</td><td>Morteratsch</td><td>5.5</td><td>0.80</td><td>historical</td><td>GLAMOS</td><td>high</td></tr><tr><td>2005</td><td>Morteratsch</td><td>5.2</td><td>0.72</td><td>historical</td><td>GLAMOS</td><td>high</td></tr><tr><td>2010</td><td>Morteratsch</td><td>4.9</td><td>0.65</td><td>historical</td><td>GLAMOS</td><td>high</td></tr><tr><td>2015</td><td>Morteratsch</td><td>4.5</td><td>0.56</td><td>historical</td><td>GLAMOS</td><td>high</td></tr><tr><td>2020</td><td>Morteratsch</td><td>4.1</td><td>0.48</td><td>historical</td><td>GLAMOS</td><td>high</td></tr><tr><td>2025</td><td>Morteratsch</td><td>3.8</td><td>0.42</td><td>historical</td><td>GLAMOS</td><td>high</td></tr><tr><td>2030</td><td>Morteratsch</td><td>3.4</td><td>0.35</td><td>projected_RCP4.5</td><td>GLAMOS/CH2018</td><td>medium</td></tr><tr><td>2036</td><td>Morteratsch</td><td>3.0</td><td>0.28</td><td>projected_RCP4.5</td><td>GLAMOS/CH2018</td><td>medium</td></tr><tr><td>2030</td><td>Morteratsch</td><td>3.2</td><td>0.32</td><td>projected_RCP8.5</td><td>GLAMOS/CH2018</td><td>medium</td></tr><tr><td>2036</td><td>Morteratsch</td><td>2.6</td><td>0.22</td><td>projected_RCP8.5</td><td>GLAMOS/CH2018</td><td>medium</td></tr><tr><td>1990</td><td>Pers</td><td>4.8</td><td>0.62</td><td>historical</td><td>GLAMOS</td><td>high</td></tr><tr><td>1995</td><td>Pers</td><td>4.5</td><td>0.56</td><td>historical</td><td>GLAMOS</td><td>high</td></tr><tr><td>2000</td><td>Pers</td><td>4.2</td><td>0.50</td><td>historical</td><td>GLAMOS</td><td>high</td></tr><tr><td>2005</td><td>Pers</td><td>3.9</td><td>0.44</td><td>historical</td><td>GLAMOS</td><td>high</td></tr><tr><td>2010</td><td>Pers</td><td>3.6</td><td>0.38</td><td>historical</td><td>GLAMOS</td><td>high</td></tr><tr><td>2015</td><td>Pers</td><td>3.2</td><td>0.32</td><td>historical</td><td>GLAMOS</td><td>high</td></tr><tr><td>2020</td><td>Pers</td><td>2.8</td><td>0.26</td><td>historical</td><td>GLAMOS</td><td>high</td></tr><tr><td>2025</td><td>Pers</td><td>2.5</td><td>0.22</td><td>historical</td><td>GLAMOS</td><td>high</td></tr></tbody></table></div>
+
+    <h3>
+      <span data-lang="de">A7 — Risikomatrix</span>
+      <span data-lang="en" class="lang-hidden">A7 — Risk Matrix</span>
+    </h3>
+    <div class="table-wrap"><table class="data-table">
+  <thead><tr><th>Sub_Region</th><th>Flood_Risk</th><th>Drought_Risk</th><th>Permafrost_Risk</th><th>Snow_Loss_Risk</th><th>Overall_Risk</th><th>Flood_Probability</th><th>Flood_Impact</th><th>Drought_Probability</th><th>Drought_Impact</th><th>Permafrost_Probability</th><th>Permafrost_Impact</th><th>Snow_Loss_Probability</th><th>Snow_Loss_Impact</th><th>Source</th></tr></thead>
+  <tbody><tr><td>Upper Engadin (Maloja-St.Moritz)</td><td>high</td><td>medium</td><td>high</td><td>high</td><td>high</td><td>0.7</td><td>4</td><td>0.5</td><td>3</td><td>0.8</td><td>4</td><td>0.8</td><td>5</td><td>CH2018/FOEN/SLF composite</td></tr><tr><td>Mid Engadin (Celerina-Zuoz)</td><td>medium</td><td>medium</td><td>low</td><td>high</td><td>medium</td><td>0.5</td><td>3</td><td>0.5</td><td>3</td><td>0.2</td><td>2</td><td>0.7</td><td>4</td><td>CH2018/FOEN/SLF composite</td></tr><tr><td>Lower Engadin (Zernez-Scuol)</td><td>medium</td><td>high</td><td>medium</td><td>medium</td><td>medium</td><td>0.5</td><td>3</td><td>0.7</td><td>4</td><td>0.4</td><td>3</td><td>0.5</td><td>3</td><td>CH2018/FOEN/SLF composite</td></tr><tr><td>Val Bernina</td><td>high</td><td>low</td><td>very_high</td><td>medium</td><td>high</td><td>0.6</td><td>4</td><td>0.3</td><td>2</td><td>0.9</td><td>5</td><td>0.6</td><td>3</td><td>CH2018/FOEN/SLF composite</td></tr><tr><td>Val Roseg</td><td>high</td><td>low</td><td>very_high</td><td>medium</td><td>high</td><td>0.7</td><td>4</td><td>0.2</td><td>2</td><td>0.9</td><td>5</td><td>0.5</td><td>3</td><td>CH2018/FOEN/SLF composite</td></tr><tr><td>Silsersee Area</td><td>medium</td><td>medium</td><td>low</td><td>high</td><td>medium</td><td>0.4</td><td>3</td><td>0.5</td><td>3</td><td>0.2</td><td>2</td><td>0.8</td><td>4</td><td>CH2018/FOEN/SLF composite</td></tr><tr><td>Swiss National Park Area</td><td>low</td><td>high</td><td>medium</td><td>low</td><td>medium</td><td>0.3</td><td>2</td><td>0.7</td><td>4</td><td>0.5</td><td>3</td><td>0.3</td><td>2</td><td>CH2018/FOEN/SLF composite</td></tr><tr><td>Val Mustair</td><td>low</td><td>very_high</td><td>low</td><td>medium</td><td>medium</td><td>0.3</td><td>2</td><td>0.8</td><td>5</td><td>0.2</td><td>2</td><td>0.5</td><td>3</td><td>CH2018/FOEN/SLF composite</td></tr></tbody></table></div>
+
+    <h3>
+      <span data-lang="de">A8 — Ski-Taugliche Tage</span>
+      <span data-lang="en" class="lang-hidden">A8 — Ski-Viable Days</span>
+    </h3>
+    <div class="table-wrap"><table class="data-table">
+  <thead><tr><th>Season</th><th>Ski_Viable_Days</th><th>Scenario</th><th>Elevation_Zone</th><th>Source</th><th>Confidence</th></tr></thead>
+  <tbody><tr><td>1990/91</td><td>145</td><td>historical</td><td>1800-2200m</td><td>SLF/Seilbahnen Schweiz</td><td>high</td></tr><tr><td>1995/96</td><td>148</td><td>historical</td><td>1800-2200m</td><td>SLF/Seilbahnen Schweiz</td><td>high</td></tr><tr><td>2000/01</td><td>140</td><td>historical</td><td>1800-2200m</td><td>SLF/Seilbahnen Schweiz</td><td>high</td></tr><tr><td>2005/06</td><td>132</td><td>historical</td><td>1800-2200m</td><td>SLF/Seilbahnen Schweiz</td><td>high</td></tr><tr><td>2010/11</td><td>128</td><td>historical</td><td>1800-2200m</td><td>SLF/Seilbahnen Schweiz</td><td>high</td></tr><tr><td>2015/16</td><td>118</td><td>historical</td><td>1800-2200m</td><td>SLF/Seilbahnen Schweiz</td><td>high</td></tr><tr><td>2020/21</td><td>112</td><td>historical</td><td>1800-2200m</td><td>SLF/Seilbahnen Schweiz</td><td>high</td></tr><tr><td>2024/25</td><td>105</td><td>historical</td><td>1800-2200m</td><td>SLF/Seilbahnen Schweiz</td><td>high</td></tr><tr><td>2026/27</td><td>102</td><td>projected_RCP2.6</td><td>1800-2200m</td><td>CH2018/SLF</td><td>medium</td></tr><tr><td>2028/29</td><td>100</td><td>projected_RCP2.6</td><td>1800-2200m</td><td>CH2018/SLF</td><td>medium</td></tr><tr><td>2030/31</td><td>98</td><td>projected_RCP2.6</td><td>1800-2200m</td><td>CH2018/SLF</td><td>medium</td></tr><tr><td>2032/33</td><td>96</td><td>projected_RCP2.6</td><td>1800-2200m</td><td>CH2018/SLF</td><td>medium</td></tr><tr><td>2034/35</td><td>94</td><td>projected_RCP2.6</td><td>1800-2200m</td><td>CH2018/SLF</td><td>medium</td></tr><tr><td>2035/36</td><td>93</td><td>projected_RCP2.6</td><td>1800-2200m</td><td>CH2018/SLF</td><td>medium</td></tr><tr><td>2026/27</td><td>98</td><td>projected_RCP4.5</td><td>1800-2200m</td><td>CH2018/SLF</td><td>medium</td></tr><tr><td>2028/29</td><td>92</td><td>projected_RCP4.5</td><td>1800-2200m</td><td>CH2018/SLF</td><td>medium</td></tr><tr><td>2030/31</td><td>88</td><td>projected_RCP4.5</td><td>1800-2200m</td><td>CH2018/SLF</td><td>medium</td></tr><tr><td>2032/33</td><td>84</td><td>projected_RCP4.5</td><td>1800-2200m</td><td>CH2018/SLF</td><td>medium</td></tr><tr><td>2034/35</td><td>80</td><td>projected_RCP4.5</td><td>1800-2200m</td><td>CH2018/SLF</td><td>medium</td></tr><tr><td>2035/36</td><td>78</td><td>projected_RCP4.5</td><td>1800-2200m</td><td>CH2018/SLF</td><td>medium</td></tr></tbody></table></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <svg class="footer-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="mindset-IT logo">
+    <rect x="2" y="2" width="8" height="8" fill="#94B49C"/>
+    <rect x="14" y="2" width="8" height="8" fill="#94B49C"/>
+    <rect x="2" y="14" width="8" height="8" fill="#94B49C"/>
+    <rect x="14" y="14" width="8" height="8" stroke="#94B49C" stroke-width="1.5"/>
+  </svg>
+  Powered by mindset-IT UG
+</footer>
+
+<script>
+var currentLang = 'de';
+
+function toggleLang() {
+  currentLang = currentLang === 'de' ? 'en' : 'de';
+  applyLang();
+}
+
+function applyLang() {
+  var btn = document.getElementById('langToggle');
+  btn.textContent = currentLang === 'de' ? 'EN' : 'DE';
+
+  // Toggle data-lang elements
+  var deEls = document.querySelectorAll('[data-lang="de"]');
+  var enEls = document.querySelectorAll('[data-lang="en"]');
+  deEls.forEach(function(el) {
+    el.classList.toggle('lang-hidden', currentLang !== 'de');
+  });
+  enEls.forEach(function(el) {
+    el.classList.toggle('lang-hidden', currentLang !== 'en');
+  });
+
+  // Toggle data-de/data-en text attributes on nav and other elements
+  var bilingualEls = document.querySelectorAll('[data-de][data-en]');
+  bilingualEls.forEach(function(el) {
+    if (el.hasAttribute('data-lang')) return; // Skip lang-gated elements
+    var txt = currentLang === 'de' ? el.getAttribute('data-de') : el.getAttribute('data-en');
+    if (txt) el.textContent = txt;
+  });
+
+  // Update html lang attribute
+  document.documentElement.lang = currentLang;
+}
+
+// Initialize
+applyLang();
+</script>
+</body>
+</html>

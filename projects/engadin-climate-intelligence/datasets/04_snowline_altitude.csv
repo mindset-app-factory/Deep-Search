@@ -1,0 +1,27 @@
+Year,Snowline_Elevation_m,Scenario,Source,Confidence
+1990,2350,historical,SLF/MeteoSwiss climatology,high
+1995,2380,historical,SLF/MeteoSwiss climatology,high
+2000,2420,historical,SLF/MeteoSwiss climatology,high
+2005,2460,historical,SLF/MeteoSwiss climatology,high
+2010,2500,historical,SLF/MeteoSwiss climatology,high
+2015,2560,historical,SLF/MeteoSwiss climatology,high
+2020,2620,historical,SLF/MeteoSwiss climatology,high
+2025,2660,historical,SLF/MeteoSwiss climatology,high
+2026,2680,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2028,2700,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2030,2720,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2032,2730,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2034,2740,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2036,2750,projected_RCP2.6,CH2018 Eastern Swiss Alps,medium
+2026,2690,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2028,2720,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2030,2760,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2032,2790,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2034,2820,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2036,2850,projected_RCP4.5,CH2018 Eastern Swiss Alps,medium
+2026,2700,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium
+2028,2750,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium
+2030,2800,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium
+2032,2850,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium
+2034,2900,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium
+2036,2950,projected_RCP8.5,CH2018 Eastern Swiss Alps,medium

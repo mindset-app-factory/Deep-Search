@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Arial, Helvetica, sans-serif">
+    <rect width="900" height="500" fill="#F7F6F2" rx="0"/>
+
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Mittlere Jahrestemperatur Engadin / Mean Annual Temperature Engadin</text>
+  <text x="450" y="55" text-anchor="middle" font-size="11" fill="#64748b">Historisch 1990–2025 + Projektionen 2026–2036 | Historical 1990–2025 + Projections 2026–2036</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="70" x2="80" y2="420" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="80" y1="420" x2="860" y2="420" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Y-axis labels (°C) -->
+  <text x="75" y="420" text-anchor="end" font-size="10" fill="#64748b">0°C</text>
+  <text x="75" y="350" text-anchor="end" font-size="10" fill="#64748b">1°C</text>
+  <text x="75" y="280" text-anchor="end" font-size="10" fill="#64748b">2°C</text>
+  <text x="75" y="210" text-anchor="end" font-size="10" fill="#64748b">3°C</text>
+  <text x="75" y="140" text-anchor="end" font-size="10" fill="#64748b">4°C</text>
+  <text x="75" y="75" text-anchor="end" font-size="10" fill="#64748b">5°C</text>
+
+  <!-- Y gridlines -->
+  <line x1="80" y1="350" x2="860" y2="350" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="280" x2="860" y2="280" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="210" x2="860" y2="210" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="80" y1="140" x2="860" y2="140" stroke="#e2e8f0" stroke-width="0.5"/>
+
+  <!-- X-axis labels -->
+  <text x="80" y="440" text-anchor="middle" font-size="10" fill="#64748b">1990</text>
+  <text x="188" y="440" text-anchor="middle" font-size="10" fill="#64748b">1995</text>
+  <text x="296" y="440" text-anchor="middle" font-size="10" fill="#64748b">2000</text>
+  <text x="404" y="440" text-anchor="middle" font-size="10" fill="#64748b">2005</text>
+  <text x="512" y="440" text-anchor="middle" font-size="10" fill="#64748b">2010</text>
+  <text x="620" y="440" text-anchor="middle" font-size="10" fill="#64748b">2015</text>
+  <text x="728" y="440" text-anchor="middle" font-size="10" fill="#64748b">2020</text>
+  <text x="836" y="440" text-anchor="middle" font-size="10" fill="#64748b">2025</text>
+
+  <!-- Projection zone background -->
+  <rect x="756" y="70" width="104" height="350" fill="#fef3c7" opacity="0.3" rx="0"/>
+  <text x="808" y="85" text-anchor="middle" font-size="9" fill="#92400e">Projektion / Projection</text>
+
+  <!-- Historical data line (1990-2025): y = 420 - (temp * 70) -->
+  <polyline points="80,336 102,315 123,294 145,350 166,308 188,329 210,364 231,322 253,287 274,343 296,301 318,294 339,280 361,238 382,315 404,322 425,273 447,280 469,294 490,287 512,329 534,252 555,273 577,294 599,259 620,245 642,266 664,280 685,231 707,252 728,238 750,280 771,224 793,245 814,231 836,238"
+    fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Trend line historical -->
+  <line x1="80" y1="340" x2="836" y2="250" stroke="#2563eb" stroke-width="1" stroke-dasharray="6,3" opacity="0.5"/>
+
+  <!-- RCP2.6 projection -->
+  <polyline points="836,238 853,231 860,231"
+    fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,2"/>
+
+  <!-- RCP4.5 projection -->
+  <polyline points="836,238 853,217 860,210"
+    fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,2"/>
+
+  <!-- RCP8.5 projection -->
+  <polyline points="836,238 853,196 860,175"
+    fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,2"/>
+
+  <!-- Projection labels at right -->
+  <text x="865" y="234" font-size="9" fill="#22c55e" font-weight="bold">RCP2.6: +3.0°C</text>
+  <text x="865" y="213" font-size="9" fill="#f59e0b" font-weight="bold">RCP4.5: +3.6°C</text>
+  <text x="865" y="178" font-size="9" fill="#ef4444" font-weight="bold">RCP8.5: +4.3°C</text>
+
+  <!-- Legend -->
+  <rect x="100" y="455" width="700" height="35" fill="white" rx="0" stroke="#e2e8f0"/>
+  <line x1="120" y1="472" x2="150" y2="472" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="155" y="476" font-size="10" fill="#1e293b">Historisch / Historical</text>
+  <line x1="300" y1="472" x2="330" y2="472" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="335" y="476" font-size="10" fill="#1e293b">RCP2.6 (best)</text>
+  <line x1="440" y1="472" x2="470" y2="472" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="475" y="476" font-size="10" fill="#1e293b">RCP4.5 (base)</text>
+  <line x1="580" y1="472" x2="610" y2="472" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="615" y="476" font-size="10" fill="#1e293b">RCP8.5 (worst)</text>
+
+  <!-- Source -->
+  <text x="450" y="498" text-anchor="middle" font-size="8" fill="#94a3b8">Quellen / Sources: MeteoSwiss, CH2018 Szenarien, Ostschweizer Alpen / Eastern Swiss Alps scenarios</text>
+</svg>

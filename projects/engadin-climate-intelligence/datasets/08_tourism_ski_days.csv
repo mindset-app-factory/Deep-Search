@@ -1,0 +1,27 @@
+Season,Ski_Viable_Days,Scenario,Elevation_Zone,Source,Confidence
+1990/91,145,historical,1800-2200m,SLF/Seilbahnen Schweiz,high
+1995/96,148,historical,1800-2200m,SLF/Seilbahnen Schweiz,high
+2000/01,140,historical,1800-2200m,SLF/Seilbahnen Schweiz,high
+2005/06,132,historical,1800-2200m,SLF/Seilbahnen Schweiz,high
+2010/11,128,historical,1800-2200m,SLF/Seilbahnen Schweiz,high
+2015/16,118,historical,1800-2200m,SLF/Seilbahnen Schweiz,high
+2020/21,112,historical,1800-2200m,SLF/Seilbahnen Schweiz,high
+2024/25,105,historical,1800-2200m,SLF/Seilbahnen Schweiz,high
+2026/27,102,projected_RCP2.6,1800-2200m,CH2018/SLF,medium
+2028/29,100,projected_RCP2.6,1800-2200m,CH2018/SLF,medium
+2030/31,98,projected_RCP2.6,1800-2200m,CH2018/SLF,medium
+2032/33,96,projected_RCP2.6,1800-2200m,CH2018/SLF,medium
+2034/35,94,projected_RCP2.6,1800-2200m,CH2018/SLF,medium
+2035/36,93,projected_RCP2.6,1800-2200m,CH2018/SLF,medium
+2026/27,98,projected_RCP4.5,1800-2200m,CH2018/SLF,medium
+2028/29,92,projected_RCP4.5,1800-2200m,CH2018/SLF,medium
+2030/31,88,projected_RCP4.5,1800-2200m,CH2018/SLF,medium
+2032/33,84,projected_RCP4.5,1800-2200m,CH2018/SLF,medium
+2034/35,80,projected_RCP4.5,1800-2200m,CH2018/SLF,medium
+2035/36,78,projected_RCP4.5,1800-2200m,CH2018/SLF,medium
+2026/27,95,projected_RCP8.5,1800-2200m,CH2018/SLF,medium
+2028/29,85,projected_RCP8.5,1800-2200m,CH2018/SLF,medium
+2030/31,78,projected_RCP8.5,1800-2200m,CH2018/SLF,medium
+2032/33,72,projected_RCP8.5,1800-2200m,CH2018/SLF,medium
+2034/35,65,projected_RCP8.5,1800-2200m,CH2018/SLF,medium
+2035/36,62,projected_RCP8.5,1800-2200m,CH2018/SLF,medium
