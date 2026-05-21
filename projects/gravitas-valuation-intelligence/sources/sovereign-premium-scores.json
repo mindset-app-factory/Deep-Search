@@ -1,0 +1,605 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "date": "2026-05-21",
+    "asset": "Gravitas (Alpine AI Infrastructure AG)",
+    "classification": "Confidential — Investor/Board Use Only",
+    "preparedBy": "Strategie Agent — Deep Research AI Agency",
+    "language": "en"
+  },
+
+  "sovereignPremiumScore": {
+    "totalScore": 87,
+    "maxScore": 100,
+    "interpretation": "Top-decile infrastructure asset quality. Score above 80 supports a 30–50% structural premium to generic European AI datacenter comparables.",
+    "dimensions": [
+      {
+        "id": "swiss_sovereign_jurisdiction",
+        "label": "Swiss Sovereign Jurisdiction",
+        "labelDe": "Schweizer Souveräne Jurisdiktion",
+        "weight": 0.25,
+        "score": 92,
+        "weightedScore": 23.0,
+        "premiumRange": { "low": 0.15, "high": 0.25, "unit": "percent_to_base" },
+        "subCriteria": [
+          { "label": "Data Protection (Swiss DPA / GDPR-equivalent)", "score": 95 },
+          { "label": "Geopolitical Neutrality", "score": 98 },
+          { "label": "Financial System Stability (CHF)", "score": 90 },
+          { "label": "Physical Security / Alpine Geography", "score": 88 },
+          { "label": "Canton GR / Municipal Government Partnership", "score": 85 }
+        ]
+      },
+      {
+        "id": "power_structure",
+        "label": "Power Structure & Counterparty Quality",
+        "labelDe": "Stromstruktur & Gegenparteiqualität",
+        "weight": 0.22,
+        "score": 95,
+        "weightedScore": 20.9,
+        "premiumRange": { "low": 0.20, "high": 0.30, "unit": "percent_to_base" },
+        "subCriteria": [
+          { "label": "Behind-the-Meter (BTM) Structure", "score": 98 },
+          { "label": "EKW Anchor Counterparty", "score": 95 },
+          { "label": "Alpiq / Axpo / BKW Stack", "score": 92 },
+          { "label": "Power Price (CHF 0.10/kWh, 20-year term)", "score": 97 },
+          { "label": "Renewable Profile (Alpine Hydro)", "score": 93 },
+          { "label": "Power Term Certainty (20 years)", "score": 96 }
+        ]
+      },
+      {
+        "id": "energy_efficiency",
+        "label": "Energy Efficiency & Operational Excellence",
+        "labelDe": "Energieeffizienz & Betriebliche Exzellenz",
+        "weight": 0.20,
+        "score": 88,
+        "weightedScore": 17.6,
+        "premiumRange": { "low": 0.12, "high": 0.18, "unit": "percent_to_base" },
+        "notes": "PUE 1.08 is a design target. Recommend 50% haircut until independent commissioning certification is available.",
+        "subCriteria": [
+          { "label": "PUE Target (1.08)", "score": 90 },
+          { "label": "Alpine Free-Air Cooling Mechanism", "score": 92 },
+          { "label": "CapEx Efficiency (reduced cooling CapEx)", "score": 82 },
+          { "label": "Operational Cost Structure", "score": 88 }
+        ]
+      },
+      {
+        "id": "regulatory_compliance",
+        "label": "Regulatory Compliance & EU AI Act Alignment",
+        "labelDe": "Regulatorische Compliance & EU-KI-Gesetz-Ausrichtung",
+        "weight": 0.15,
+        "score": 80,
+        "weightedScore": 12.0,
+        "premiumRange": { "low": 0.05, "high": 0.10, "unit": "percent_to_base" },
+        "subCriteria": [
+          { "label": "EU AI Act Compliance Positioning", "score": 82 },
+          { "label": "GDPR / revFADP Compatibility", "score": 88 },
+          { "label": "NIS2 Directive Readiness", "score": 75 },
+          { "label": "EU Taxonomy Alignment", "score": 85 }
+        ]
+      },
+      {
+        "id": "demand_positioning",
+        "label": "Demand Positioning & Market Timing",
+        "labelDe": "Nachfragepositionierung & Markt-Timing",
+        "weight": 0.12,
+        "score": 85,
+        "weightedScore": 10.2,
+        "premiumRange": { "low": 0.05, "high": 0.10, "unit": "percent_to_base" },
+        "subCriteria": [
+          { "label": "EU AI Continent Action Plan Tailwind", "score": 88 },
+          { "label": "Sovereign AI Compute Demand", "score": 90 },
+          { "label": "European Data Center Capacity Gap", "score": 85 },
+          { "label": "First-Mover / Structural Moat in Alpine Sovereign AI DC", "score": 87 }
+        ]
+      },
+      {
+        "id": "team_execution",
+        "label": "Team & Execution Capability",
+        "labelDe": "Team & Ausführungsfähigkeit",
+        "weight": 0.06,
+        "score": 55,
+        "weightedScore": 3.3,
+        "premiumRange": { "low": -0.18, "high": -0.12, "unit": "percent_to_base" },
+        "notes": "First-time founders in infrastructure. Discount partially offset by advisory bench.",
+        "subCriteria": [
+          { "label": "Founder Track Record", "score": 45 },
+          { "label": "Advisory Bench Quality", "score": 72 },
+          { "label": "Execution to Date", "score": 60 }
+        ]
+      }
+    ]
+  },
+
+  "premiumDiscountAttribution": {
+    "baseBenchmark": {
+      "label": "Generic European AI-Capable Datacenter (non-sovereign, grid-connected)",
+      "evPerMW": { "low": 8000000, "high": 12000000, "currency": "CHF" },
+      "evEbitdaMultiple": { "low": 14, "high": 18 }
+    },
+    "premiums": [
+      {
+        "id": "swiss_sovereign_jurisdiction",
+        "label": "Swiss Sovereign Jurisdiction",
+        "labelDe": "Schweizer Souveräne Jurisdiktion",
+        "rangeLow": 0.20,
+        "rangeHigh": 0.30,
+        "confidence": "high",
+        "mechanism": "Swiss legal certainty, data sovereignty, geopolitical neutrality, Canton GR partnership"
+      },
+      {
+        "id": "btm_power_structure",
+        "label": "Behind-the-Meter Power Structure",
+        "labelDe": "Hinter-dem-Zähler Stromstruktur",
+        "rangeLow": 0.15,
+        "rangeHigh": 0.25,
+        "confidence": "high",
+        "mechanism": "Eliminates energy merchant risk; direct hydroelectric connection"
+      },
+      {
+        "id": "power_price_lock",
+        "label": "Power Price Lock (CHF 0.10/kWh, 20yr)",
+        "labelDe": "Strompreisfixierung (CHF 0.10/kWh, 20 Jahre)",
+        "rangeLow": 0.12,
+        "rangeHigh": 0.20,
+        "confidence": "high",
+        "mechanism": "40-60% below EU AI DC market rate; creates permanent EBITDA margin advantage"
+      },
+      {
+        "id": "renewable_hydro_profile",
+        "label": "Renewable Hydroelectric Profile",
+        "labelDe": "Erneuerbares Wasserkraftprofil",
+        "rangeLow": 0.08,
+        "rangeHigh": 0.12,
+        "confidence": "high",
+        "mechanism": "100% renewable; EU Taxonomy-eligible; ESG investor premium"
+      },
+      {
+        "id": "pue_efficiency",
+        "label": "PUE 1.08 Efficiency (target)",
+        "labelDe": "PUE 1.08 Effizienz (Zielwert)",
+        "rangeLow": 0.08,
+        "rangeHigh": 0.15,
+        "confidence": "medium",
+        "certificationRequired": true,
+        "mechanism": "25% more compute per MW vs. EU average; lower operating cost per rack unit"
+      },
+      {
+        "id": "sovereign_counterparty_stack",
+        "label": "EKW/Alpiq/Axpo/BKW Counterparty Stack",
+        "labelDe": "EKW/Alpiq/Axpo/BKW Gegenpartei-Stack",
+        "rangeLow": 0.06,
+        "rangeHigh": 0.10,
+        "confidence": "high",
+        "mechanism": "Investment-grade, cantonal-backed power suppliers; zero supply concentration risk"
+      },
+      {
+        "id": "eu_ai_sovereignty_trend",
+        "label": "EU AI Sovereignty Trend Tailwind",
+        "labelDe": "EU-KI-Souveränitäts-Trendtreiber",
+        "rangeLow": 0.05,
+        "rangeHigh": 0.10,
+        "confidence": "medium-high",
+        "mechanism": "EU AI Continent Action Plan; EU AI Act compliance demand; structural European compute shortage"
+      },
+      {
+        "id": "enterprise_government_demand",
+        "label": "Enterprise / Government-Grade Demand Multiplier",
+        "labelDe": "Unternehmens- / Regierungsgrad-Nachfragemultiplikator",
+        "rangeLow": 0.05,
+        "rangeHigh": 0.08,
+        "confidence": "medium",
+        "mechanism": "Regulated enterprise, EU government, and defense sector demand requires sovereign jurisdiction"
+      },
+      {
+        "id": "first_mover_moat",
+        "label": "First-Mover / Structural Moat",
+        "labelDe": "First-Mover / Struktureller Burggraben",
+        "rangeLow": 0.05,
+        "rangeHigh": 0.10,
+        "confidence": "high",
+        "mechanism": "BTM + sovereign stack + Alpine PUE combination not available elsewhere"
+      }
+    ],
+    "discounts": [
+      {
+        "id": "first_time_founder",
+        "label": "First-Time Founder Team",
+        "labelDe": "Erstgründer-Team",
+        "rangeLow": -0.12,
+        "rangeHigh": -0.18,
+        "confidence": "high",
+        "mitigationPath": "Formal advisory bench documentation; operator-level hire (COO/CTO infrastructure)"
+      },
+      {
+        "id": "pre_revenue",
+        "label": "Pre-Revenue / Development Stage",
+        "labelDe": "Vor-Umsatz / Entwicklungsphase",
+        "rangeLow": -0.18,
+        "rangeHigh": -0.25,
+        "confidence": "high",
+        "mitigationPath": "First signed customer LOI reduces to -8% to -12%"
+      },
+      {
+        "id": "single_site_concentration",
+        "label": "Single-Site Concentration",
+        "labelDe": "Einzelstandort-Konzentration",
+        "rangeLow": -0.05,
+        "rangeHigh": -0.08,
+        "confidence": "medium",
+        "mitigationPath": "Phase 2 site optionality documentation"
+      },
+      {
+        "id": "pue_projection_uncertainty",
+        "label": "PUE Projection Uncertainty",
+        "labelDe": "PUE-Projektionsunsicherheit",
+        "rangeLow": -0.04,
+        "rangeHigh": -0.06,
+        "confidence": "medium",
+        "mitigationPath": "Independent commissioning certification"
+      },
+      {
+        "id": "regulatory_pathway_uncertainty",
+        "label": "Regulatory Pathway Uncertainty (NIS2)",
+        "labelDe": "Regulatorische Wegsunsicherheit (NIS2)",
+        "rangeLow": -0.03,
+        "rangeHigh": -0.05,
+        "confidence": "low",
+        "mitigationPath": "Pre-qualification with Swiss/EU regulators"
+      }
+    ],
+    "netPremiumScenarios": [
+      {
+        "id": "bear",
+        "label": "Bear",
+        "labelDe": "Bär",
+        "description": "Pre-customer, uncertified PUE, no formal advisory bench",
+        "netPremiumToBase": { "low": 0.22, "high": 0.22 },
+        "evPerMW": { "low": 10000000, "high": 15000000, "currency": "CHF" }
+      },
+      {
+        "id": "base",
+        "label": "Base",
+        "labelDe": "Basis",
+        "description": "First LOI signed, advisory bench formalized",
+        "netPremiumToBase": { "low": 0.60, "high": 0.75 },
+        "evPerMW": { "low": 13000000, "high": 20000000, "currency": "CHF" }
+      },
+      {
+        "id": "bull",
+        "label": "Bull",
+        "labelDe": "Bulle",
+        "description": "First customer operational, PUE certified",
+        "netPremiumToBase": { "low": 1.05, "high": 1.20 },
+        "evPerMW": { "low": 17000000, "high": 25000000, "currency": "CHF" }
+      },
+      {
+        "id": "sovereign_exit",
+        "label": "Sovereign Exit",
+        "labelDe": "Souveräner Exit",
+        "description": "Strategic buyer acquisition, 2028+",
+        "netPremiumToBase": { "low": 1.15, "high": 1.35 },
+        "evPerMW": { "low": 22000000, "high": 35000000, "currency": "CHF" }
+      }
+    ]
+  },
+
+  "exitTransactionLogic": {
+    "referenceTransactions": [
+      {
+        "id": "green_datacenter",
+        "company": "Green Datacenter",
+        "geography": "Switzerland (Zurich)",
+        "assetType": "Carrier-neutral datacenter",
+        "year": 2024,
+        "exitMetric": "4.5× MOIC in 7 years",
+        "moic": 4.5,
+        "evPerMW": null,
+        "acquirer": "Digital Bridge",
+        "relevance": "Swiss institutional-grade comparable; closest jurisdiction match",
+        "confidenceLevel": "medium",
+        "notes": "Transaction details partially private; MOIC estimate based on public reporting"
+      },
+      {
+        "id": "vantage_zrh2",
+        "company": "Vantage Data Centers ZRH2",
+        "geography": "Switzerland (Zurich)",
+        "assetType": "Hyperscale campus",
+        "year": 2023,
+        "exitMetric": "CHF 15.4M/MW implied",
+        "moic": null,
+        "evPerMW": 15400000,
+        "evPerMWCurrency": "CHF",
+        "evEbitdaMultiple": { "estimated": true, "low": 22, "high": 26 },
+        "acquirer": "Infrastructure investors",
+        "relevance": "Closest Swiss MW-basis comparable; primary EV/MW benchmark",
+        "confidenceLevel": "medium-high"
+      },
+      {
+        "id": "qts_realty",
+        "company": "QTS Realty Trust",
+        "geography": "USA",
+        "assetType": "Hyperscale REIT",
+        "year": 2021,
+        "totalEV": 10000000000,
+        "totalEVCurrency": "USD",
+        "evPerMW": 5600000,
+        "evPerMWCurrency": "USD",
+        "evEbitdaMultiple": { "estimated": true, "value": 22 },
+        "acquirer": "Blackstone",
+        "relevance": "US infrastructure PE benchmark; Blackstone as reference buyer",
+        "confidenceLevel": "high"
+      },
+      {
+        "id": "cyrusone",
+        "company": "CyrusOne",
+        "geography": "USA",
+        "assetType": "Enterprise datacenter",
+        "year": 2021,
+        "totalEV": 15000000000,
+        "totalEVCurrency": "USD",
+        "evPerMW": 4200000,
+        "evPerMWCurrency": "USD",
+        "evEbitdaMultiple": { "estimated": true, "value": 21 },
+        "acquirer": "KKR + GIP",
+        "relevance": "Large-cap PE infrastructure benchmark",
+        "confidenceLevel": "high"
+      },
+      {
+        "id": "switch_inc",
+        "company": "Switch, Inc.",
+        "geography": "USA",
+        "assetType": "Multi-campus operator",
+        "year": 2022,
+        "totalEV": 11000000000,
+        "totalEVCurrency": "USD",
+        "evPerMW": 4800000,
+        "evPerMWCurrency": "USD",
+        "evEbitdaMultiple": { "estimated": true, "value": 25 },
+        "acquirer": "DigitalBridge",
+        "relevance": "Premium operator benchmark; DigitalBridge as reference strategic infrastructure buyer",
+        "confidenceLevel": "high"
+      },
+      {
+        "id": "kao_data",
+        "company": "Kao Data",
+        "geography": "UK",
+        "assetType": "AI-focused datacenter",
+        "year": 2022,
+        "totalEV": 280000000,
+        "totalEVCurrency": "GBP",
+        "evPerMW": 6000000,
+        "evPerMWCurrency": "GBP",
+        "acquirer": "Private investors",
+        "relevance": "European AI DC proxy; closest asset type match",
+        "confidenceLevel": "medium"
+      },
+      {
+        "id": "yondr_group",
+        "company": "Yondr Group",
+        "geography": "Europe",
+        "assetType": "Hyperscale datacenter",
+        "year": 2023,
+        "totalEV": 1000000000,
+        "totalEVCurrency": "USD",
+        "evPerMW": { "low": 6000000, "high": 8000000 },
+        "evPerMWCurrency": "GBP",
+        "acquirer": "Infrastructure PE",
+        "relevance": "European hyperscale comparable; infrastructure PE as buyer",
+        "confidenceLevel": "medium"
+      }
+    ],
+
+    "exitMultipleFramework": {
+      "byInfrastructureQualityTier": [
+        {
+          "tier": "Generic European Colocation",
+          "tierDe": "Generische europäische Kolokation",
+          "characteristics": "Grid-connected, standard PUE 1.4-1.6, no sovereign positioning",
+          "evPerMW": { "low": 4000000, "high": 8000000, "currency": "CHF" },
+          "evEbitdaMultiple": { "low": 12, "high": 16 }
+        },
+        {
+          "tier": "AI-Capable European DC",
+          "tierDe": "KI-fähiges europäisches Rechenzentrum",
+          "characteristics": "GPU-ready, improved PUE 1.2-1.4, major market",
+          "evPerMW": { "low": 8000000, "high": 14000000, "currency": "CHF" },
+          "evEbitdaMultiple": { "low": 16, "high": 22 }
+        },
+        {
+          "tier": "Premium Swiss AI DC",
+          "tierDe": "Premium Schweizer KI-Rechenzentrum",
+          "characteristics": "Swiss jurisdiction, renewable power, PUE <1.2",
+          "evPerMW": { "low": 14000000, "high": 22000000, "currency": "CHF" },
+          "evEbitdaMultiple": { "low": 20, "high": 28 }
+        },
+        {
+          "tier": "Sovereign AI Infrastructure (Gravitas)",
+          "tierDe": "Souveräne KI-Infrastruktur (Gravitas)",
+          "characteristics": "BTM + sovereign counterparty stack + PUE 1.08 + Alpine free-air cooling",
+          "evPerMW": { "low": 18000000, "high": 35000000, "currency": "CHF" },
+          "evEbitdaMultiple": { "low": 22, "high": 35 },
+          "isTarget": true
+        }
+      ]
+    },
+
+    "exitScenarios": [
+      {
+        "id": "strategic_investment_series_a",
+        "label": "Strategic Investment / Series A",
+        "labelDe": "Strategische Investition / Serie A",
+        "timeframe": "2026–2027",
+        "yearsFromNow": { "low": 0.5, "high": 2 },
+        "trigger": "First anchor customer signed; PUE certification complete",
+        "valuationBasis": "8–12× forward revenue; CHF 13–18M/MW implied",
+        "impliedValuation": { "low": 50000000, "high": 120000000, "currency": "CHF" },
+        "evPerMW": { "low": 13000000, "high": 18000000, "currency": "CHF" },
+        "probability": "high",
+        "buyerProfile": "European infrastructure PE minority; strategic co-investor (Alpiq/Axpo infrastructure arm, Swiss pension fund)"
+      },
+      {
+        "id": "infrastructure_pe_buyout",
+        "label": "Infrastructure PE Buyout",
+        "labelDe": "Infrastruktur-PE-Buyout",
+        "timeframe": "2028–2030",
+        "yearsFromNow": { "low": 3, "high": 5 },
+        "trigger": "Operational, positive EBITDA, 5–15MW live capacity",
+        "valuationBasis": "20–27× EBITDA; CHF 18–25M/MW",
+        "impliedValuation": { "low": 120000000, "high": 280000000, "currency": "CHF" },
+        "evPerMW": { "low": 18000000, "high": 25000000, "currency": "CHF" },
+        "evEbitdaMultiple": { "low": 20, "high": 27 },
+        "probability": "medium-high",
+        "buyerProfile": "DigitalBridge, Brookfield Infrastructure, Blackstone Real Estate Infrastructure, KKR Infrastructure, Ardian"
+      },
+      {
+        "id": "strategic_acquisition",
+        "label": "Strategic Acquisition (Hyperscaler / Sovereign Cloud)",
+        "labelDe": "Strategische Akquisition (Hyperscaler / Souveräne Cloud)",
+        "timeframe": "2028–2032",
+        "yearsFromNow": { "low": 3, "high": 8 },
+        "trigger": "EU AI Act enforcement creates mandatory sovereign-jurisdiction compute demand",
+        "valuationBasis": "27–35× EBITDA; CHF 22–40M/MW; strategic synergy premium",
+        "impliedValuation": { "low": 180000000, "high": 500000000, "currency": "CHF" },
+        "evPerMW": { "low": 22000000, "high": 40000000, "currency": "CHF" },
+        "evEbitdaMultiple": { "low": 27, "high": 35 },
+        "probability": "medium",
+        "buyerProfile": "Microsoft Azure Sovereign, Google Cloud EU, AWS European Sovereign Cloud, OVHcloud, Hetzner, Deutsche Telekom, Swiss Post"
+      },
+      {
+        "id": "ipo_infrastructure_reit",
+        "label": "IPO / Infrastructure REIT",
+        "labelDe": "Börsengang / Infrastruktur-REIT",
+        "timeframe": "2030–2034",
+        "yearsFromNow": { "low": 5, "high": 10 },
+        "trigger": "30+ MW operational, stable EBITDA, institutional investor demand for listed AI infrastructure",
+        "valuationBasis": "25–35× EBITDA; CHF 25–40M/MW",
+        "impliedValuation": { "low": 300000000, "high": 700000000, "currency": "CHF" },
+        "evPerMW": { "low": 25000000, "high": 40000000, "currency": "CHF" },
+        "evEbitdaMultiple": { "low": 25, "high": 35 },
+        "probability": "low-medium",
+        "buyerProfile": "Public markets; institutional infrastructure investors"
+      }
+    ]
+  },
+
+  "strategicNarrative": {
+    "primaryPositioning": "Sovereign European AI Infrastructure Platform",
+    "primaryPositioningDe": "Souveräne Europäische KI-Infrastrukturplattform",
+    "secondaryCategories": [
+      "AI infrastructure platform",
+      "Green AI compute infrastructure",
+      "GPU-ready datacenter infrastructure",
+      "Sovereign cloud infrastructure",
+      "AI colocation infrastructure",
+      "High-efficiency Alpine datacenter platform"
+    ],
+    "secondaryCategoriesDe": [
+      "KI-Infrastrukturplattform",
+      "Grüne KI-Recheninfrastruktur",
+      "GPU-fähige Rechenzentrumsinfrastruktur",
+      "Souveräne Cloud-Infrastruktur",
+      "KI-Kolokationsinfrastruktur",
+      "Hocheffiziente Alpine Rechenzentrums-Plattform"
+    ],
+    "excludedCategories": [
+      "Generic colocation",
+      "Commodity datacenter infrastructure",
+      "Standard hyperscale real estate",
+      "Traditional hosting infrastructure"
+    ],
+    "structuralUniquenessTrifecta": [
+      {
+        "factor": "Behind-the-Meter (BTM) Structure",
+        "factorDe": "Hinter-dem-Zähler (BTM) Struktur",
+        "description": "Direct grid connection eliminating energy merchant intermediary"
+      },
+      {
+        "factor": "Sovereign-Grade EKW Counterparty Stack",
+        "factorDe": "Souveräner EKW-Gegenpartei-Stack",
+        "description": "EKW, Alpiq, Axpo, BKW, Canton GR, and municipalities — investment-grade, cantonal-backed"
+      },
+      {
+        "factor": "PUE 1.08 Target with Alpine Free-Air Cooling",
+        "factorDe": "PUE 1.08 Zielwert mit Alpiner Freiluftkühlung",
+        "description": "Best-in-class global efficiency enabled by Graubünden Alpine natural cooling"
+      }
+    ],
+    "uniquenessStatement": "These three parameters in combination are not available in any verified European AI infrastructure comparable."
+  },
+
+  "keyMetrics": {
+    "pue": {
+      "gravitas": 1.08,
+      "euAverage": { "low": 1.45, "high": 1.55 },
+      "hyperscalerBestInClass": { "low": 1.10, "high": 1.12 },
+      "gravitas_status": "target",
+      "advantage": "25-30% efficiency advantage over EU average"
+    },
+    "powerCost": {
+      "gravitas": { "value": 0.10, "currency": "CHF", "unit": "per_kWh" },
+      "euAIDatacenterMarket": { "low": 0.15, "high": 0.25, "currency": "EUR", "unit": "per_kWh" },
+      "advantage": "40-60% cost advantage below EU AI DC market rate"
+    },
+    "powerTerm": {
+      "gravitas": 20,
+      "industryTypical": { "low": 3, "high": 5 },
+      "unit": "years",
+      "advantage": "Structural moat; 20-year certainty unavailable to new entrants"
+    },
+    "renewablePercentage": {
+      "gravitas": 1.0,
+      "euAverage": { "low": 0.45, "high": 0.65 },
+      "source": "Alpine hydroelectric (100%)"
+    },
+    "jurisdiction": {
+      "gravitas": "Switzerland (Swiss Confederation)",
+      "premium": "15-25% over non-Swiss European AI infrastructure"
+    }
+  },
+
+  "euSovereigntyTrends": [
+    {
+      "id": "eu_ai_continent_action_plan",
+      "name": "EU AI Continent Action Plan",
+      "nameDe": "EU-KI-Kontinent-Aktionsplan",
+      "commitment": "EUR 200bn AI infrastructure investment",
+      "target": "100+ GW of AI compute capacity in Europe",
+      "timeline": "2025–2030",
+      "tier": 1,
+      "impactOnGravitas": "Creates institutional demand for sovereign compute; positions Gravitas as EU AI Act-compatible infrastructure"
+    },
+    {
+      "id": "eu_ai_act",
+      "name": "EU AI Act (High-Risk AI Systems)",
+      "nameDe": "EU-KI-Gesetz (Hochrisiko-KI-Systeme)",
+      "commitment": "Mandatory EU-jurisdiction compute for regulated AI workloads",
+      "enforced": "2025 onward",
+      "tier": 1,
+      "impactOnGravitas": "Swiss jurisdiction qualifies as EU AI Act-compatible; creates regulated enterprise demand"
+    },
+    {
+      "id": "gaia_x",
+      "name": "GAIA-X Federated Data Infrastructure",
+      "nameDe": "GAIA-X Föderierte Dateninfrastruktur",
+      "timeline": "Ongoing",
+      "tier": 1,
+      "impactOnGravitas": "Swiss participation enables GAIA-X-compliant node positioning"
+    },
+    {
+      "id": "nis2_directive",
+      "name": "NIS2 Directive (Critical Infrastructure)",
+      "nameDe": "NIS2-Richtlinie (Kritische Infrastruktur)",
+      "enforced": "2024 onward",
+      "tier": 1,
+      "impactOnGravitas": "Government and regulated enterprise customers require sovereign infrastructure for compliance"
+    },
+    {
+      "id": "eu_datacenter_capacity_targets",
+      "name": "European Data Center Capacity Targets",
+      "nameDe": "Europäische Rechenzentrumskapazitätsziele",
+      "target": "5× AI compute capacity by 2030",
+      "tier": 1,
+      "impactOnGravitas": "New supply constrained by power availability; Gravitas BTM position is a structural advantage"
+    }
+  ]
+}

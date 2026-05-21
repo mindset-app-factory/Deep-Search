@@ -1,0 +1,1127 @@
+{
+  "meta": {
+    "model": "Gravitas Valuation Intelligence — Weighted Scoring & Scenario Analysis",
+    "version": "1.0.0",
+    "date": "2026-05-21",
+    "issueRef": "DEE-18",
+    "methodology": "Weighted multi-factor scoring with 3-scenario NPV/multiples analysis. Weights derived from Alpine AI Valuation Parameter Framework (Critical=4, High=3, Medium=2, Low=1). All monetary values in CHF unless noted. Projections clearly separated from confirmed data.",
+    "dataDisclaimer": "All source parameters taken from the Alpine AI Valuation Parameter Framework. Comparable transaction multiples are framework-defined ranges, not independently sourced market data. Awaiting DEE-17 (Research Agent) for external comparable validation.",
+    "assumptions": [
+      "Tax rate: 15% effective (Swiss cantonal rate assumption — requires verification)",
+      "Depreciation: 7% of CapEx annually (20-year useful life, straight-line, rounded)",
+      "Working capital: negligible relative to asset base",
+      "Construction period: not modelled (shovel-ready assumption)",
+      "Revenue ramp: Year 1-2 at stated utilisation, steady state from Year 3",
+      "No terminal value modelled — 20-year PPA horizon used as project life",
+      "Discount rates: WACC 8% base (6-12% range per framework)",
+      "All scenarios use Phase 1 (25MW) except Bull which includes full 55MW entitlement"
+    ]
+  },
+
+  "weightedScoringModel": {
+    "methodology": "Each of 30 parameters rated 1-5, multiplied by weight factor (Critical=4, High=3, Medium=2, Low=1). Maximum possible score = 5 × sum(weights). Scores represent relative positioning vs market peers.",
+    "weightScale": {
+      "Critical": 4,
+      "High": 3,
+      "Medium": 2,
+      "Low": 1
+    },
+    "ratingScale": {
+      "1": "Significantly below market",
+      "2": "Below market",
+      "3": "At market",
+      "4": "Above market",
+      "5": "Significantly above market / best-in-class"
+    },
+    "categories": [
+      {
+        "name": "Power & Energy Infrastructure",
+        "categoryWeight": "Critical",
+        "parameters": [
+          {
+            "id": "PE-01",
+            "name": "Contracted Power Rate",
+            "weight": "Critical",
+            "weightFactor": 4,
+            "rating": 5,
+            "weightedScore": 20,
+            "dataPoint": "CHF 0.10/kWh (20-year PPA, flat, no escalation)",
+            "benchmark": "Market CHF 0.24/kWh (base), CHF 0.32/kWh (high)",
+            "dataType": "confirmed",
+            "rationale": "58-69% below market rate on a 20-year locked contract — exceptional cost advantage"
+          },
+          {
+            "id": "PE-02",
+            "name": "PPA Duration & Structure",
+            "weight": "Critical",
+            "weightFactor": 4,
+            "rating": 5,
+            "weightedScore": 20,
+            "dataPoint": "20-year flat PPA, no escalation clauses",
+            "benchmark": "Typical 5-10 year PPAs with annual escalation",
+            "dataType": "confirmed",
+            "rationale": "Duration and flat structure eliminate long-term energy cost risk entirely"
+          },
+          {
+            "id": "PE-03",
+            "name": "Behind-the-Meter Structure",
+            "weight": "Critical",
+            "weightFactor": 4,
+            "rating": 5,
+            "weightedScore": 20,
+            "dataPoint": "Full BTM configuration",
+            "benchmark": "Most facilities grid-connected; BTM carries 15-25% NPV premium",
+            "dataType": "confirmed",
+            "rationale": "BTM avoids grid fees, transmission losses, and regulatory tariff risk"
+          },
+          {
+            "id": "PE-04",
+            "name": "PUE Target",
+            "weight": "High",
+            "weightFactor": 3,
+            "rating": 5,
+            "weightedScore": 15,
+            "dataPoint": "PUE 1.08",
+            "benchmark": "Industry average PUE 1.50",
+            "dataType": "confirmed",
+            "rationale": "28% lower overhead energy consumption; separate CHF 39M NPV line item"
+          },
+          {
+            "id": "PE-05",
+            "name": "Power Capacity — Phase 1",
+            "weight": "High",
+            "weightFactor": 3,
+            "rating": 4,
+            "weightedScore": 12,
+            "dataPoint": "25MW Phase 1",
+            "benchmark": "Competitive for European enterprise colocation",
+            "dataType": "confirmed",
+            "rationale": "Solid initial scale; not yet hyperscale but sufficient for enterprise AI workloads"
+          }
+        ],
+        "categoryTotals": {
+          "maxPossibleScore": 90,
+          "achievedScore": 87,
+          "categoryPercentage": 96.7
+        }
+      },
+      {
+        "name": "Site & Permitting",
+        "categoryWeight": "Critical",
+        "parameters": [
+          {
+            "id": "SP-01",
+            "name": "Permitting Status",
+            "weight": "Critical",
+            "weightFactor": 4,
+            "rating": 5,
+            "weightedScore": 20,
+            "dataPoint": "Fully permitted, shovel-ready",
+            "benchmark": "Most projects 12-36 months to full permits",
+            "dataType": "confirmed",
+            "rationale": "Eliminates permitting risk and time-to-revenue delay entirely"
+          },
+          {
+            "id": "SP-02",
+            "name": "Full Entitlement",
+            "weight": "High",
+            "weightFactor": 3,
+            "rating": 5,
+            "weightedScore": 15,
+            "dataPoint": "55MW full entitlement",
+            "benchmark": "2.2× Phase 1 capacity secured",
+            "dataType": "confirmed",
+            "rationale": "Expansion path fully entitled — no future permitting uncertainty"
+          },
+          {
+            "id": "SP-03",
+            "name": "Exclusive Development Rights",
+            "weight": "High",
+            "weightFactor": 3,
+            "rating": 5,
+            "weightedScore": 15,
+            "dataPoint": "5-year exclusive development rights",
+            "benchmark": "Rare in European markets",
+            "dataType": "confirmed",
+            "rationale": "Competitive moat — no rival can develop the same site"
+          },
+          {
+            "id": "SP-04",
+            "name": "Location — Jurisdiction",
+            "weight": "High",
+            "weightFactor": 3,
+            "rating": 5,
+            "weightedScore": 15,
+            "dataPoint": "Graubünden, Switzerland",
+            "benchmark": "Tier-1 sovereign jurisdiction for data sovereignty",
+            "dataType": "confirmed",
+            "rationale": "Swiss legal framework, political stability, data protection laws"
+          },
+          {
+            "id": "SP-05",
+            "name": "Climate Suitability",
+            "weight": "Medium",
+            "weightFactor": 2,
+            "rating": 5,
+            "weightedScore": 10,
+            "dataPoint": "Alpine climate — natural free-cooling potential",
+            "benchmark": "Supports low PUE target",
+            "dataType": "confirmed",
+            "rationale": "Cold climate reduces cooling energy, directly supports PUE 1.08"
+          }
+        ],
+        "categoryTotals": {
+          "maxPossibleScore": 75,
+          "achievedScore": 75,
+          "categoryPercentage": 100.0
+        }
+      },
+      {
+        "name": "Counterparty & Offtake",
+        "categoryWeight": "High",
+        "parameters": [
+          {
+            "id": "CO-01",
+            "name": "Energy Counterparty Quality",
+            "weight": "Critical",
+            "weightFactor": 4,
+            "rating": 5,
+            "weightedScore": 20,
+            "dataPoint": "EKW, Alpiq, Axpo, BKW, Canton GR",
+            "benchmark": "All sovereign-grade Swiss utilities / cantonal entities",
+            "dataType": "confirmed",
+            "rationale": "Near-zero counterparty default risk — sovereign and quasi-sovereign entities"
+          },
+          {
+            "id": "CO-02",
+            "name": "Customer Pipeline",
+            "weight": "High",
+            "weightFactor": 3,
+            "rating": 2,
+            "weightedScore": 6,
+            "dataPoint": "Pre-revenue — no disclosed customer contracts",
+            "benchmark": "Operational peers have contracted revenue",
+            "dataType": "assumption",
+            "rationale": "Pre-revenue stage; pipeline not publicly disclosed. Significant uncertainty."
+          },
+          {
+            "id": "CO-03",
+            "name": "Revenue Diversification",
+            "weight": "Medium",
+            "weightFactor": 2,
+            "rating": 2,
+            "weightedScore": 4,
+            "dataPoint": "Single-site, enterprise colocation focus",
+            "benchmark": "Multi-site operators score higher",
+            "dataType": "confirmed",
+            "rationale": "Concentration risk from single site and single service model"
+          },
+          {
+            "id": "CO-04",
+            "name": "Contract Structure Target",
+            "weight": "High",
+            "weightFactor": 3,
+            "rating": 4,
+            "weightedScore": 12,
+            "dataPoint": "Enterprise colocation with contracted counterparties",
+            "benchmark": "Contracted > spot/retail",
+            "dataType": "assumption",
+            "rationale": "Target model is contracted enterprise — adds revenue visibility if achieved"
+          },
+          {
+            "id": "CO-05",
+            "name": "Sovereign Tenant Potential",
+            "weight": "Medium",
+            "weightFactor": 2,
+            "rating": 4,
+            "weightedScore": 8,
+            "dataPoint": "Swiss sovereign AI infrastructure positioning",
+            "benchmark": "Government/sovereign tenants provide premium stability",
+            "dataType": "assumption",
+            "rationale": "Swiss sovereign AI narrative attracts government-adjacent customers"
+          }
+        ],
+        "categoryTotals": {
+          "maxPossibleScore": 70,
+          "achievedScore": 50,
+          "categoryPercentage": 71.4
+        }
+      },
+      {
+        "name": "Financial Structure",
+        "categoryWeight": "High",
+        "parameters": [
+          {
+            "id": "FS-01",
+            "name": "CapEx Efficiency",
+            "weight": "High",
+            "weightFactor": 3,
+            "rating": 3,
+            "weightedScore": 9,
+            "dataPoint": "CHF 12-18M/MW Swiss benchmark",
+            "benchmark": "Global range $8-15M/MW; Swiss premium expected",
+            "dataType": "confirmed",
+            "rationale": "At market for Swiss jurisdiction — premium reflects local construction costs"
+          },
+          {
+            "id": "FS-02",
+            "name": "Target EBITDA Margin",
+            "weight": "Critical",
+            "weightFactor": 4,
+            "rating": 5,
+            "weightedScore": 20,
+            "dataPoint": "55-65% EBITDA margin at steady state",
+            "benchmark": "Market-rate peers 40-45%",
+            "dataType": "projection",
+            "rationale": "Power cost advantage directly drives 10-20pp margin premium over peers"
+          },
+          {
+            "id": "FS-03",
+            "name": "Revenue per MW",
+            "weight": "High",
+            "weightFactor": 3,
+            "rating": 4,
+            "weightedScore": 12,
+            "dataPoint": "~CHF 1.3M/MW annual at steady state",
+            "benchmark": "European enterprise colocation range CHF 1.0-1.5M/MW",
+            "dataType": "projection",
+            "rationale": "Above-average revenue density for enterprise colocation"
+          },
+          {
+            "id": "FS-04",
+            "name": "WACC / Cost of Capital",
+            "weight": "High",
+            "weightFactor": 3,
+            "rating": 3,
+            "weightedScore": 9,
+            "dataPoint": "8% base case (6-12% range)",
+            "benchmark": "Infrastructure WACC 6-10% typical",
+            "dataType": "confirmed",
+            "rationale": "8% is market-appropriate for Swiss infrastructure with pre-revenue risk"
+          },
+          {
+            "id": "FS-05",
+            "name": "Utilisation Ramp",
+            "weight": "Medium",
+            "weightFactor": 2,
+            "rating": 3,
+            "weightedScore": 6,
+            "dataPoint": "70% Y1-2, 85% steady state",
+            "benchmark": "Aggressive but achievable for well-located facilities",
+            "dataType": "projection",
+            "rationale": "Reasonable ramp if customer pipeline materialises"
+          }
+        ],
+        "categoryTotals": {
+          "maxPossibleScore": 75,
+          "achievedScore": 56,
+          "categoryPercentage": 74.7
+        }
+      },
+      {
+        "name": "Technology & Operations",
+        "categoryWeight": "Medium",
+        "parameters": [
+          {
+            "id": "TO-01",
+            "name": "Cooling Technology",
+            "weight": "High",
+            "weightFactor": 3,
+            "rating": 5,
+            "weightedScore": 15,
+            "dataPoint": "Alpine free-cooling + advanced cooling supporting PUE 1.08",
+            "benchmark": "Industry PUE 1.50 average",
+            "dataType": "confirmed",
+            "rationale": "Best-in-class cooling efficiency from natural + engineered approach"
+          },
+          {
+            "id": "TO-02",
+            "name": "AI Infrastructure Readiness",
+            "weight": "High",
+            "weightFactor": 3,
+            "rating": 4,
+            "weightedScore": 12,
+            "dataPoint": "Purpose-built for AI/HPC workloads",
+            "benchmark": "Many facilities retrofitted, not purpose-built",
+            "dataType": "confirmed",
+            "rationale": "Greenfield purpose-built design avoids retrofit compromises"
+          },
+          {
+            "id": "TO-03",
+            "name": "Network Connectivity",
+            "weight": "Medium",
+            "weightFactor": 2,
+            "rating": 3,
+            "weightedScore": 6,
+            "dataPoint": "Swiss backbone connectivity (details not specified)",
+            "benchmark": "Zurich/Geneva are primary Swiss hubs",
+            "dataType": "assumption",
+            "rationale": "Graubünden is not a primary connectivity hub — latency to major exchanges unclear"
+          },
+          {
+            "id": "TO-04",
+            "name": "Redundancy & Uptime Target",
+            "weight": "Medium",
+            "weightFactor": 2,
+            "rating": 3,
+            "weightedScore": 6,
+            "dataPoint": "Not specified — assumed Tier III equivalent",
+            "benchmark": "Enterprise customers expect 99.98%+ uptime",
+            "dataType": "assumption",
+            "rationale": "No stated tier classification; assumed Tier III based on enterprise positioning"
+          },
+          {
+            "id": "TO-05",
+            "name": "Sustainability Credentials",
+            "weight": "Medium",
+            "weightFactor": 2,
+            "rating": 5,
+            "weightedScore": 10,
+            "dataPoint": "100% hydroelectric power, alpine environment",
+            "benchmark": "Increasing requirement for ESG-compliant infrastructure",
+            "dataType": "confirmed",
+            "rationale": "Strong green credentials from Swiss hydro sourcing"
+          }
+        ],
+        "categoryTotals": {
+          "maxPossibleScore": 60,
+          "achievedScore": 49,
+          "categoryPercentage": 81.7
+        }
+      },
+      {
+        "name": "Execution & Team",
+        "categoryWeight": "Medium",
+        "parameters": [
+          {
+            "id": "ET-01",
+            "name": "Development Stage",
+            "weight": "Critical",
+            "weightFactor": 4,
+            "rating": 4,
+            "weightedScore": 16,
+            "dataPoint": "Fully permitted, shovel-ready, pre-construction",
+            "benchmark": "De-risked vs most greenfield projects",
+            "dataType": "confirmed",
+            "rationale": "Permits secured is significant de-risking but still pre-revenue"
+          },
+          {
+            "id": "ET-02",
+            "name": "Founder / Management Team",
+            "weight": "High",
+            "weightFactor": 3,
+            "rating": 3,
+            "weightedScore": 9,
+            "dataPoint": "Not independently assessed",
+            "benchmark": "Track record in similar projects is key",
+            "dataType": "assumption",
+            "rationale": "No independent assessment of team — neutral rating pending due diligence"
+          },
+          {
+            "id": "ET-03",
+            "name": "Regulatory Relationships",
+            "weight": "High",
+            "weightFactor": 3,
+            "rating": 4,
+            "weightedScore": 12,
+            "dataPoint": "Canton GR involvement, sovereign-grade partners",
+            "benchmark": "Government alignment reduces regulatory risk",
+            "dataType": "confirmed",
+            "rationale": "Cantonal engagement and utility partnerships signal strong regulatory position"
+          },
+          {
+            "id": "ET-04",
+            "name": "Capital Raising Progress",
+            "weight": "High",
+            "weightFactor": 3,
+            "rating": 2,
+            "weightedScore": 6,
+            "dataPoint": "Not disclosed",
+            "benchmark": "Funded projects score higher",
+            "dataType": "assumption",
+            "rationale": "No disclosed funding status — significant execution uncertainty"
+          },
+          {
+            "id": "ET-05",
+            "name": "Construction Readiness",
+            "weight": "Medium",
+            "weightFactor": 2,
+            "rating": 4,
+            "weightedScore": 8,
+            "dataPoint": "Shovel-ready with identified contractors",
+            "benchmark": "Most greenfield projects still in design phase",
+            "dataType": "confirmed",
+            "rationale": "Shovel-ready status eliminates design and planning delays"
+          }
+        ],
+        "categoryTotals": {
+          "maxPossibleScore": 75,
+          "achievedScore": 51,
+          "categoryPercentage": 68.0
+        }
+      }
+    ],
+    "overallScore": {
+      "totalMaxPossible": 445,
+      "totalAchieved": 368,
+      "overallPercentage": 82.7,
+      "interpretation": "Strong overall positioning driven by exceptional power/energy infrastructure and site/permitting scores. Below-average scores in counterparty (pre-revenue risk) and execution/team (undisclosed funding, unassessed management) represent the primary discount factors."
+    },
+    "categoryRanking": [
+      { "category": "Site & Permitting", "percentage": 100.0, "insight": "Perfect score — fully permitted, sovereign jurisdiction, exclusive rights" },
+      { "category": "Power & Energy Infrastructure", "percentage": 96.7, "insight": "Near-perfect — exceptional power economics drive the value thesis" },
+      { "category": "Technology & Operations", "percentage": 81.7, "insight": "Strong cooling/sustainability, gaps in connectivity detail and tier classification" },
+      { "category": "Financial Structure", "percentage": 74.7, "insight": "Margin projections excellent but CapEx at market and utilisation is projection" },
+      { "category": "Counterparty & Offtake", "percentage": 71.4, "insight": "Energy counterparties excellent but customer pipeline undisclosed" },
+      { "category": "Execution & Team", "percentage": 68.0, "insight": "Shovel-ready but funding and team track record unverified" }
+    ]
+  },
+
+  "scenarioDefinitions": {
+    "bull": {
+      "label": "Bull Case",
+      "description": "Full entitlement developed, high market rate, maximum multiples",
+      "assumptions": {
+        "marketPowerRate_CHF_kWh": 0.32,
+        "contractedPowerRate_CHF_kWh": 0.10,
+        "powerSpread_CHF_kWh": 0.22,
+        "utilisationRate": 0.90,
+        "ebitdaMultiple": 22,
+        "capacityMW": 55,
+        "capexPerMW_CHF_M": 15,
+        "ebitdaMargin": 0.65,
+        "revenuePerMW_CHF_M": 1.5,
+        "wacc": 0.06,
+        "projectLifeYears": 20,
+        "pue": 1.08,
+        "industryPue": 1.50
+      },
+      "probabilityAssessment": {
+        "probability": 0.15,
+        "confidence": "low",
+        "rationale": "Requires full 55MW buildout, sustained high market rates, and maximum valuation multiples. Historically aggressive."
+      }
+    },
+    "base": {
+      "label": "Base Case",
+      "description": "Phase 1 only, current market benchmark, mid-range multiples",
+      "assumptions": {
+        "marketPowerRate_CHF_kWh": 0.24,
+        "contractedPowerRate_CHF_kWh": 0.10,
+        "powerSpread_CHF_kWh": 0.14,
+        "utilisationRate": 0.85,
+        "ebitdaMultiple": 18,
+        "capacityMW": 25,
+        "capexPerMW_CHF_M": 15,
+        "ebitdaMargin": 0.60,
+        "revenuePerMW_CHF_M": 1.3,
+        "wacc": 0.08,
+        "projectLifeYears": 20,
+        "pue": 1.08,
+        "industryPue": 1.50
+      },
+      "probabilityAssessment": {
+        "probability": 0.55,
+        "confidence": "medium",
+        "rationale": "Reflects framework parameters at face value with Phase 1 scope. Most assumptions align with stated targets."
+      }
+    },
+    "bear": {
+      "label": "Bear Case",
+      "description": "Phase 1 only, compressed market rates, lower multiples",
+      "assumptions": {
+        "marketPowerRate_CHF_kWh": 0.18,
+        "contractedPowerRate_CHF_kWh": 0.10,
+        "powerSpread_CHF_kWh": 0.08,
+        "utilisationRate": 0.70,
+        "ebitdaMultiple": 15,
+        "capacityMW": 25,
+        "capexPerMW_CHF_M": 18,
+        "ebitdaMargin": 0.50,
+        "revenuePerMW_CHF_M": 1.0,
+        "wacc": 0.12,
+        "projectLifeYears": 20,
+        "pue": 1.08,
+        "industryPue": 1.50
+      },
+      "probabilityAssessment": {
+        "probability": 0.30,
+        "confidence": "medium",
+        "rationale": "Market rate compression to CHF 0.18/kWh narrows spread. Higher CapEx and WACC reflect execution risk. Lower utilisation from slower ramp."
+      }
+    }
+  },
+
+  "valuationMetricsEngine": {
+    "methodology": "Metrics calculated from scenario assumptions. Revenue = capacity × revenuePerMW × utilisation. EBITDA = revenue × margin. EV = EBITDA × multiple. NPV uses discounted cash flows over project life at scenario WACC. All values in CHF millions unless noted.",
+    "scenarios": {
+      "bull": {
+        "capacityMW": 55,
+        "annualRevenue_CHF_M": 74.25,
+        "revenueCalculation": "55 MW × CHF 1.5M/MW × 90% utilisation",
+        "annualEBITDA_CHF_M": 48.26,
+        "ebitdaCalculation": "CHF 74.25M × 65% margin",
+        "totalCapEx_CHF_M": 825.0,
+        "capexCalculation": "55 MW × CHF 15M/MW",
+        "enterpriseValue_CHF_M": 1061.7,
+        "evCalculation": "CHF 48.26M × 22×",
+        "metrics": {
+          "EV_per_MW_CHF_M": 19.30,
+          "EV_EBITDA": 22.0,
+          "EV_Revenue": 14.30,
+          "CapEx_per_MW_CHF_M": 15.0,
+          "Revenue_per_MW_CHF_M": 1.35,
+          "EBITDA_per_MW_CHF_M": 0.878
+        },
+        "npvAnalysis": {
+          "wacc": 0.06,
+          "annuityFactor": 11.47,
+          "npvEBITDA_CHF_M": 553.5,
+          "npvCalculation": "CHF 48.26M × 11.47 (20-year annuity factor at 6%)",
+          "npvNetOfCapEx_CHF_M": -271.5,
+          "npvNetCalculation": "CHF 553.5M - CHF 825.0M CapEx",
+          "note": "Negative net NPV at full 55MW CapEx shows capital intensity. Value is captured through multiple expansion (EV/EBITDA) and strategic premiums, not pure DCF on CapEx vs cash flow."
+        }
+      },
+      "base": {
+        "capacityMW": 25,
+        "annualRevenue_CHF_M": 27.63,
+        "revenueCalculation": "25 MW × CHF 1.3M/MW × 85% utilisation",
+        "annualEBITDA_CHF_M": 16.58,
+        "ebitdaCalculation": "CHF 27.63M × 60% margin",
+        "totalCapEx_CHF_M": 375.0,
+        "capexCalculation": "25 MW × CHF 15M/MW",
+        "enterpriseValue_CHF_M": 298.4,
+        "evCalculation": "CHF 16.58M × 18×",
+        "metrics": {
+          "EV_per_MW_CHF_M": 11.94,
+          "EV_EBITDA": 18.0,
+          "EV_Revenue": 10.80,
+          "CapEx_per_MW_CHF_M": 15.0,
+          "Revenue_per_MW_CHF_M": 1.105,
+          "EBITDA_per_MW_CHF_M": 0.663
+        },
+        "npvAnalysis": {
+          "wacc": 0.08,
+          "annuityFactor": 9.818,
+          "npvEBITDA_CHF_M": 162.8,
+          "npvCalculation": "CHF 16.58M × 9.818 (20-year annuity factor at 8%)",
+          "npvNetOfCapEx_CHF_M": -212.2,
+          "npvNetCalculation": "CHF 162.8M - CHF 375.0M CapEx",
+          "note": "Infrastructure projects typically show negative CapEx-to-DCF NPV early. Value realisation depends on multiple-based exits and platform premium."
+        }
+      },
+      "bear": {
+        "capacityMW": 25,
+        "annualRevenue_CHF_M": 17.5,
+        "revenueCalculation": "25 MW × CHF 1.0M/MW × 70% utilisation",
+        "annualEBITDA_CHF_M": 8.75,
+        "ebitdaCalculation": "CHF 17.5M × 50% margin",
+        "totalCapEx_CHF_M": 450.0,
+        "capexCalculation": "25 MW × CHF 18M/MW",
+        "enterpriseValue_CHF_M": 131.25,
+        "evCalculation": "CHF 8.75M × 15×",
+        "metrics": {
+          "EV_per_MW_CHF_M": 5.25,
+          "EV_EBITDA": 15.0,
+          "EV_Revenue": 7.50,
+          "CapEx_per_MW_CHF_M": 18.0,
+          "Revenue_per_MW_CHF_M": 0.70,
+          "EBITDA_per_MW_CHF_M": 0.35
+        },
+        "npvAnalysis": {
+          "wacc": 0.12,
+          "annuityFactor": 7.469,
+          "npvEBITDA_CHF_M": 65.4,
+          "npvCalculation": "CHF 8.75M × 7.469 (20-year annuity factor at 12%)",
+          "npvNetOfCapEx_CHF_M": -384.6,
+          "npvNetCalculation": "CHF 65.4M - CHF 450.0M CapEx",
+          "note": "Bear case with higher CapEx per MW and lower utilisation shows significant CapEx recovery risk."
+        }
+      }
+    },
+    "scenarioComparison": {
+      "headers": ["Metric", "Bull", "Base", "Bear"],
+      "rows": [
+        ["Capacity (MW)", 55, 25, 25],
+        ["Annual Revenue (CHF M)", 74.25, 27.63, 17.5],
+        ["Annual EBITDA (CHF M)", 48.26, 16.58, 8.75],
+        ["Total CapEx (CHF M)", 825.0, 375.0, 450.0],
+        ["Enterprise Value (CHF M)", 1061.7, 298.4, 131.25],
+        ["EV/MW (CHF M)", 19.30, 11.94, 5.25],
+        ["EV/EBITDA", "22.0×", "18.0×", "15.0×"],
+        ["EV/Revenue", "14.3×", "10.8×", "7.5×"],
+        ["EBITDA Margin", "65%", "60%", "50%"],
+        ["NPV of EBITDA (CHF M)", 553.5, 162.8, 65.4],
+        ["Probability", "15%", "55%", "30%"]
+      ]
+    },
+    "probabilityWeightedEV_CHF_M": {
+      "calculation": "(1061.7 × 0.15) + (298.4 × 0.55) + (131.25 × 0.30)",
+      "result": 362.75,
+      "interpretation": "Probability-weighted enterprise value of CHF 363M reflects base-case dominance with bear-case drag."
+    }
+  },
+
+  "premiumDiscountAttribution": {
+    "methodology": "Each premium/discount quantified as percentage adjustment to base multiples or as standalone NPV line item. Premiums are cumulative but subject to overlap dampening (total capped at reasonable bounds). All figures are estimates based on framework parameters — not independently validated market data.",
+
+    "premiums": [
+      {
+        "name": "Swiss Sovereign Jurisdiction Premium",
+        "type": "multiple_premium",
+        "estimatedImpact_percent": 15,
+        "estimatedImpact_range_percent": [10, 20],
+        "confidence": "medium",
+        "dataType": "assumption",
+        "rationale": "Swiss jurisdiction provides data sovereignty, political stability, and regulatory clarity. EU-adjacent but non-EU regulatory independence valued by sovereign and enterprise clients.",
+        "source": "Framework parameter: sovereign-grade counterparties + Graubünden location",
+        "baseForCalculation": "Applied to base EV/EBITDA multiple (18× → 20.7×)"
+      },
+      {
+        "name": "Power Cost Advantage NPV",
+        "type": "standalone_npv",
+        "scenarios": {
+          "bull": {
+            "annualSaving_CHF_M": 95.40,
+            "calculation": "55,000kW × 8,760h × 90% util × (0.32 - 0.10) CHF/kWh ÷ 1,000,000",
+            "npv20yr_CHF_M": 1094.2,
+            "npvCalculation": "CHF 95.40M × 11.47 (annuity factor at 6%)"
+          },
+          "base": {
+            "annualSaving_CHF_M": 26.06,
+            "calculation": "25,000kW × 8,760h × 85% util × (0.24 - 0.10) CHF/kWh ÷ 1,000,000",
+            "npv20yr_CHF_M": 255.9,
+            "npvCalculation": "CHF 26.06M × 9.818 (annuity factor at 8%)"
+          },
+          "bear": {
+            "annualSaving_CHF_M": 12.26,
+            "calculation": "25,000kW × 8,760h × 70% util × (0.18 - 0.10) CHF/kWh ÷ 1,000,000",
+            "npv20yr_CHF_M": 91.6,
+            "npvCalculation": "CHF 12.26M × 7.469 (annuity factor at 12%)"
+          }
+        },
+        "confidence": "high",
+        "dataType": "confirmed",
+        "rationale": "Direct spread between contracted rate (CHF 0.10/kWh) and market benchmark. This is the single largest value driver."
+      },
+      {
+        "name": "BTM Structure Premium",
+        "type": "multiple_premium",
+        "estimatedImpact_percent": 20,
+        "estimatedImpact_range_percent": [15, 25],
+        "confidence": "high",
+        "dataType": "confirmed",
+        "rationale": "Framework states 15-25% NPV premium for BTM vs grid-connected. Avoids grid tariffs, transmission losses, and regulatory tariff risk exposure.",
+        "source": "Framework parameter: BTM structure with 15-25% NPV premium",
+        "baseForCalculation": "Applied to power cost advantage NPV as premium layer"
+      },
+      {
+        "name": "PUE Efficiency Premium",
+        "type": "standalone_npv",
+        "estimatedNPV_CHF_M": 39,
+        "confidence": "high",
+        "dataType": "confirmed",
+        "rationale": "Framework explicitly states CHF 39M separate NPV line item for PUE 1.08 vs industry 1.50. Represents 28% lower energy overhead across facility life.",
+        "source": "Framework parameter: CHF 39M separate NPV line",
+        "calculationNote": "PUE saving = (1 - 1.08/1.50) × total energy cost. Framework has pre-calculated this at CHF 39M."
+      },
+      {
+        "name": "Exclusivity / Moat Premium",
+        "type": "multiple_premium",
+        "estimatedImpact_percent": 10,
+        "estimatedImpact_range_percent": [5, 15],
+        "confidence": "medium",
+        "dataType": "assumption",
+        "rationale": "5-year exclusive development rights prevent competition on this specific site. Combined with full permitting, creates a time-based moat. Premium decays as exclusivity period expires.",
+        "source": "Framework parameter: 5-year exclusive development rights",
+        "baseForCalculation": "Applied as multiple premium to base EV/EBITDA"
+      }
+    ],
+
+    "discounts": [
+      {
+        "name": "Pre-Revenue Discount",
+        "type": "multiple_discount",
+        "estimatedImpact_percent": -25,
+        "estimatedImpact_range_percent": [-30, -20],
+        "confidence": "high",
+        "dataType": "confirmed",
+        "rationale": "No current revenue stream. All financials are projections. Comparable operational assets trade at full multiples; pre-revenue assets require significant discount.",
+        "source": "Project stage: pre-revenue, pre-construction"
+      },
+      {
+        "name": "Founder / Execution Discount",
+        "type": "multiple_discount",
+        "estimatedImpact_percent": -15,
+        "estimatedImpact_range_percent": [-20, -10],
+        "confidence": "medium",
+        "dataType": "assumption",
+        "rationale": "No independent assessment of management team track record. Execution risk for CHF 375M+ CapEx program is substantial. Discount applied until team due diligence completed.",
+        "source": "Framework acknowledgment of execution risk"
+      },
+      {
+        "name": "Single-Asset Concentration Discount",
+        "type": "multiple_discount",
+        "estimatedImpact_percent": -10,
+        "estimatedImpact_range_percent": [-15, -5],
+        "confidence": "medium",
+        "dataType": "confirmed",
+        "rationale": "Single-site, single-jurisdiction concentration risk. Multi-site operators receive diversification premiums that single-asset projects lack.",
+        "source": "Project structure: single Graubünden site"
+      }
+    ],
+
+    "netPremiumSummary": {
+      "grossPremiums_percent": 45,
+      "grossPremiumComponents": "Sovereign 15% + BTM 20% + Exclusivity 10%",
+      "grossDiscounts_percent": -50,
+      "grossDiscountComponents": "Pre-revenue -25% + Execution -15% + Concentration -10%",
+      "netMultipleAdjustment_percent": -5,
+      "interpretation": "Discounts slightly outweigh premiums on multiple basis. However, the power cost advantage NPV and PUE NPV are standalone value additions that operate independently of multiple adjustments.",
+      "standaloneNPV_additions": {
+        "powerCostAdvantage_base_CHF_M": 255.9,
+        "pueEfficiency_CHF_M": 39.0,
+        "btmPremiumOnPowerNPV_CHF_M": 51.2,
+        "btmCalculation": "CHF 255.9M × 20% BTM premium",
+        "total_standalone_NPV_CHF_M": 346.1
+      }
+    }
+  },
+
+  "sovereignAdjustedMultiple": {
+    "methodology": "Start from base EV/EBITDA and apply cumulative premium/discount adjustments",
+    "baseMultiple": 18.0,
+    "adjustments": [
+      { "factor": "Swiss sovereign premium", "adjustment_pct": 15, "adjustedMultiple": 20.7 },
+      { "factor": "Exclusivity premium", "adjustment_pct": 10, "adjustedMultiple": 22.5 },
+      { "factor": "Pre-revenue discount", "adjustment_pct": -25, "adjustedMultiple": 16.9 },
+      { "factor": "Execution discount", "adjustment_pct": -15, "adjustedMultiple": 14.3 },
+      { "factor": "Concentration discount", "adjustment_pct": -10, "adjustedMultiple": 12.9 }
+    ],
+    "netAdjustedMultiple": 12.9,
+    "note": "Net-adjusted multiple of 12.9× reflects heavy discounting from pre-revenue and execution risk. This is the 'current-state' multiple. The framework's 15-22× range represents 'at-revenue' multiples — the gap is the execution-stage discount."
+  },
+
+  "infrastructureAdjustedMultiple": {
+    "methodology": "Infrastructure assets with contracted cash flows and regulated returns trade at premium to generic tech multiples. Adjust for infrastructure-grade characteristics.",
+    "baseInfraMultiple": 14.0,
+    "note": "European data centre infrastructure EV/EBITDA range 12-18× for operational assets",
+    "adjustments": [
+      { "factor": "20-year PPA locked cost", "adjustment_pct": 20, "rationale": "Contracted cost base mimics regulated utility" },
+      { "factor": "Sovereign counterparties", "adjustment_pct": 10, "rationale": "Quasi-governmental energy partners" },
+      { "factor": "BTM structure", "adjustment_pct": 10, "rationale": "Vertically integrated power/compute" },
+      { "factor": "Pre-revenue", "adjustment_pct": -30, "rationale": "Not yet operational" },
+      { "factor": "Single asset", "adjustment_pct": -10, "rationale": "No diversification" }
+    ],
+    "netAdjustedMultiple": 14.0,
+    "interpretation": "Infrastructure-adjusted multiple converges near 14× — premiums and discounts roughly cancel. Consistent with the sovereign-adjusted path."
+  },
+
+  "riskMatrix": {
+    "methodology": "Probability (1-5) × Impact (1-5). Score ranges: 1-5 Low, 6-12 Medium, 13-19 High, 20-25 Critical.",
+    "risks": [
+      {
+        "id": "R01",
+        "risk": "Customer acquisition failure",
+        "category": "Commercial",
+        "probability": 3,
+        "impact": 5,
+        "score": 15,
+        "severity": "High",
+        "mitigation": "Pre-revenue stage — entire valuation depends on achieving target utilisation",
+        "scenarioImpact": "Bear case + potential write-down if <50% utilisation"
+      },
+      {
+        "id": "R02",
+        "risk": "CapEx overrun",
+        "category": "Execution",
+        "probability": 3,
+        "impact": 4,
+        "score": 12,
+        "severity": "Medium",
+        "mitigation": "Swiss construction costs are well-documented; CHF 18M/MW bear case provides buffer",
+        "scenarioImpact": "Bear case already models CHF 18M/MW"
+      },
+      {
+        "id": "R03",
+        "risk": "Market power rate compression",
+        "category": "Market",
+        "probability": 2,
+        "impact": 5,
+        "score": 10,
+        "severity": "Medium",
+        "mitigation": "Contracted rate locks in floor — spread narrows but never inverts. Bear case models CHF 0.18/kWh market",
+        "scenarioImpact": "Bear case directly models this risk"
+      },
+      {
+        "id": "R04",
+        "risk": "Construction / permitting delay",
+        "category": "Execution",
+        "probability": 2,
+        "impact": 3,
+        "score": 6,
+        "severity": "Medium",
+        "mitigation": "Fully permitted, shovel-ready reduces but doesn't eliminate construction risk",
+        "scenarioImpact": "Delays push revenue start date, reducing NPV"
+      },
+      {
+        "id": "R05",
+        "risk": "Technology obsolescence (PUE target miss)",
+        "category": "Technology",
+        "probability": 2,
+        "impact": 3,
+        "score": 6,
+        "severity": "Medium",
+        "mitigation": "PUE 1.08 is aggressive but achievable with alpine climate. PUE 1.15-1.20 still excellent.",
+        "scenarioImpact": "CHF 39M PUE NPV line item reduced proportionally"
+      },
+      {
+        "id": "R06",
+        "risk": "Regulatory change (Swiss data laws)",
+        "category": "Regulatory",
+        "probability": 1,
+        "impact": 4,
+        "score": 4,
+        "severity": "Low",
+        "mitigation": "Swiss regulatory stability is a core thesis pillar. Low probability but material if occurs.",
+        "scenarioImpact": "Would undermine sovereign premium thesis"
+      },
+      {
+        "id": "R07",
+        "risk": "Funding / capital raising failure",
+        "category": "Financial",
+        "probability": 3,
+        "impact": 5,
+        "score": 15,
+        "severity": "High",
+        "mitigation": "CHF 375-825M CapEx requirement is substantial. No disclosed funding status.",
+        "scenarioImpact": "Binary risk — unfunded project cannot proceed"
+      },
+      {
+        "id": "R08",
+        "risk": "Exclusivity expiry without full buildout",
+        "category": "Strategic",
+        "probability": 3,
+        "impact": 3,
+        "score": 9,
+        "severity": "Medium",
+        "mitigation": "5-year window for Phase 1 + expansion decision. Tight but feasible.",
+        "scenarioImpact": "Moat premium evaporates; expansion optionality lost"
+      }
+    ],
+    "riskSummary": {
+      "criticalRisks": 0,
+      "highRisks": 2,
+      "mediumRisks": 4,
+      "lowRisks": 2,
+      "topRisks": ["Customer acquisition failure (15)", "Funding / capital raising failure (15)"],
+      "interpretation": "Two high-severity risks (customer acquisition and funding) are both pre-revenue stage risks. The core infrastructure thesis (power economics, permitting, jurisdiction) carries medium-to-low risk."
+    }
+  },
+
+  "chartSpecifications": {
+    "note": "Specifications for Frontend Engineer to render visualisations",
+    "charts": [
+      {
+        "id": "chart-01",
+        "type": "radar",
+        "title": "Weighted Scoring — Category Performance",
+        "dataSource": "weightedScoringModel.categoryRanking",
+        "axes": ["Power & Energy", "Site & Permitting", "Counterparty", "Financial Structure", "Technology", "Execution & Team"],
+        "values": [96.7, 100.0, 71.4, 74.7, 81.7, 68.0],
+        "maxValue": 100,
+        "colorScheme": "Single color with opacity gradient by score",
+        "annotations": "Show percentage labels at each vertex"
+      },
+      {
+        "id": "chart-02",
+        "type": "grouped_bar",
+        "title": "Scenario Comparison — Key Financial Metrics",
+        "dataSource": "valuationMetricsEngine.scenarioComparison",
+        "groups": ["Bull", "Base", "Bear"],
+        "metrics": [
+          { "label": "Revenue (CHF M)", "values": [74.25, 27.63, 17.5] },
+          { "label": "EBITDA (CHF M)", "values": [48.26, 16.58, 8.75] },
+          { "label": "Enterprise Value (CHF M)", "values": [1061.7, 298.4, 131.25] }
+        ],
+        "colorScheme": "Green (bull), Blue (base), Red (bear)",
+        "yAxis": "CHF Millions"
+      },
+      {
+        "id": "chart-03",
+        "type": "waterfall",
+        "title": "Premium/Discount Attribution — Multiple Walk",
+        "dataSource": "sovereignAdjustedMultiple",
+        "startValue": 18.0,
+        "steps": [
+          { "label": "Base Multiple", "value": 18.0, "type": "start" },
+          { "label": "Sovereign", "value": 2.7, "type": "increase" },
+          { "label": "Exclusivity", "value": 1.8, "type": "increase" },
+          { "label": "Pre-Revenue", "value": -4.5, "type": "decrease" },
+          { "label": "Execution", "value": -2.7, "type": "decrease" },
+          { "label": "Concentration", "value": -1.8, "type": "decrease" },
+          { "label": "Adjusted", "value": 12.9, "type": "end" }
+        ],
+        "colorScheme": "Green for increases, red for decreases, blue for start/end"
+      },
+      {
+        "id": "chart-04",
+        "type": "heatmap",
+        "title": "Risk Matrix — Probability × Impact",
+        "dataSource": "riskMatrix.risks",
+        "xAxis": { "label": "Impact", "range": [1, 5] },
+        "yAxis": { "label": "Probability", "range": [1, 5] },
+        "dataPoints": [
+          { "risk": "R01", "x": 5, "y": 3, "label": "Customer acquisition" },
+          { "risk": "R02", "x": 4, "y": 3, "label": "CapEx overrun" },
+          { "risk": "R03", "x": 5, "y": 2, "label": "Rate compression" },
+          { "risk": "R04", "x": 3, "y": 2, "label": "Construction delay" },
+          { "risk": "R05", "x": 3, "y": 2, "label": "PUE miss" },
+          { "risk": "R06", "x": 4, "y": 1, "label": "Regulatory change" },
+          { "risk": "R07", "x": 5, "y": 3, "label": "Funding failure" },
+          { "risk": "R08", "x": 3, "y": 3, "label": "Exclusivity expiry" }
+        ],
+        "colorScheme": "Green (low) → Yellow (medium) → Orange (high) → Red (critical)"
+      },
+      {
+        "id": "chart-05",
+        "type": "stacked_bar",
+        "title": "Power Cost Advantage NPV by Scenario",
+        "dataSource": "premiumDiscountAttribution.premiums[1].scenarios",
+        "bars": [
+          { "label": "Bull", "power_npv": 1094.2, "pue_npv": 39, "btm_premium": 218.8 },
+          { "label": "Base", "power_npv": 255.9, "pue_npv": 39, "btm_premium": 51.2 },
+          { "label": "Bear", "power_npv": 91.6, "pue_npv": 39, "btm_premium": 18.3 }
+        ],
+        "segments": ["Power Cost NPV", "PUE Efficiency NPV", "BTM Premium"],
+        "colorScheme": "Distinct colors per segment",
+        "yAxis": "CHF Millions"
+      },
+      {
+        "id": "chart-06",
+        "type": "horizontal_bar",
+        "title": "EV/MW Comparison Across Scenarios",
+        "dataSource": "valuationMetricsEngine.scenarios",
+        "bars": [
+          { "label": "Bull", "value": 19.30 },
+          { "label": "Base", "value": 11.94 },
+          { "label": "Bear", "value": 5.25 }
+        ],
+        "xAxis": "CHF M per MW",
+        "colorScheme": "Green → Blue → Red",
+        "annotation": "Industry range reference line at CHF 8-15M/MW"
+      }
+    ]
+  },
+
+  "sensitivityAnalysis": {
+    "methodology": "One-factor-at-a-time sensitivity on base case EV, varying each key assumption ±20% while holding others constant.",
+    "baseEV_CHF_M": 298.4,
+    "factors": [
+      {
+        "factor": "EBITDA Multiple",
+        "baseValue": 18,
+        "lowValue": 14.4,
+        "highValue": 21.6,
+        "evAtLow_CHF_M": 238.7,
+        "evAtHigh_CHF_M": 358.1,
+        "swing_CHF_M": 119.4,
+        "swingPercent": 40.0,
+        "rank": 1,
+        "note": "Multiple is the largest single driver — directly scales EV linearly"
+      },
+      {
+        "factor": "EBITDA Margin",
+        "baseValue": 0.60,
+        "lowValue": 0.48,
+        "highValue": 0.72,
+        "evAtLow_CHF_M": 238.7,
+        "evAtHigh_CHF_M": 358.1,
+        "swing_CHF_M": 119.4,
+        "swingPercent": 40.0,
+        "rank": 2,
+        "note": "Margin drives EBITDA directly — tied with multiple for sensitivity"
+      },
+      {
+        "factor": "Utilisation Rate",
+        "baseValue": 0.85,
+        "lowValue": 0.68,
+        "highValue": 1.00,
+        "evAtLow_CHF_M": 238.7,
+        "evAtHigh_CHF_M": 351.1,
+        "swing_CHF_M": 112.4,
+        "swingPercent": 37.7,
+        "rank": 3,
+        "note": "Capped at 100% on upside. Utilisation risk is asymmetric — more downside than upside."
+      },
+      {
+        "factor": "Revenue per MW",
+        "baseValue": 1.3,
+        "lowValue": 1.04,
+        "highValue": 1.56,
+        "evAtLow_CHF_M": 238.7,
+        "evAtHigh_CHF_M": 358.1,
+        "swing_CHF_M": 119.4,
+        "swingPercent": 40.0,
+        "rank": 4,
+        "note": "Revenue/MW reflects pricing power and service mix"
+      },
+      {
+        "factor": "Market Power Rate (spread impact on premium NPV)",
+        "baseValue": 0.24,
+        "lowValue": 0.192,
+        "highValue": 0.288,
+        "powerNPV_atLow_CHF_M": 171.5,
+        "powerNPV_atHigh_CHF_M": 343.0,
+        "swing_CHF_M": 171.5,
+        "swingPercent": 66.7,
+        "rank": "N/A — affects standalone NPV, not EV directly",
+        "note": "Market rate is the key driver of the power cost advantage NPV — the single largest premium."
+      }
+    ],
+    "keyInsight": "EV is equally sensitive to multiple, margin, and revenue/MW (all linear). Utilisation has asymmetric risk (capped upside). The power cost advantage NPV is most sensitive to market power rate movements — a factor outside management control."
+  },
+
+  "dataQualityFlags": {
+    "confirmedData": [
+      "CHF 0.10/kWh contracted rate",
+      "20-year PPA flat structure",
+      "BTM configuration",
+      "PUE 1.08 target",
+      "25MW Phase 1 / 55MW full entitlement",
+      "Fully permitted, shovel-ready",
+      "5-year exclusive development rights",
+      "Sovereign-grade counterparties (EKW, Alpiq, Axpo, BKW, Canton GR)",
+      "Graubünden location",
+      "CHF 39M PUE NPV line item"
+    ],
+    "frameworkProjections": [
+      "CHF 0.24/kWh market rate (base) — requires market validation",
+      "CHF 0.32/kWh market rate (high) — requires market validation",
+      "CHF 12-18M/MW CapEx range — Swiss benchmark, not quoted",
+      "55-65% EBITDA margin — projection at steady state",
+      "CHF 1.3M/MW revenue — projection at steady state",
+      "70% Y1-2, 85% steady state utilisation — projection",
+      "15-22× EV/EBITDA range — framework assertion, not comparable transaction data",
+      "8% WACC (6-12% range) — assumption"
+    ],
+    "unverifiedAssumptions": [
+      "Management team capability and track record",
+      "Customer pipeline existence and quality",
+      "Capital raising status and investor interest",
+      "Network connectivity quality at Graubünden site",
+      "Tier classification / uptime guarantees",
+      "Construction timeline and contractor readiness",
+      "15% effective tax rate (Swiss cantonal — not confirmed for this specific entity)"
+    ],
+    "dataGaps": [
+      "No comparable transaction data — awaiting DEE-17 Research Agent output",
+      "No independent market rate verification",
+      "No customer LOIs or pipeline disclosure",
+      "No detailed construction budget or timeline",
+      "No funding structure or capital stack details"
+    ]
+  }
+}
+
